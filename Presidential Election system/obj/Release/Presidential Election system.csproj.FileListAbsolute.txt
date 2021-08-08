@@ -1,0 +1,10 @@
+C:\Users\mikiy\source\repos\Presidential Election system\Presidential Election system\bin\Release\Presidential Election system.exe.config
+C:\Users\mikiy\source\repos\Presidential Election system\Presidential Election system\bin\Release\Presidential Election system.exe
+C:\Users\mikiy\source\repos\Presidential Election system\Presidential Election system\bin\Release\Presidential Election system.pdb
+C:\Users\mikiy\source\repos\Presidential Election system\Presidential Election system\obj\Release\Presidential Election system.csproj.AssemblyReference.cache
+C:\Users\mikiy\source\repos\Presidential Election system\Presidential Election system\obj\Release\Presidential_Election_system.MainPage.resources
+C:\Users\mikiy\source\repos\Presidential Election system\Presidential Election system\obj\Release\Presidential_Election_system.Properties.Resources.resources
+C:\Users\mikiy\source\repos\Presidential Election system\Presidential Election system\obj\Release\Presidential Election system.csproj.GenerateResource.cache
+C:\Users\mikiy\source\repos\Presidential Election system\Presidential Election system\obj\Release\Presidential Election system.csproj.CoreCompileInputs.cache
+C:\Users\mikiy\source\repos\Presidential Election system\Presidential Election system\obj\Release\Presidential Election system.exe
+C:\Users\mikiy\source\repos\Presidential Election system\Presidential Election system\obj\Release\Presidential Election system.pdb
