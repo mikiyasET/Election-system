@@ -10,3 +10,15 @@ C:\Users\mikiy\source\repos\Presidential Election system\Presidential Election s
 C:\Users\mikiy\source\repos\Presidential Election system\Presidential Election system\obj\Debug\Presidential Election system.pdb
 C:\Users\mikiy\source\repos\Presidential Election system\Presidential Election system\bin\Debug\FontAwesome.Sharp.dll
 C:\Users\mikiy\source\repos\Presidential Election system\Presidential Election system\obj\Debug\Presidential Election system.csproj.CopyComplete
+C:\Users\Suru\Documents\GitHub\Presidential-Election-system\Presidential Election system\obj\Debug\Presidential Election system.csproj.AssemblyReference.cache
+C:\Users\Suru\Documents\GitHub\Presidential-Election-system\Presidential Election system\obj\Debug\Presidential_Election_system.MainPage.resources
+C:\Users\Suru\Documents\GitHub\Presidential-Election-system\Presidential Election system\obj\Debug\Presidential_Election_system.Properties.Resources.resources
+C:\Users\Suru\Documents\GitHub\Presidential-Election-system\Presidential Election system\obj\Debug\Presidential Election system.csproj.GenerateResource.cache
+C:\Users\Suru\Documents\GitHub\Presidential-Election-system\Presidential Election system\obj\Debug\Presidential Election system.csproj.CoreCompileInputs.cache
+C:\Users\Suru\Documents\GitHub\Presidential-Election-system\Presidential Election system\obj\Debug\Presidential Election system.exe
+C:\Users\Suru\Documents\GitHub\Presidential-Election-system\Presidential Election system\obj\Debug\Presidential Election system.pdb
+C:\Users\Suru\Documents\GitHub\Presidential-Election-system\Presidential Election system\bin\Debug\Presidential Election system.exe.config
+C:\Users\Suru\Documents\GitHub\Presidential-Election-system\Presidential Election system\bin\Debug\Presidential Election system.exe
+C:\Users\Suru\Documents\GitHub\Presidential-Election-system\Presidential Election system\bin\Debug\Presidential Election system.pdb
+C:\Users\Suru\Documents\GitHub\Presidential-Election-system\Presidential Election system\bin\Debug\FontAwesome.Sharp.dll
+C:\Users\Suru\Documents\GitHub\Presidential-Election-system\Presidential Election system\obj\Debug\Presidential Election system.csproj.CopyComplete
