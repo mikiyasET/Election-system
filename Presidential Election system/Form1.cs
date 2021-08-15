@@ -37,6 +37,12 @@ namespace Presidential_Election_system
                 // Tigray
                 Console.WriteLine("Tigray X: " + x + "         Y:" + y + "\n");
             }
+            else if (Rule(46,133,305,405))
+            {
+                // Benshal gulgumz
+                Console.WriteLine("Benishan Gulgumz X: " + x + "         Y:" + y + "\n");
+
+            }
             else if (Rule( 88,242,259,370) || Rule(88,130,277,308))
             {
                 // Amahara
@@ -53,7 +59,19 @@ namespace Presidential_Election_system
                 Console.WriteLine("Hareri X: " + x + "         Y:" + y + "\n");
 
             }
-            else if (Rule(228,518,318,600))
+            else if (Rule(76,178,463,565))
+            {
+                // SNNP
+                Console.WriteLine("SNNP X: " + x + "         Y:" + y + "\n");
+
+            }
+            else if (Rule(48,344,201,596))
+            {
+                // oromiya
+                Console.WriteLine("Oromiya X: " + x + "         Y:" + y + "\n");
+
+            }
+            else if (Rule(228,518,340,600))
             {
                 // somali
                 Console.WriteLine("Somali X: " + x + "         Y:" + y + "\n");
@@ -64,28 +82,19 @@ namespace Presidential_Election_system
                 // Afar
                 Console.WriteLine("Afar X: " + x + "         Y:" + y + "\n");
             }
-            else if (false)
-            {
-                // Benshal gulgumz
-            }
+            
             
            
             else if (false)
             {
                 // sidama
             }
-            else if (false)
-            {
-                // oromiya
-            }
+            
             else if (false)
             {
                 // addis ababa
             }
-            else if (false)
-            {
-                // SNNP
-            }
+           
             else if (false)
             {
                 // Gambela
