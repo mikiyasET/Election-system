@@ -66,12 +66,6 @@ namespace Presidential_Election_system
                 Console.WriteLine("SNNP X: " + x + "         Y:" + y + "\n");
 
             }
-            else if (Rule(48, 344, 201, 596))
-            {
-                // oromiya
-                Console.WriteLine("Oromiya X: " + x + "         Y:" + y + "\n");
-
-            }
             else if (Rule(228, 518, 340, 600))
             {
                 // somali
@@ -83,9 +77,6 @@ namespace Presidential_Election_system
                 // Afar
                 Console.WriteLine("Afar X: " + x + "         Y:" + y + "\n");
             }
-
-
-
             else if (Rule(10, 79, 417, 502))
             {
                 // Gambela
@@ -93,9 +84,10 @@ namespace Presidential_Election_system
 
             }
 
-            else if (false)
+            else if (Rule(202,209 ,403 ,411 ))
             {
                 // addis ababa
+                Console.WriteLine("Addis Ababa X: " + x + "         Y:" + y + "\n");
             }
 
             else if (Rule(183, 217, 470, 515))
@@ -104,6 +96,14 @@ namespace Presidential_Election_system
                 Console.WriteLine("Sidama X: " + x + "         Y:" + y + "\n");
             }
 
+            else if (Rule(48, 344, 201, 596))
+            {
+                // oromiya
+                Console.WriteLine("Oromiya X: " + x + "         Y:" + y + "\n");
+
+            }
+            
+            
             else
             {
                 Console.WriteLine("Unkown Region    X: " + x + "         Y:" + y + "\n");
