@@ -18,14 +18,90 @@ namespace Presidential_Election_system
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            /* Point point = pictureBox1.PointToClient(Cursor.Position);
+            Point point = pictureBox1.PointToClient(Cursor.Position);
+            int x = point.X;
+            int y = point.Y;
 
-             int x = point.X;
-             int y = point.Y;
-             Console.WriteLine("X: " + point.X + "         Y:" + point.Y + "\n");*/
+            // rule:-  Rule(x1,x2,y1,y1)
+            // rule:-       30,88,10,20
+            if (Rule(123, 244, 216, 255) || Rule(216, 244, 210, 291))
+            {
+                // Tigray
+                ShowRegion("Tigray");
+            }
+            else if (Rule(46, 133, 305, 405))
+            {
+                // Benishangul
+                ShowRegion("Benishangul");
+
+            }
+            else if (Rule(88, 242, 259, 370) || Rule(88, 130, 277, 308) || Rule(222, 250, 371, 414) || Rule(224, 253, 232, 370))
+            {
+                // Amahara
+                ShowRegion("Amahara");
+            }
+            else if (Rule(307, 327, 381, 389))
+            {
+                // DireDawa
+                ShowRegion("DireDawa");
+
+            }
+            else if (Rule(316, 325, 393, 400))
+            {
+                // Harari
+                ShowRegion("Harari");
+            }
+            else if (Rule(76, 178, 463, 565))
+            {
+                // SNNPR
+                ShowRegion("SNNPR");
+
+            }
+            else if (Rule(228, 276, 403, 533) || Rule(277, 313, 389, 497) || Rule(255, 277, 392, 414) || Rule(312, 348, 381, 435) || Rule(291, 323, 462, 495) || Rule(228, 242, 535, 572))
+            {
+                // Oromia
+                ShowRegion("Oromia");
+            }
+            else if (Rule(228, 518, 340, 600))
+            {
+                // Somali
+                ShowRegion("Somali");
+
+            }
+            else if (Rule(245, 329, 219, 410) || Rule(278, 329, 260, 340))
+            {
+                // Afar
+                ShowRegion("Afar");
+            }
+            else if (Rule(10, 79, 417, 502))
+            {
+                // Gambela
+                ShowRegion("Gambela");
+            }
+
+            else if (Rule(202, 209, 403, 411))
+            {
+                // AddisAbaba
+                ShowRegion(" AddisAbaba");
+            }
+
+            else if (Rule(183, 217, 470, 515))
+            {
+                // Sidama
+                ShowRegion("Sidama");
+            }
+
+            else if (Rule(48, 344, 361, 596))
+            {
+                // Oromia
+                ShowRegion("Oromia");
+
+            }
         }
-        private void pictureBox1_Hover(object sender, EventArgs e)
+        private void pictureBox1_Hover(object sender, EventArgs e) 
+            
         {
+            /*
             Point point = pictureBox1.PointToClient(Cursor.Position);
             int x = point.X;
             int y = point.Y;
@@ -113,6 +189,7 @@ namespace Presidential_Election_system
             {
                 Console.WriteLine("Unkown Region    X: " + x + "         Y:" + y + "\n");
             }
+            */
         }
 
         private bool Rule(int x1, int x2, int y1, int y2)
@@ -133,7 +210,7 @@ namespace Presidential_Election_system
         {
             switch (region)
             {
-                case "Addis Ababa":
+                case "AddisAbaba":
                     Console.WriteLine("Addis Ababa");
                     break;
                 case "Afar":
