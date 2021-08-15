@@ -23,3 +23,4 @@ C:\Users\Suru\Documents\GitHub\Presidential-Election-system\Presidential Electio
 C:\Users\Suru\Documents\GitHub\Presidential-Election-system\Presidential Election system\bin\Debug\FontAwesome.Sharp.dll
 C:\Users\Suru\Documents\GitHub\Presidential-Election-system\Presidential Election system\obj\Debug\Presidential Election system.csproj.CopyComplete
 C:\Users\Suru\Documents\GitHub\Presidential-Election-system\Presidential Election system\obj\Debug\Presidential_Election_system.Login.resources
+C:\Users\mikiy\source\repos\Presidential Election system\Presidential Election system\obj\Debug\Presidential_Election_system.Login.resources

@@ -1,2 +1,5 @@
 
 *.cache
+*.exe
+.vs/Presidential Election system/v16/.suo
+Presidential Election system/obj/Debug/Presidential Election system.csproj.GenerateResource.cache

@@ -43,7 +43,7 @@ namespace Presidential_Election_system
                 Console.WriteLine("Benishan Gulgumz X: " + x + "         Y:" + y + "\n");
 
             }
-            else if (Rule(88, 242, 259, 370) || Rule(88, 130, 277, 308))
+            else if (Rule(88, 242, 259, 370) || Rule(88, 130, 277, 308) || Rule(222, 250, 371, 414) || Rule(224, 253, 232, 370))
             {
                 // Amahara
                 Console.WriteLine("Amhara X: " + x + "         Y:" + y + "\n");
@@ -66,6 +66,11 @@ namespace Presidential_Election_system
                 Console.WriteLine("SNNP X: " + x + "         Y:" + y + "\n");
 
             }
+            else if (Rule(228, 276, 403, 533) || Rule(277, 313, 389, 497) || Rule(255, 277, 392, 414) || Rule(312, 348, 381, 435) || Rule(291, 323, 462, 495) || Rule(228, 242, 535, 572))
+            {
+                // Oromiya
+                Console.WriteLine("Oromiya X: " + x + "         Y:" + y + "\n");
+            }
             else if (Rule(228, 518, 340, 600))
             {
                 // somali
@@ -84,7 +89,7 @@ namespace Presidential_Election_system
 
             }
 
-            else if (Rule(202,209 ,403 ,411 ))
+            else if (Rule(202, 209, 403, 411))
             {
                 // addis ababa
                 Console.WriteLine("Addis Ababa X: " + x + "         Y:" + y + "\n");
@@ -96,21 +101,21 @@ namespace Presidential_Election_system
                 Console.WriteLine("Sidama X: " + x + "         Y:" + y + "\n");
             }
 
-            else if (Rule(48, 344, 201, 596))
+            else if (Rule(48, 344, 361, 596))
             {
                 // oromiya
                 Console.WriteLine("Oromiya X: " + x + "         Y:" + y + "\n");
 
             }
-            
-            
+
+
             else
             {
                 Console.WriteLine("Unkown Region    X: " + x + "         Y:" + y + "\n");
             }
         }
 
-        private bool Rule(int x1, int x2 , int y1 ,int y2)
+        private bool Rule(int x1, int x2, int y1, int y2)
         {
             Point point = pictureBox1.PointToClient(Cursor.Position);
             int x = point.X;
@@ -118,12 +123,13 @@ namespace Presidential_Election_system
             if (x >= x1 && x <= x2 && (y >= y1 && y <= y2))
             {
                 return true;
-            }else
+            }
+            else
             {
                 return false;
             }
         }
 
-        
+
     }
 }
