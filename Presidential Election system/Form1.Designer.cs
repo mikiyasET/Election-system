@@ -45,6 +45,14 @@ namespace Presidential_Election_system
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.label5 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -56,14 +64,6 @@ namespace Presidential_Election_system
             this.label4 = new System.Windows.Forms.Label();
             this.position = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.panel1.SuspendLayout();
             this.Logo.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -198,6 +198,7 @@ namespace Presidential_Election_system
             // 
             // panel3
             // 
+            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panel3.Controls.Add(this.tableLayoutPanel1);
             this.panel3.Controls.Add(this.label5);
@@ -209,10 +210,9 @@ namespace Presidential_Election_system
             this.panel3.Controls.Add(this.label9);
             this.panel3.Controls.Add(this.label7);
             this.panel3.Controls.Add(this.label4);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(547, 0);
+            this.panel3.Location = new System.Drawing.Point(531, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(388, 808);
+            this.panel3.Size = new System.Drawing.Size(404, 808);
             this.panel3.TabIndex = 3;
             // 
             // tableLayoutPanel1
@@ -238,9 +238,109 @@ namespace Presidential_Election_system
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(388, 89);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(404, 89);
             this.tableLayoutPanel1.TabIndex = 2;
             this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
+            // 
+            // label13
+            // 
+            this.label13.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Bold);
+            this.label13.Location = new System.Drawing.Point(33, 15);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(34, 14);
+            this.label13.TabIndex = 0;
+            this.label13.Text = "Rank";
+            this.label13.Click += new System.EventHandler(this.label13_Click_1);
+            // 
+            // label14
+            // 
+            this.label14.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Bold);
+            this.label14.Location = new System.Drawing.Point(118, 15);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(66, 14);
+            this.label14.TabIndex = 0;
+            this.label14.Text = "Party Logo";
+            this.label14.Click += new System.EventHandler(this.label14_Click);
+            // 
+            // label15
+            // 
+            this.label15.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(44, 59);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(13, 15);
+            this.label15.TabIndex = 0;
+            this.label15.Text = "1";
+            this.label15.Click += new System.EventHandler(this.label13_Click_1);
+            // 
+            // label17
+            // 
+            this.label17.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Bold);
+            this.label17.Location = new System.Drawing.Point(218, 15);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(69, 14);
+            this.label17.TabIndex = 0;
+            this.label17.Text = "Party Name";
+            this.label17.Click += new System.EventHandler(this.label14_Click);
+            // 
+            // label18
+            // 
+            this.label18.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Bold);
+            this.label18.Location = new System.Drawing.Point(309, 15);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(88, 14);
+            this.label18.TabIndex = 0;
+            this.label18.Text = "Peoples Count";
+            this.label18.Click += new System.EventHandler(this.label14_Click);
+            // 
+            // label19
+            // 
+            this.label19.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(330, 59);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(46, 15);
+            this.label19.TabIndex = 0;
+            this.label19.Text = "230,200";
+            this.label19.Click += new System.EventHandler(this.label14_Click);
+            // 
+            // label20
+            // 
+            this.label20.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.Location = new System.Drawing.Point(223, 59);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(59, 15);
+            this.label20.TabIndex = 0;
+            this.label20.Text = "Prosperty";
+            this.label20.Click += new System.EventHandler(this.label14_Click);
+            // 
+            // iconButton1
+            // 
+            this.iconButton1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.iconButton1.FlatAppearance.BorderSize = 0;
+            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.Lightbulb;
+            this.iconButton1.IconColor = System.Drawing.Color.Black;
+            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton1.IconSize = 25;
+            this.iconButton1.Location = new System.Drawing.Point(104, 47);
+            this.iconButton1.Name = "iconButton1";
+            this.iconButton1.Size = new System.Drawing.Size(95, 39);
+            this.iconButton1.TabIndex = 1;
+            this.iconButton1.UseVisualStyleBackColor = true;
+            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
             // 
             // label5
             // 
@@ -248,7 +348,7 @@ namespace Presidential_Election_system
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Times New Roman", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label5.Location = new System.Drawing.Point(105, 9);
+            this.label5.Location = new System.Drawing.Point(113, 9);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(161, 55);
             this.label5.TabIndex = 1;
@@ -363,116 +463,15 @@ namespace Presidential_Election_system
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.White;
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
             this.pictureBox1.Image = global::Presidential_Election_system.Properties.Resources.Ethiopia_map___white;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(547, 808);
+            this.pictureBox1.Size = new System.Drawing.Size(530, 808);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             this.pictureBox1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_Hover);
-            // 
-            // label13
-            // 
-            this.label13.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Bold);
-            this.label13.Location = new System.Drawing.Point(31, 15);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(34, 14);
-            this.label13.TabIndex = 0;
-            this.label13.Text = "Rank";
-            this.label13.Click += new System.EventHandler(this.label13_Click_1);
-            // 
-            // label14
-            // 
-            this.label14.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Bold);
-            this.label14.Location = new System.Drawing.Point(112, 15);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(66, 14);
-            this.label14.TabIndex = 0;
-            this.label14.Text = "Party Logo";
-            this.label14.Click += new System.EventHandler(this.label14_Click);
-            // 
-            // label15
-            // 
-            this.label15.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(42, 59);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(13, 15);
-            this.label15.TabIndex = 0;
-            this.label15.Text = "1";
-            this.label15.Click += new System.EventHandler(this.label13_Click_1);
-            // 
-            // label17
-            // 
-            this.label17.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Bold);
-            this.label17.Location = new System.Drawing.Point(208, 15);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(69, 14);
-            this.label17.TabIndex = 0;
-            this.label17.Text = "Party Name";
-            this.label17.Click += new System.EventHandler(this.label14_Click);
-            // 
-            // label18
-            // 
-            this.label18.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Bold);
-            this.label18.Location = new System.Drawing.Point(295, 15);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(88, 14);
-            this.label18.TabIndex = 0;
-            this.label18.Text = "Peoples Count";
-            this.label18.Click += new System.EventHandler(this.label14_Click);
-            // 
-            // label19
-            // 
-            this.label19.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(316, 59);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(46, 15);
-            this.label19.TabIndex = 0;
-            this.label19.Text = "230,200";
-            this.label19.Click += new System.EventHandler(this.label14_Click);
-            // 
-            // label20
-            // 
-            this.label20.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(213, 59);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(59, 15);
-            this.label20.TabIndex = 0;
-            this.label20.Text = "Prosperty";
-            this.label20.Click += new System.EventHandler(this.label14_Click);
-            // 
-            // iconButton1
-            // 
-            this.iconButton1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.iconButton1.FlatAppearance.BorderSize = 0;
-            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.Lightbulb;
-            this.iconButton1.IconColor = System.Drawing.Color.Black;
-            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton1.IconSize = 25;
-            this.iconButton1.Location = new System.Drawing.Point(100, 47);
-            this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(91, 39);
-            this.iconButton1.TabIndex = 1;
-            this.iconButton1.UseVisualStyleBackColor = true;
-            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
             // 
             // MainPage
             // 

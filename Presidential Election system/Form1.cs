@@ -22,12 +22,13 @@ namespace Presidential_Election_system
 
             int x = point.X;
             int y = point.Y;
-            position.Text += "X: " + point.X +"         Y:" + point.Y +"\n";
-            if(x >= 113 & x <= 208 && (y > 12 && y < 58 || x > 184 && (y > 23 && y < 85)))
-            {
+            Console.WriteLine("X: " + point.X +"         Y:" + point.Y +"\n");
+            if(x >= 128 && x <= 244 && (y >= 216 && y <= 255))
+            { 
                 MessageBox.Show("Tigray");
             }
             // X: 113 - 208 | Y: 12 - 53, > 184 23 - 85
+            // X: 130 - 250 | Y: 130 - 170
             
         }
         private void pictureBox1_Hover(object sender, EventArgs e)
@@ -36,9 +37,12 @@ namespace Presidential_Election_system
 
             int x = point.X;
             int y = point.Y;
-            if (x >= 113 & x <= 208 && (y > 12 && y < 53 || x > 184 && (y > 23 && y < 85)))
+            if (x >= 128 && x <= 244 && (y >= 216 && y <= 255))
             {
                 Console.WriteLine("Tigray");
+            }else
+            {
+                Console.WriteLine("X: " + x + "         Y:" + y + "\n");
             }
         }
 
