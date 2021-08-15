@@ -41,10 +41,22 @@ namespace Presidential_Election_system
             {
                 // Amahara
                 Console.WriteLine("Amhara X: " + x + "         Y:" + y + "\n");
-            }else if (false)
+            }else if (Rule(307,327,381,389))
             {
                 // dire dawa
                 Console.WriteLine("Dire Dawa X: " + x + "         Y:" + y + "\n");
+
+            }
+            else if (Rule(316,325,393,400))
+            {
+                // hareri
+                Console.WriteLine("Hareri X: " + x + "         Y:" + y + "\n");
+
+            }
+            else if (Rule(228,518,318,600))
+            {
+                // somali
+                Console.WriteLine("Somali X: " + x + "         Y:" + y + "\n");
 
             }
             else if (Rule(245,329,219,410) || Rule(278,329,260,340))
@@ -57,10 +69,7 @@ namespace Presidential_Election_system
                 // Benshal gulgumz
             }
             
-            else if (false)
-            {
-                // somali
-            }
+           
             else if (false)
             {
                 // sidama
@@ -81,10 +90,7 @@ namespace Presidential_Election_system
             {
                 // Gambela
             }
-            else if (false)
-            {
-                // hareri
-            }
+            
             else
             {
                 Console.WriteLine("Unkown Region    X: " + x + "         Y:" + y + "\n");
