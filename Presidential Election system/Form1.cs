@@ -129,7 +129,49 @@ namespace Presidential_Election_system
                 return false;
             }
         }
+        private void ShowRegion(string region) 
+        {
+            switch (region)
+            {
+                case "Addis Ababa":
+                    Console.WriteLine("Addis Ababa");
+                    break;
+                case "Afar":
+                    Console.WriteLine("Afar");
+                    break;
+                case "Amahara":
+                    Console.WriteLine("Amahara");
+                    break;
+                case "Benishangul":
+                    Console.WriteLine("Benishangul");
+                    break;
+                case "DireDawa":
+                    Console.WriteLine("DireDawa");
+                    break;
+                case "Gambela":
+                    Console.WriteLine("Gambela");
+                    break;
+                case "Harari":
+                    Console.WriteLine("Harari");
+                    break;
+                case "Oromia":
+                    Console.WriteLine("Oromia");
+                    break;
+                case "Sidama":
+                    Console.WriteLine("Sidama");
+                    break;
+                case "Somali":
+                    Console.WriteLine("Somali");
+                    break;
+                case "SNNPR":
+                    Console.WriteLine("SNNPR");
+                    break;
+                case "Tigray":
+                    Console.WriteLine("Tigray");
+                    break;
 
+            }
+        }
 
     }
 }

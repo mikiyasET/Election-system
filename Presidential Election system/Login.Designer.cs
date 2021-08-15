@@ -188,9 +188,9 @@ namespace Presidential_Election_system
             // pictureBox2
             // 
             this.pictureBox2.Image = global::Presidential_Election_system.Properties.Resources.logo_white;
-            this.pictureBox2.Location = new System.Drawing.Point(152, 68);
+            this.pictureBox2.Location = new System.Drawing.Point(113, 68);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(335, 200);
+            this.pictureBox2.Size = new System.Drawing.Size(407, 200);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
