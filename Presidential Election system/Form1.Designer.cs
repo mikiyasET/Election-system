@@ -194,7 +194,6 @@ namespace Presidential_Election_system
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(935, 808);
             this.panel2.TabIndex = 1;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // panel3
             // 
@@ -240,7 +239,6 @@ namespace Presidential_Election_system
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(404, 89);
             this.tableLayoutPanel1.TabIndex = 2;
-            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
             // label13
             // 
@@ -252,7 +250,6 @@ namespace Presidential_Election_system
             this.label13.Size = new System.Drawing.Size(34, 14);
             this.label13.TabIndex = 0;
             this.label13.Text = "Rank";
-            this.label13.Click += new System.EventHandler(this.label13_Click_1);
             // 
             // label14
             // 
@@ -264,7 +261,6 @@ namespace Presidential_Election_system
             this.label14.Size = new System.Drawing.Size(66, 14);
             this.label14.TabIndex = 0;
             this.label14.Text = "Party Logo";
-            this.label14.Click += new System.EventHandler(this.label14_Click);
             // 
             // label15
             // 
@@ -276,7 +272,6 @@ namespace Presidential_Election_system
             this.label15.Size = new System.Drawing.Size(13, 15);
             this.label15.TabIndex = 0;
             this.label15.Text = "1";
-            this.label15.Click += new System.EventHandler(this.label13_Click_1);
             // 
             // label17
             // 
@@ -288,7 +283,6 @@ namespace Presidential_Election_system
             this.label17.Size = new System.Drawing.Size(69, 14);
             this.label17.TabIndex = 0;
             this.label17.Text = "Party Name";
-            this.label17.Click += new System.EventHandler(this.label14_Click);
             // 
             // label18
             // 
@@ -300,7 +294,6 @@ namespace Presidential_Election_system
             this.label18.Size = new System.Drawing.Size(88, 14);
             this.label18.TabIndex = 0;
             this.label18.Text = "Peoples Count";
-            this.label18.Click += new System.EventHandler(this.label14_Click);
             // 
             // label19
             // 
@@ -312,7 +305,6 @@ namespace Presidential_Election_system
             this.label19.Size = new System.Drawing.Size(46, 15);
             this.label19.TabIndex = 0;
             this.label19.Text = "230,200";
-            this.label19.Click += new System.EventHandler(this.label14_Click);
             // 
             // label20
             // 
@@ -324,7 +316,6 @@ namespace Presidential_Election_system
             this.label20.Size = new System.Drawing.Size(59, 15);
             this.label20.TabIndex = 0;
             this.label20.Text = "Prosperty";
-            this.label20.Click += new System.EventHandler(this.label14_Click);
             // 
             // iconButton1
             // 
@@ -340,7 +331,6 @@ namespace Presidential_Election_system
             this.iconButton1.Size = new System.Drawing.Size(95, 39);
             this.iconButton1.TabIndex = 1;
             this.iconButton1.UseVisualStyleBackColor = true;
-            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
             // 
             // label5
             // 
@@ -365,7 +355,6 @@ namespace Presidential_Election_system
             this.label12.Size = new System.Drawing.Size(33, 19);
             this.label12.TabIndex = 0;
             this.label12.Text = "450";
-            this.label12.Click += new System.EventHandler(this.label4_Click);
             // 
             // label10
             // 
@@ -377,7 +366,6 @@ namespace Presidential_Election_system
             this.label10.Size = new System.Drawing.Size(73, 19);
             this.label10.TabIndex = 0;
             this.label10.Text = "1,298,547";
-            this.label10.Click += new System.EventHandler(this.label4_Click);
             // 
             // label8
             // 
@@ -389,7 +377,6 @@ namespace Presidential_Election_system
             this.label8.Size = new System.Drawing.Size(73, 19);
             this.label8.TabIndex = 0;
             this.label8.Text = "2,787,234";
-            this.label8.Click += new System.EventHandler(this.label4_Click);
             // 
             // label6
             // 
@@ -401,7 +388,6 @@ namespace Presidential_Election_system
             this.label6.Size = new System.Drawing.Size(73, 19);
             this.label6.TabIndex = 0;
             this.label6.Text = "4,000,000";
-            this.label6.Click += new System.EventHandler(this.label4_Click);
             // 
             // label11
             // 
@@ -413,7 +399,6 @@ namespace Presidential_Election_system
             this.label11.Size = new System.Drawing.Size(57, 19);
             this.label11.TabIndex = 0;
             this.label11.Text = "Stations";
-            this.label11.Click += new System.EventHandler(this.label4_Click);
             // 
             // label9
             // 
@@ -425,7 +410,6 @@ namespace Presidential_Election_system
             this.label9.Size = new System.Drawing.Size(115, 19);
             this.label9.TabIndex = 0;
             this.label9.Text = "Voted (Currently)";
-            this.label9.Click += new System.EventHandler(this.label4_Click);
             // 
             // label7
             // 
@@ -437,7 +421,6 @@ namespace Presidential_Election_system
             this.label7.Size = new System.Drawing.Size(48, 19);
             this.label7.TabIndex = 0;
             this.label7.Text = "Voters";
-            this.label7.Click += new System.EventHandler(this.label4_Click);
             // 
             // label4
             // 
@@ -449,7 +432,6 @@ namespace Presidential_Election_system
             this.label4.Size = new System.Drawing.Size(73, 19);
             this.label4.TabIndex = 0;
             this.label4.Text = "Population";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // position
             // 
