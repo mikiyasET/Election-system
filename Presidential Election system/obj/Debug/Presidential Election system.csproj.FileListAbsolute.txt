@@ -8,3 +8,5 @@ C:\Users\mikiy\source\repos\Presidential Election system\Presidential Election s
 C:\Users\mikiy\source\repos\Presidential Election system\Presidential Election system\bin\Debug\Presidential Election system.pdb
 C:\Users\mikiy\source\repos\Presidential Election system\Presidential Election system\obj\Debug\Presidential Election system.exe
 C:\Users\mikiy\source\repos\Presidential Election system\Presidential Election system\obj\Debug\Presidential Election system.pdb
+C:\Users\mikiy\source\repos\Presidential Election system\Presidential Election system\bin\Debug\FontAwesome.Sharp.dll
+C:\Users\mikiy\source\repos\Presidential Election system\Presidential Election system\obj\Debug\Presidential Election system.csproj.CopyComplete
