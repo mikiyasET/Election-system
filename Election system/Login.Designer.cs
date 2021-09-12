@@ -159,7 +159,7 @@ namespace Election_system
             // 
             this.pictureBox5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox5.Image = global::Presidential_Election_system.Properties.Resources._124;
+            this.pictureBox5.Image = global::Election_system.Properties.Resources._124;
             this.pictureBox5.Location = new System.Drawing.Point(0, 506);
             this.pictureBox5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox5.Name = "pictureBox5";
@@ -170,7 +170,7 @@ namespace Election_system
             // pictureBox4
             // 
             this.pictureBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox4.Image = global::Presidential_Election_system.Properties.Resources.Phone11;
+            this.pictureBox4.Image = global::Election_system.Properties.Resources.Phone11;
             this.pictureBox4.Location = new System.Drawing.Point(395, 506);
             this.pictureBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox4.Name = "pictureBox4";
@@ -181,7 +181,7 @@ namespace Election_system
             // pictureBox3
             // 
             this.pictureBox3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pictureBox3.Image = global::Presidential_Election_system.Properties.Resources.Email;
+            this.pictureBox3.Image = global::Election_system.Properties.Resources.Email;
             this.pictureBox3.Location = new System.Drawing.Point(0, 562);
             this.pictureBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox3.Name = "pictureBox3";
@@ -221,7 +221,7 @@ namespace Election_system
             // pictureBox2
             // 
             this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox2.Image = global::Presidential_Election_system.Properties.Resources.logo_white;
+            this.pictureBox2.Image = global::Election_system.Properties.Resources.logo_white;
             this.pictureBox2.Location = new System.Drawing.Point(263, 119);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox2.Name = "pictureBox2";

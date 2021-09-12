@@ -364,7 +364,7 @@ namespace Election_system
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainPage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Presidential Election system";
+            this.Text = "Election system";
             this.TransparencyKey = System.Drawing.Color.Purple;
             this.panel1.ResumeLayout(false);
             this.Logo.ResumeLayout(false);

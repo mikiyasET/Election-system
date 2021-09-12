@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Presidential_Election_system.Properties {
+namespace Election_system.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]

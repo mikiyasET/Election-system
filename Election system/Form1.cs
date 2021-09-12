@@ -18,6 +18,7 @@ namespace Election_system
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
+            Console.WriteLine("1");
             Point point = pictureBox1.PointToClient(Cursor.Position);
             int x = point.X;
             int y = point.Y;
@@ -98,9 +99,9 @@ namespace Election_system
 
             }
         }
-        private void pictureBox1_Hover(object sender, EventArgs e) 
-            
+        private void pictureBox1_Hover(object sender, EventArgs e)
         {
+            Console.WriteLine("2");
             /*
             Point point = pictureBox1.PointToClient(Cursor.Position);
             int x = point.X;
@@ -246,7 +247,9 @@ namespace Election_system
                 case "Tigray":
                     Console.WriteLine("Tigray");
                     break;
-
+                default:
+                    Console.WriteLine("Unknown Region");
+                    break;
             }
         }
 

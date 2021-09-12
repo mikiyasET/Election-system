@@ -1,0 +1,13 @@
+C:\Users\mikiy\source\repos\Election system\Election system\bin\Debug\Election system.exe.config
+C:\Users\mikiy\source\repos\Election system\Election system\bin\Debug\Election system.exe
+C:\Users\mikiy\source\repos\Election system\Election system\bin\Debug\Election system.pdb
+C:\Users\mikiy\source\repos\Election system\Election system\bin\Debug\FontAwesome.Sharp.dll
+C:\Users\mikiy\source\repos\Election system\Election system\obj\Debug\Election system.csproj.AssemblyReference.cache
+C:\Users\mikiy\source\repos\Election system\Election system\obj\Debug\Election_system.MainPage.resources
+C:\Users\mikiy\source\repos\Election system\Election system\obj\Debug\Election_system.Login.resources
+C:\Users\mikiy\source\repos\Election system\Election system\obj\Debug\Election_system.Properties.Resources.resources
+C:\Users\mikiy\source\repos\Election system\Election system\obj\Debug\Election system.csproj.GenerateResource.cache
+C:\Users\mikiy\source\repos\Election system\Election system\obj\Debug\Election system.csproj.CoreCompileInputs.cache
+C:\Users\mikiy\source\repos\Election system\Election system\obj\Debug\Election system.csproj.CopyComplete
+C:\Users\mikiy\source\repos\Election system\Election system\obj\Debug\Election system.exe
+C:\Users\mikiy\source\repos\Election system\Election system\obj\Debug\Election system.pdb
