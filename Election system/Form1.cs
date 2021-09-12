@@ -101,7 +101,6 @@ namespace Election_system
         }
         private void pictureBox1_Hover(object sender, EventArgs e)
         {
-            Console.WriteLine("2");
             /*
             Point point = pictureBox1.PointToClient(Cursor.Position);
             int x = point.X;
