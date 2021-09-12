@@ -18,7 +18,6 @@ namespace Election_system
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            Console.WriteLine("1");
             Point point = pictureBox1.PointToClient(Cursor.Position);
             int x = point.X;
             int y = point.Y;
@@ -191,7 +190,6 @@ namespace Election_system
             }
             */
         }
-
         private bool Rule(int x1, int x2, int y1, int y2)
         {
             Point point = pictureBox1.PointToClient(Cursor.Position);
