@@ -1,5 +1,5 @@
 ﻿
-namespace Presidential_Election_system
+namespace Election_system
 {
     partial class Login
     {
@@ -128,7 +128,7 @@ namespace Presidential_Election_system
             // pictureBox1
             // 
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pictureBox1.Image = global::Presidential_Election_system.Properties.Resources.logo_w;
+            this.pictureBox1.Image = global::Election_system.Properties.Resources.logo_w;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox1.Name = "pictureBox1";

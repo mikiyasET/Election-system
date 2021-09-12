@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{200855C8-670B-4635-B422-AE3D4417070B}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>Presidential_Election_system</RootNamespace>
-    <AssemblyName>Presidential Election system</AssemblyName>
+    <RootNamespace>Election_system</RootNamespace>
+    <AssemblyName>Election system</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

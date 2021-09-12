@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
-namespace Presidential_Election_system
+namespace Election_system
 {
     partial class MainPage
     {
@@ -146,7 +146,7 @@ namespace Presidential_Election_system
             // 
             // Logo
             // 
-            this.Logo.BackgroundImage = global::Presidential_Election_system.Properties.Resources.logo;
+            this.Logo.BackgroundImage = global::Election_system.Properties.Resources.logo;
             this.Logo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.Logo.Controls.Add(this.label2);
             this.Logo.Controls.Add(this.label1);
@@ -339,7 +339,7 @@ namespace Presidential_Election_system
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.White;
-            this.pictureBox1.Image = global::Presidential_Election_system.Properties.Resources.Ethiopia_map___white;
+            this.pictureBox1.Image = global::Election_system.Properties.Resources.Ethiopia_map___white;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(530, 808);
