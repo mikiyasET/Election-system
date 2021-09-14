@@ -1,19 +1,44 @@
 go
 -- drop database Election
 go
+
 GO
 CREATE DATABASE Election
 GO
+
 go
 use Election
 go
+
+
+go
+CREATE FUNCTION dbo.Encrypt(@str varchar(max))
+RETURNS varchar(max)
+AS BEGIN 
+    DECLARE @res varchar(max)
+    SET @res = ENCRYPTBYPASSPHRASE('SQL SERVER 2008 Pass',@str)
+    RETURN (@res)
+    END
+go
+
+go
+CREATE FUNCTION dbo.Decrypt(@encrypt varchar(max))
+RETURNS varchar(max)
+AS
+BEGIN 
+    DECLARE @res varchar(max)
+    SET @res = DECRYPTBYPASSPHRASE('SQL SERVER 2008 Pass',@encrypt)
+    RETURN(@res)
+END
+go
+
 go
 CREATE TABLE voters(
 	vid int primary key identity,
 	firstName varchar(30) not null,
 	middleName varchar(30) not null,
 	lastName varchar(30) not null,
-	passcode text not null,
+	passcode varchar(max) not null,
 	birth date not null,
 	phone int,
 	idNo varchar(50) not null,
@@ -22,11 +47,48 @@ CREATE TABLE voters(
 go
 
 go
+CREATE TABLE superAdmin(
+	id int primary key identity,
+	username varchar(30) not null,
+	passcode varchar(max) not null
+)
+go
+
+go
+CREATE PROC Admin_Signin
+@username varchar(30),
+@password varchar(max)
+as
+begin
+	SELECT * from superAdmin WHERE username = @username and dbo.Decrypt(passcode) = @password
+	if @@ROWCOUNT != 0
+		return 1; -- login success
+	else
+		return 0; -- login failed
+end
+go
+
+go
+CREATE PROC Voter_Signin
+@idNo varchar(50),
+@password varchar(max)
+as
+begin
+	SELECT * from voters WHERE idNo = @idNo and dbo.Decrypt(passcode) = @password
+	if @@ROWCOUNT != 0 
+		return 1; -- login success
+	else 
+		return 0; -- login failed
+end
+go
+
+
+go
 CREATE PROC AddVoters
 @firstName varchar(30),
 @middleName varchar(30),
 @lastName varchar(30),
-@password text,
+@password varchar(max),
 @birth date,
 @phone int,
 @idNo varchar(50),
@@ -34,9 +96,8 @@ CREATE PROC AddVoters
 @msg varchar(100) OUTPUT
 as
 begin
-	DECLARE @vcount int;
-	SELECT @vcount = COUNT(*) FROM voters WHERE idNo = @idNo;
-	if (@vcount = 0) 
+	SELECT * FROM voters WHERE idNo = @idNo;
+	if (@@ROWCOUNT = 0) 
 		if(NULLIF(@firstName, '') IS NOT NULL)
 			if(NULLIF(@firstName, '') IS NOT NULL)
 				if (NULLIF(@lastName, '') IS NOT NULL)
@@ -45,7 +106,7 @@ begin
 							if (NULLIF(@phone, '') IS NOT NULL)
 								if(NULLIF(@idNo, '') IS NOT NULL)
 									if (NULLIF(CONVERT(varbinary(max),@idImage), '') IS NOT NULL)
-										INSERT INTO voters VALUES (@firstName,@middleName,@lastName,@password,@birth,@phone,@idNo,@idimage)
+										INSERT INTO voters VALUES (@firstName,@middleName,@lastName,dbo.Encrypt(@password),@birth,@phone,@idNo,@idimage)
 									else
 										SET @msg = 'ID image is required'
 								else
@@ -66,3 +127,9 @@ begin
 		SET @msg = 'Voter already added'
 end
 go
+
+
+
+-- select * from voters where passcode = dbo.Decrypt('snowden')
+
+-- INSERT INTO voters VALUES ('mikiyas','lemlemu','gebrewold',dbo.Encrypt('snowden'),'12-2-2019',0941398934,'123','image.jpg')

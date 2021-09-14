@@ -16,8 +16,11 @@ namespace Election_system
         public DateTime birth;
         public string IDNo;
         public string IDImage;
+        public Voters()
+        {
 
-        Voters(string firstName,string middleName,string lastName,int phone,DateTime birth,string IDNo,string IDImage)
+        }
+        public Voters(string firstName,string middleName,string lastName,int phone,DateTime birth,string IDNo,string IDImage)
         {
             this.firstName = firstName;
             this.middleName = middleName;
@@ -43,7 +46,10 @@ namespace Election_system
             VotersDBLayer v = new VotersDBLayer();
             v.Delete(this);
         }
-
-
+        public void Login()
+        {
+            VotersDBLayer v = new VotersDBLayer();
+            v.signIn(this);
+        }
     }
 }

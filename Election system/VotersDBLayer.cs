@@ -9,9 +9,8 @@ using System.Windows.Forms;
 
 namespace Election_system
 {
-    class VotersDBLayer
+    class VotersDBLayer : Database
     {
-        string constr = "server=UNKNOWN\\SQLEXPRESS;database=CSLAB;uid=lab;pwd=123";
         public void Insert(Voters v)
         {
             try
@@ -84,6 +83,39 @@ namespace Election_system
                     con.Close();
                     if (row > 0)
                         MessageBox.Show("Deleted successfully!");
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+        }
+
+        public void signIn(Voters v)
+        {
+            try
+            {
+                using (SqlConnection con = new SqlConnection(constr))
+                {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("Voter_Signin", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@idNo", v.IDNo);
+                    cmd.Parameters.AddWithValue("@password", v.password);
+                    // cmd.Parameters.Add("@x", SqlDbType.Int,100).Direction = ParameterDirection.Output;
+                    int row = cmd.ExecuteNonQuery();
+                    // string result = Convert.ToString(cmd.Parameters["@x"].Value);
+                    int result = cmd.ExecuteScalar() == null ? 0 : (int) cmd.ExecuteScalar();
+                    if (result == 1)
+                    {
+                        MessageBox.Show("Successfull");
+                    }else
+                    {
+                        MessageBox.Show("Id or password not correct", "Login error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    con.Close();
+
+
                 }
             }
             catch (Exception e)

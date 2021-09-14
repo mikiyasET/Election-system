@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
 namespace Election_system
 {
     public partial class MainPage : Form
@@ -82,7 +83,7 @@ namespace Election_system
             else if (Rule(202, 209, 403, 411))
             {
                 // AddisAbaba
-                ShowRegion(" AddisAbaba");
+                ShowRegion("AddisAbaba");
             }
 
             else if (Rule(183, 217, 470, 515))
@@ -245,10 +246,17 @@ namespace Election_system
                     Console.WriteLine("Tigray");
                     break;
                 default:
-                    Console.WriteLine("Unknown Region");
+                    Console.WriteLine("Error: " + region);
                     break;
             }
         }
 
+        private void VoteNowBtn(object sender, EventArgs e)
+        {
+            Login login = new Login();
+            this.Hide(); // hide
+            login.ShowDialog(); // show the form
+            this.Close(); // close
+        }
     }
 }
