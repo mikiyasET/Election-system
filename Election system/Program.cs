@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Election_system.Private.Admin;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +17,7 @@ namespace Election_system
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainPage());
+            Application.Run(new AdminForm());
         }
     }
 }
