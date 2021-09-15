@@ -79,6 +79,18 @@
     <Compile Include="Private\Admin\AddVoters.Designer.cs">
       <DependentUpon>AddVoters.cs</DependentUpon>
     </Compile>
+    <Compile Include="Private\Admin\ModifyVoters.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Private\Admin\ModifyVoters.Designer.cs">
+      <DependentUpon>ModifyVoters.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Private\Admin\ViewVoters.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Private\Admin\ViewVoters.Designer.cs">
+      <DependentUpon>ViewVoters.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Voters.cs" />
@@ -94,6 +106,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Private\Admin\AddVoters.resx">
       <DependentUpon>AddVoters.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Private\Admin\ModifyVoters.resx">
+      <DependentUpon>ModifyVoters.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Private\Admin\ViewVoters.resx">
+      <DependentUpon>ViewVoters.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -196,6 +214,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="assets\icons\ethiopia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\images\id-card.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

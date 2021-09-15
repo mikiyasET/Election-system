@@ -111,12 +111,18 @@ namespace Election_system.Private.Admin
 
         private void modifyVoters_btn_Click(object sender, EventArgs e)
         {
-
+            ModifyVoters modify = new ModifyVoters();
+            modify.Dock = DockStyle.Fill;
+            body.Controls.Clear();
+            body.Controls.Add(modify);
         }
 
         private void viewVoters_btn_Click(object sender, EventArgs e)
         {
-
+            ViewVoters view = new ViewVoters();
+            view.Dock = DockStyle.Fill;
+            body.Controls.Clear();
+            body.Controls.Add(view);
         }
 
         private void addcand_btn_Click(object sender, EventArgs e)
@@ -163,5 +169,7 @@ namespace Election_system.Private.Admin
         {
 
         }
+
+        
     }
 }
