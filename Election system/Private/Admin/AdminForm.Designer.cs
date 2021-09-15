@@ -31,65 +31,65 @@ namespace Election_system.Private.Admin
         {
             this.sidenav = new System.Windows.Forms.Panel();
             this.region_con = new System.Windows.Forms.Panel();
-            this.panel16 = new System.Windows.Forms.Panel();
+            this.region_txt_con = new System.Windows.Forms.Panel();
             this.region_txt = new System.Windows.Forms.Label();
             this.region_icon = new System.Windows.Forms.PictureBox();
             this.panel17 = new System.Windows.Forms.Panel();
-            this.button12 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
+            this.viewregion_btn = new System.Windows.Forms.Button();
+            this.modifyregion_btn = new System.Windows.Forms.Button();
+            this.addregion_btn = new System.Windows.Forms.Button();
             this.station_con = new System.Windows.Forms.Panel();
-            this.panel13 = new System.Windows.Forms.Panel();
+            this.station_txt_con = new System.Windows.Forms.Panel();
             this.station_txt = new System.Windows.Forms.Label();
             this.station_icon = new System.Windows.Forms.PictureBox();
             this.panel14 = new System.Windows.Forms.Panel();
-            this.button11 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
+            this.viewstation_btn = new System.Windows.Forms.Button();
+            this.modifystation_btn = new System.Windows.Forms.Button();
+            this.addstation_btn = new System.Windows.Forms.Button();
             this.cand_con = new System.Windows.Forms.Panel();
-            this.panel10 = new System.Windows.Forms.Panel();
+            this.cand_txt_con = new System.Windows.Forms.Panel();
             this.cand_txt = new System.Windows.Forms.Label();
             this.cand_icon = new System.Windows.Forms.PictureBox();
             this.panel11 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.viewcand_btn = new System.Windows.Forms.Button();
+            this.modifycand_btn = new System.Windows.Forms.Button();
+            this.addcand_btn = new System.Windows.Forms.Button();
             this.voter_con = new System.Windows.Forms.Panel();
-            this.panel7 = new System.Windows.Forms.Panel();
+            this.voter_txt_con = new System.Windows.Forms.Panel();
             this.voter_txt = new System.Windows.Forms.Label();
             this.voter_icon = new System.Windows.Forms.PictureBox();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.viewVoters_btn = new System.Windows.Forms.Button();
+            this.modifyVoters_btn = new System.Windows.Forms.Button();
+            this.addVoters_btn = new System.Windows.Forms.Button();
             this.home_con = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
+            this.home_txt_con = new System.Windows.Forms.Panel();
             this.home_txt = new System.Windows.Forms.Label();
             this.home_icon = new System.Windows.Forms.PictureBox();
             this.Spacer = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.body = new System.Windows.Forms.Panel();
             this.sidenav.SuspendLayout();
             this.region_con.SuspendLayout();
-            this.panel16.SuspendLayout();
+            this.region_txt_con.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.region_icon)).BeginInit();
             this.panel17.SuspendLayout();
             this.station_con.SuspendLayout();
-            this.panel13.SuspendLayout();
+            this.station_txt_con.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.station_icon)).BeginInit();
             this.panel14.SuspendLayout();
             this.cand_con.SuspendLayout();
-            this.panel10.SuspendLayout();
+            this.cand_txt_con.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cand_icon)).BeginInit();
             this.panel11.SuspendLayout();
             this.voter_con.SuspendLayout();
-            this.panel7.SuspendLayout();
+            this.voter_txt_con.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.voter_icon)).BeginInit();
             this.panel8.SuspendLayout();
             this.home_con.SuspendLayout();
-            this.panel5.SuspendLayout();
+            this.home_txt_con.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.home_icon)).BeginInit();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
@@ -107,12 +107,12 @@ namespace Election_system.Private.Admin
             this.sidenav.Dock = System.Windows.Forms.DockStyle.Left;
             this.sidenav.Location = new System.Drawing.Point(0, 0);
             this.sidenav.Name = "sidenav";
-            this.sidenav.Size = new System.Drawing.Size(385, 724);
+            this.sidenav.Size = new System.Drawing.Size(385, 800);
             this.sidenav.TabIndex = 0;
             // 
             // region_con
             // 
-            this.region_con.Controls.Add(this.panel16);
+            this.region_con.Controls.Add(this.region_txt_con);
             this.region_con.Controls.Add(this.region_icon);
             this.region_con.Controls.Add(this.panel17);
             this.region_con.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -120,17 +120,18 @@ namespace Election_system.Private.Admin
             this.region_con.Location = new System.Drawing.Point(0, 566);
             this.region_con.Name = "region_con";
             this.region_con.Padding = new System.Windows.Forms.Padding(25, 5, 5, 0);
-            this.region_con.Size = new System.Drawing.Size(385, 56);
+            this.region_con.Size = new System.Drawing.Size(385, 60);
             this.region_con.TabIndex = 1;
             this.region_con.Click += new System.EventHandler(this.RegionbtnClick);
             // 
-            // panel16
+            // region_txt_con
             // 
-            this.panel16.Controls.Add(this.region_txt);
-            this.panel16.Location = new System.Drawing.Point(125, 5);
-            this.panel16.Name = "panel16";
-            this.panel16.Size = new System.Drawing.Size(255, 42);
-            this.panel16.TabIndex = 0;
+            this.region_txt_con.Controls.Add(this.region_txt);
+            this.region_txt_con.Location = new System.Drawing.Point(125, 5);
+            this.region_txt_con.Name = "region_txt_con";
+            this.region_txt_con.Size = new System.Drawing.Size(255, 52);
+            this.region_txt_con.TabIndex = 0;
+            this.region_txt_con.Click += new System.EventHandler(this.RegionbtnClick);
             // 
             // region_txt
             // 
@@ -138,7 +139,7 @@ namespace Election_system.Private.Admin
             this.region_txt.AutoSize = true;
             this.region_txt.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.region_txt.ForeColor = System.Drawing.Color.White;
-            this.region_txt.Location = new System.Drawing.Point(40, 10);
+            this.region_txt.Location = new System.Drawing.Point(40, 15);
             this.region_txt.Name = "region_txt";
             this.region_txt.Size = new System.Drawing.Size(81, 22);
             this.region_txt.TabIndex = 1;
@@ -151,7 +152,7 @@ namespace Election_system.Private.Admin
             this.region_icon.Image = global::Election_system.Properties.Resources.ethiopia;
             this.region_icon.Location = new System.Drawing.Point(25, 5);
             this.region_icon.Name = "region_icon";
-            this.region_icon.Size = new System.Drawing.Size(100, 42);
+            this.region_icon.Size = new System.Drawing.Size(100, 52);
             this.region_icon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.region_icon.TabIndex = 0;
             this.region_icon.TabStop = false;
@@ -160,59 +161,62 @@ namespace Election_system.Private.Admin
             // panel17
             // 
             this.panel17.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.panel17.Controls.Add(this.button12);
-            this.panel17.Controls.Add(this.button9);
-            this.panel17.Controls.Add(this.button10);
-            this.panel17.Location = new System.Drawing.Point(24, 53);
+            this.panel17.Controls.Add(this.viewregion_btn);
+            this.panel17.Controls.Add(this.modifyregion_btn);
+            this.panel17.Controls.Add(this.addregion_btn);
+            this.panel17.Location = new System.Drawing.Point(24, 62);
             this.panel17.Name = "panel17";
-            this.panel17.Size = new System.Drawing.Size(355, 123);
+            this.panel17.Size = new System.Drawing.Size(355, 129);
             this.panel17.TabIndex = 0;
             // 
-            // button12
+            // viewregion_btn
             // 
-            this.button12.FlatAppearance.BorderSize = 0;
-            this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button12.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button12.ForeColor = System.Drawing.Color.White;
-            this.button12.Location = new System.Drawing.Point(136, 86);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(206, 34);
-            this.button12.TabIndex = 0;
-            this.button12.Text = "View Regions";
-            this.button12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button12.UseVisualStyleBackColor = true;
+            this.viewregion_btn.FlatAppearance.BorderSize = 0;
+            this.viewregion_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.viewregion_btn.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.viewregion_btn.ForeColor = System.Drawing.Color.White;
+            this.viewregion_btn.Location = new System.Drawing.Point(136, 86);
+            this.viewregion_btn.Name = "viewregion_btn";
+            this.viewregion_btn.Size = new System.Drawing.Size(206, 34);
+            this.viewregion_btn.TabIndex = 0;
+            this.viewregion_btn.Text = "View Regions";
+            this.viewregion_btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.viewregion_btn.UseVisualStyleBackColor = true;
+            this.viewregion_btn.Click += new System.EventHandler(this.viewregion_btn_Click);
             // 
-            // button9
+            // modifyregion_btn
             // 
-            this.button9.FlatAppearance.BorderSize = 0;
-            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button9.ForeColor = System.Drawing.Color.White;
-            this.button9.Location = new System.Drawing.Point(136, 43);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(206, 34);
-            this.button9.TabIndex = 0;
-            this.button9.Text = "Modify Regions";
-            this.button9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button9.UseVisualStyleBackColor = true;
+            this.modifyregion_btn.FlatAppearance.BorderSize = 0;
+            this.modifyregion_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.modifyregion_btn.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.modifyregion_btn.ForeColor = System.Drawing.Color.White;
+            this.modifyregion_btn.Location = new System.Drawing.Point(136, 43);
+            this.modifyregion_btn.Name = "modifyregion_btn";
+            this.modifyregion_btn.Size = new System.Drawing.Size(206, 34);
+            this.modifyregion_btn.TabIndex = 0;
+            this.modifyregion_btn.Text = "Modify Regions";
+            this.modifyregion_btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.modifyregion_btn.UseVisualStyleBackColor = true;
+            this.modifyregion_btn.Click += new System.EventHandler(this.modifyregion_btn_Click);
             // 
-            // button10
+            // addregion_btn
             // 
-            this.button10.FlatAppearance.BorderSize = 0;
-            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button10.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button10.ForeColor = System.Drawing.Color.White;
-            this.button10.Location = new System.Drawing.Point(136, 3);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(206, 34);
-            this.button10.TabIndex = 0;
-            this.button10.Text = "Add Regions";
-            this.button10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button10.UseVisualStyleBackColor = true;
+            this.addregion_btn.FlatAppearance.BorderSize = 0;
+            this.addregion_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.addregion_btn.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addregion_btn.ForeColor = System.Drawing.Color.White;
+            this.addregion_btn.Location = new System.Drawing.Point(136, 3);
+            this.addregion_btn.Name = "addregion_btn";
+            this.addregion_btn.Size = new System.Drawing.Size(206, 34);
+            this.addregion_btn.TabIndex = 0;
+            this.addregion_btn.Text = "Add Regions";
+            this.addregion_btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.addregion_btn.UseVisualStyleBackColor = true;
+            this.addregion_btn.Click += new System.EventHandler(this.addregion_btn_Click);
             // 
             // station_con
             // 
-            this.station_con.Controls.Add(this.panel13);
+            this.station_con.Controls.Add(this.station_txt_con);
             this.station_con.Controls.Add(this.station_icon);
             this.station_con.Controls.Add(this.panel14);
             this.station_con.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -224,13 +228,14 @@ namespace Election_system.Private.Admin
             this.station_con.TabIndex = 1;
             this.station_con.Click += new System.EventHandler(this.StationbtnClick);
             // 
-            // panel13
+            // station_txt_con
             // 
-            this.panel13.Controls.Add(this.station_txt);
-            this.panel13.Location = new System.Drawing.Point(125, 5);
-            this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(255, 42);
-            this.panel13.TabIndex = 0;
+            this.station_txt_con.Controls.Add(this.station_txt);
+            this.station_txt_con.Location = new System.Drawing.Point(125, 5);
+            this.station_txt_con.Name = "station_txt_con";
+            this.station_txt_con.Size = new System.Drawing.Size(255, 52);
+            this.station_txt_con.TabIndex = 0;
+            this.station_txt_con.Click += new System.EventHandler(this.StationbtnClick);
             // 
             // station_txt
             // 
@@ -238,7 +243,7 @@ namespace Election_system.Private.Admin
             this.station_txt.AutoSize = true;
             this.station_txt.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.station_txt.ForeColor = System.Drawing.Color.White;
-            this.station_txt.Location = new System.Drawing.Point(40, 10);
+            this.station_txt.Location = new System.Drawing.Point(40, 15);
             this.station_txt.Name = "station_txt";
             this.station_txt.Size = new System.Drawing.Size(68, 22);
             this.station_txt.TabIndex = 1;
@@ -251,7 +256,7 @@ namespace Election_system.Private.Admin
             this.station_icon.Image = global::Election_system.Properties.Resources.work_from_home;
             this.station_icon.Location = new System.Drawing.Point(25, 5);
             this.station_icon.Name = "station_icon";
-            this.station_icon.Size = new System.Drawing.Size(100, 42);
+            this.station_icon.Size = new System.Drawing.Size(100, 52);
             this.station_icon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.station_icon.TabIndex = 0;
             this.station_icon.TabStop = false;
@@ -260,59 +265,62 @@ namespace Election_system.Private.Admin
             // panel14
             // 
             this.panel14.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.panel14.Controls.Add(this.button11);
-            this.panel14.Controls.Add(this.button7);
-            this.panel14.Controls.Add(this.button8);
-            this.panel14.Location = new System.Drawing.Point(24, 53);
+            this.panel14.Controls.Add(this.viewstation_btn);
+            this.panel14.Controls.Add(this.modifystation_btn);
+            this.panel14.Controls.Add(this.addstation_btn);
+            this.panel14.Location = new System.Drawing.Point(24, 56);
             this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(355, 124);
+            this.panel14.Size = new System.Drawing.Size(355, 121);
             this.panel14.TabIndex = 0;
             // 
-            // button11
+            // viewstation_btn
             // 
-            this.button11.FlatAppearance.BorderSize = 0;
-            this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button11.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button11.ForeColor = System.Drawing.Color.White;
-            this.button11.Location = new System.Drawing.Point(136, 83);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(206, 34);
-            this.button11.TabIndex = 0;
-            this.button11.Text = "View Stations";
-            this.button11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button11.UseVisualStyleBackColor = true;
+            this.viewstation_btn.FlatAppearance.BorderSize = 0;
+            this.viewstation_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.viewstation_btn.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.viewstation_btn.ForeColor = System.Drawing.Color.White;
+            this.viewstation_btn.Location = new System.Drawing.Point(136, 83);
+            this.viewstation_btn.Name = "viewstation_btn";
+            this.viewstation_btn.Size = new System.Drawing.Size(206, 34);
+            this.viewstation_btn.TabIndex = 0;
+            this.viewstation_btn.Text = "View Stations";
+            this.viewstation_btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.viewstation_btn.UseVisualStyleBackColor = true;
+            this.viewstation_btn.Click += new System.EventHandler(this.viewstation_btn_Click);
             // 
-            // button7
+            // modifystation_btn
             // 
-            this.button7.FlatAppearance.BorderSize = 0;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.ForeColor = System.Drawing.Color.White;
-            this.button7.Location = new System.Drawing.Point(136, 43);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(206, 34);
-            this.button7.TabIndex = 0;
-            this.button7.Text = "Modify Stations";
-            this.button7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button7.UseVisualStyleBackColor = true;
+            this.modifystation_btn.FlatAppearance.BorderSize = 0;
+            this.modifystation_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.modifystation_btn.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.modifystation_btn.ForeColor = System.Drawing.Color.White;
+            this.modifystation_btn.Location = new System.Drawing.Point(136, 43);
+            this.modifystation_btn.Name = "modifystation_btn";
+            this.modifystation_btn.Size = new System.Drawing.Size(206, 34);
+            this.modifystation_btn.TabIndex = 0;
+            this.modifystation_btn.Text = "Modify Stations";
+            this.modifystation_btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.modifystation_btn.UseVisualStyleBackColor = true;
+            this.modifystation_btn.Click += new System.EventHandler(this.modifystation_btn_Click);
             // 
-            // button8
+            // addstation_btn
             // 
-            this.button8.FlatAppearance.BorderSize = 0;
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.ForeColor = System.Drawing.Color.White;
-            this.button8.Location = new System.Drawing.Point(136, 3);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(206, 34);
-            this.button8.TabIndex = 0;
-            this.button8.Text = "Add Stations";
-            this.button8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button8.UseVisualStyleBackColor = true;
+            this.addstation_btn.FlatAppearance.BorderSize = 0;
+            this.addstation_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.addstation_btn.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addstation_btn.ForeColor = System.Drawing.Color.White;
+            this.addstation_btn.Location = new System.Drawing.Point(136, 3);
+            this.addstation_btn.Name = "addstation_btn";
+            this.addstation_btn.Size = new System.Drawing.Size(206, 34);
+            this.addstation_btn.TabIndex = 0;
+            this.addstation_btn.Text = "Add Stations";
+            this.addstation_btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.addstation_btn.UseVisualStyleBackColor = true;
+            this.addstation_btn.Click += new System.EventHandler(this.addstation_btn_Click);
             // 
             // cand_con
             // 
-            this.cand_con.Controls.Add(this.panel10);
+            this.cand_con.Controls.Add(this.cand_txt_con);
             this.cand_con.Controls.Add(this.cand_icon);
             this.cand_con.Controls.Add(this.panel11);
             this.cand_con.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -324,13 +332,14 @@ namespace Election_system.Private.Admin
             this.cand_con.TabIndex = 1;
             this.cand_con.Click += new System.EventHandler(this.CandbtnClick);
             // 
-            // panel10
+            // cand_txt_con
             // 
-            this.panel10.Controls.Add(this.cand_txt);
-            this.panel10.Location = new System.Drawing.Point(125, 5);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(255, 42);
-            this.panel10.TabIndex = 0;
+            this.cand_txt_con.Controls.Add(this.cand_txt);
+            this.cand_txt_con.Location = new System.Drawing.Point(125, 5);
+            this.cand_txt_con.Name = "cand_txt_con";
+            this.cand_txt_con.Size = new System.Drawing.Size(255, 52);
+            this.cand_txt_con.TabIndex = 0;
+            this.cand_txt_con.Click += new System.EventHandler(this.CandbtnClick);
             // 
             // cand_txt
             // 
@@ -338,7 +347,7 @@ namespace Election_system.Private.Admin
             this.cand_txt.AutoSize = true;
             this.cand_txt.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cand_txt.ForeColor = System.Drawing.Color.White;
-            this.cand_txt.Location = new System.Drawing.Point(40, 10);
+            this.cand_txt.Location = new System.Drawing.Point(40, 15);
             this.cand_txt.Name = "cand_txt";
             this.cand_txt.Size = new System.Drawing.Size(96, 22);
             this.cand_txt.TabIndex = 1;
@@ -351,7 +360,7 @@ namespace Election_system.Private.Admin
             this.cand_icon.Image = global::Election_system.Properties.Resources.candidate;
             this.cand_icon.Location = new System.Drawing.Point(25, 5);
             this.cand_icon.Name = "cand_icon";
-            this.cand_icon.Size = new System.Drawing.Size(100, 42);
+            this.cand_icon.Size = new System.Drawing.Size(100, 52);
             this.cand_icon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.cand_icon.TabIndex = 0;
             this.cand_icon.TabStop = false;
@@ -360,59 +369,62 @@ namespace Election_system.Private.Admin
             // panel11
             // 
             this.panel11.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.panel11.Controls.Add(this.button2);
-            this.panel11.Controls.Add(this.button5);
-            this.panel11.Controls.Add(this.button6);
-            this.panel11.Location = new System.Drawing.Point(24, 53);
+            this.panel11.Controls.Add(this.viewcand_btn);
+            this.panel11.Controls.Add(this.modifycand_btn);
+            this.panel11.Controls.Add(this.addcand_btn);
+            this.panel11.Location = new System.Drawing.Point(24, 57);
             this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(355, 123);
+            this.panel11.Size = new System.Drawing.Size(355, 124);
             this.panel11.TabIndex = 0;
             // 
-            // button2
+            // viewcand_btn
             // 
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(136, 83);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(206, 34);
-            this.button2.TabIndex = 0;
-            this.button2.Text = "View Candidates";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.UseVisualStyleBackColor = true;
+            this.viewcand_btn.FlatAppearance.BorderSize = 0;
+            this.viewcand_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.viewcand_btn.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.viewcand_btn.ForeColor = System.Drawing.Color.White;
+            this.viewcand_btn.Location = new System.Drawing.Point(136, 83);
+            this.viewcand_btn.Name = "viewcand_btn";
+            this.viewcand_btn.Size = new System.Drawing.Size(206, 34);
+            this.viewcand_btn.TabIndex = 0;
+            this.viewcand_btn.Text = "View Candidates";
+            this.viewcand_btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.viewcand_btn.UseVisualStyleBackColor = true;
+            this.viewcand_btn.Click += new System.EventHandler(this.viewcand_btn_Click);
             // 
-            // button5
+            // modifycand_btn
             // 
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(136, 43);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(206, 34);
-            this.button5.TabIndex = 0;
-            this.button5.Text = "Modify Candidate";
-            this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.UseVisualStyleBackColor = true;
+            this.modifycand_btn.FlatAppearance.BorderSize = 0;
+            this.modifycand_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.modifycand_btn.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.modifycand_btn.ForeColor = System.Drawing.Color.White;
+            this.modifycand_btn.Location = new System.Drawing.Point(136, 43);
+            this.modifycand_btn.Name = "modifycand_btn";
+            this.modifycand_btn.Size = new System.Drawing.Size(206, 34);
+            this.modifycand_btn.TabIndex = 0;
+            this.modifycand_btn.Text = "Modify Candidate";
+            this.modifycand_btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.modifycand_btn.UseVisualStyleBackColor = true;
+            this.modifycand_btn.Click += new System.EventHandler(this.modifycand_btn_Click);
             // 
-            // button6
+            // addcand_btn
             // 
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.ForeColor = System.Drawing.Color.White;
-            this.button6.Location = new System.Drawing.Point(136, 3);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(206, 34);
-            this.button6.TabIndex = 0;
-            this.button6.Text = "Add Candidate";
-            this.button6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button6.UseVisualStyleBackColor = true;
+            this.addcand_btn.FlatAppearance.BorderSize = 0;
+            this.addcand_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.addcand_btn.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addcand_btn.ForeColor = System.Drawing.Color.White;
+            this.addcand_btn.Location = new System.Drawing.Point(136, 3);
+            this.addcand_btn.Name = "addcand_btn";
+            this.addcand_btn.Size = new System.Drawing.Size(206, 34);
+            this.addcand_btn.TabIndex = 0;
+            this.addcand_btn.Text = "Add Candidate";
+            this.addcand_btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.addcand_btn.UseVisualStyleBackColor = true;
+            this.addcand_btn.Click += new System.EventHandler(this.addcand_btn_Click);
             // 
             // voter_con
             // 
-            this.voter_con.Controls.Add(this.panel7);
+            this.voter_con.Controls.Add(this.voter_txt_con);
             this.voter_con.Controls.Add(this.voter_icon);
             this.voter_con.Controls.Add(this.panel8);
             this.voter_con.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -424,13 +436,14 @@ namespace Election_system.Private.Admin
             this.voter_con.TabIndex = 1;
             this.voter_con.Click += new System.EventHandler(this.VoterbtnClick);
             // 
-            // panel7
+            // voter_txt_con
             // 
-            this.panel7.Controls.Add(this.voter_txt);
-            this.panel7.Location = new System.Drawing.Point(125, 5);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(255, 42);
-            this.panel7.TabIndex = 0;
+            this.voter_txt_con.Controls.Add(this.voter_txt);
+            this.voter_txt_con.Location = new System.Drawing.Point(125, 5);
+            this.voter_txt_con.Name = "voter_txt_con";
+            this.voter_txt_con.Size = new System.Drawing.Size(255, 52);
+            this.voter_txt_con.TabIndex = 0;
+            this.voter_txt_con.Click += new System.EventHandler(this.VoterbtnClick);
             // 
             // voter_txt
             // 
@@ -438,7 +451,7 @@ namespace Election_system.Private.Admin
             this.voter_txt.AutoSize = true;
             this.voter_txt.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.voter_txt.ForeColor = System.Drawing.Color.White;
-            this.voter_txt.Location = new System.Drawing.Point(40, 10);
+            this.voter_txt.Location = new System.Drawing.Point(40, 15);
             this.voter_txt.Name = "voter_txt";
             this.voter_txt.Size = new System.Drawing.Size(55, 22);
             this.voter_txt.TabIndex = 1;
@@ -451,7 +464,7 @@ namespace Election_system.Private.Admin
             this.voter_icon.Image = global::Election_system.Properties.Resources.vote;
             this.voter_icon.Location = new System.Drawing.Point(25, 5);
             this.voter_icon.Name = "voter_icon";
-            this.voter_icon.Size = new System.Drawing.Size(100, 42);
+            this.voter_icon.Size = new System.Drawing.Size(100, 52);
             this.voter_icon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.voter_icon.TabIndex = 0;
             this.voter_icon.TabStop = false;
@@ -460,59 +473,62 @@ namespace Election_system.Private.Admin
             // panel8
             // 
             this.panel8.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.panel8.Controls.Add(this.button1);
-            this.panel8.Controls.Add(this.button3);
-            this.panel8.Controls.Add(this.button4);
-            this.panel8.Location = new System.Drawing.Point(24, 53);
+            this.panel8.Controls.Add(this.viewVoters_btn);
+            this.panel8.Controls.Add(this.modifyVoters_btn);
+            this.panel8.Controls.Add(this.addVoters_btn);
+            this.panel8.Location = new System.Drawing.Point(25, 59);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(355, 124);
             this.panel8.TabIndex = 0;
             // 
-            // button1
+            // viewVoters_btn
             // 
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(136, 83);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(206, 34);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "View Voters";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.UseVisualStyleBackColor = true;
+            this.viewVoters_btn.FlatAppearance.BorderSize = 0;
+            this.viewVoters_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.viewVoters_btn.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.viewVoters_btn.ForeColor = System.Drawing.Color.White;
+            this.viewVoters_btn.Location = new System.Drawing.Point(136, 83);
+            this.viewVoters_btn.Name = "viewVoters_btn";
+            this.viewVoters_btn.Size = new System.Drawing.Size(206, 34);
+            this.viewVoters_btn.TabIndex = 0;
+            this.viewVoters_btn.Text = "View Voters";
+            this.viewVoters_btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.viewVoters_btn.UseVisualStyleBackColor = true;
+            this.viewVoters_btn.Click += new System.EventHandler(this.viewVoters_btn_Click);
             // 
-            // button3
+            // modifyVoters_btn
             // 
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(136, 43);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(206, 34);
-            this.button3.TabIndex = 0;
-            this.button3.Text = "Modify Voters";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.UseVisualStyleBackColor = true;
+            this.modifyVoters_btn.FlatAppearance.BorderSize = 0;
+            this.modifyVoters_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.modifyVoters_btn.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.modifyVoters_btn.ForeColor = System.Drawing.Color.White;
+            this.modifyVoters_btn.Location = new System.Drawing.Point(136, 43);
+            this.modifyVoters_btn.Name = "modifyVoters_btn";
+            this.modifyVoters_btn.Size = new System.Drawing.Size(206, 34);
+            this.modifyVoters_btn.TabIndex = 0;
+            this.modifyVoters_btn.Text = "Modify Voters";
+            this.modifyVoters_btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.modifyVoters_btn.UseVisualStyleBackColor = true;
+            this.modifyVoters_btn.Click += new System.EventHandler(this.modifyVoters_btn_Click);
             // 
-            // button4
+            // addVoters_btn
             // 
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(136, 3);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(206, 34);
-            this.button4.TabIndex = 0;
-            this.button4.Text = "Add Voters";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.UseVisualStyleBackColor = true;
+            this.addVoters_btn.FlatAppearance.BorderSize = 0;
+            this.addVoters_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.addVoters_btn.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addVoters_btn.ForeColor = System.Drawing.Color.White;
+            this.addVoters_btn.Location = new System.Drawing.Point(136, 3);
+            this.addVoters_btn.Name = "addVoters_btn";
+            this.addVoters_btn.Size = new System.Drawing.Size(206, 34);
+            this.addVoters_btn.TabIndex = 0;
+            this.addVoters_btn.Text = "Add Voters";
+            this.addVoters_btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.addVoters_btn.UseVisualStyleBackColor = true;
+            this.addVoters_btn.Click += new System.EventHandler(this.addVoters_btn_Click);
             // 
             // home_con
             // 
-            this.home_con.Controls.Add(this.panel5);
+            this.home_con.Controls.Add(this.home_txt_con);
             this.home_con.Controls.Add(this.home_icon);
             this.home_con.Cursor = System.Windows.Forms.Cursors.Hand;
             this.home_con.Dock = System.Windows.Forms.DockStyle.Top;
@@ -523,13 +539,14 @@ namespace Election_system.Private.Admin
             this.home_con.TabIndex = 1;
             this.home_con.Click += new System.EventHandler(this.HomebtnClick);
             // 
-            // panel5
+            // home_txt_con
             // 
-            this.panel5.Controls.Add(this.home_txt);
-            this.panel5.Location = new System.Drawing.Point(125, 5);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(255, 42);
-            this.panel5.TabIndex = 0;
+            this.home_txt_con.Controls.Add(this.home_txt);
+            this.home_txt_con.Location = new System.Drawing.Point(125, 5);
+            this.home_txt_con.Name = "home_txt_con";
+            this.home_txt_con.Size = new System.Drawing.Size(255, 52);
+            this.home_txt_con.TabIndex = 0;
+            this.home_txt_con.Click += new System.EventHandler(this.HomebtnClick);
             // 
             // home_txt
             // 
@@ -537,7 +554,7 @@ namespace Election_system.Private.Admin
             this.home_txt.AutoSize = true;
             this.home_txt.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.home_txt.ForeColor = System.Drawing.Color.White;
-            this.home_txt.Location = new System.Drawing.Point(40, 10);
+            this.home_txt.Location = new System.Drawing.Point(40, 15);
             this.home_txt.Name = "home_txt";
             this.home_txt.Size = new System.Drawing.Size(61, 22);
             this.home_txt.TabIndex = 1;
@@ -550,7 +567,7 @@ namespace Election_system.Private.Admin
             this.home_icon.Image = global::Election_system.Properties.Resources.home__2_;
             this.home_icon.Location = new System.Drawing.Point(25, 5);
             this.home_icon.Name = "home_icon";
-            this.home_icon.Size = new System.Drawing.Size(100, 42);
+            this.home_icon.Size = new System.Drawing.Size(100, 52);
             this.home_icon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.home_icon.TabIndex = 0;
             this.home_icon.TabStop = false;
@@ -598,47 +615,49 @@ namespace Election_system.Private.Admin
             this.label1.TabIndex = 0;
             this.label1.Text = "የኢትዮጵያ ብሔራዊ ምርጫ ቦርድ";
             // 
-            // panel2
+            // body
             // 
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(385, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(794, 724);
-            this.panel2.TabIndex = 1;
+            this.body.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.body.Location = new System.Drawing.Point(385, 0);
+            this.body.Name = "body";
+            this.body.Padding = new System.Windows.Forms.Padding(50);
+            this.body.Size = new System.Drawing.Size(1115, 800);
+            this.body.TabIndex = 1;
             // 
             // AdminForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1000, 800);
-            this.Controls.Add(this.panel2);
+            this.ClientSize = new System.Drawing.Size(1500, 800);
+            this.Controls.Add(this.body);
             this.Controls.Add(this.sidenav);
             this.Name = "AdminForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Admin";
             this.sidenav.ResumeLayout(false);
             this.region_con.ResumeLayout(false);
-            this.panel16.ResumeLayout(false);
-            this.panel16.PerformLayout();
+            this.region_txt_con.ResumeLayout(false);
+            this.region_txt_con.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.region_icon)).EndInit();
             this.panel17.ResumeLayout(false);
             this.station_con.ResumeLayout(false);
-            this.panel13.ResumeLayout(false);
-            this.panel13.PerformLayout();
+            this.station_txt_con.ResumeLayout(false);
+            this.station_txt_con.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.station_icon)).EndInit();
             this.panel14.ResumeLayout(false);
             this.cand_con.ResumeLayout(false);
-            this.panel10.ResumeLayout(false);
-            this.panel10.PerformLayout();
+            this.cand_txt_con.ResumeLayout(false);
+            this.cand_txt_con.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cand_icon)).EndInit();
             this.panel11.ResumeLayout(false);
             this.voter_con.ResumeLayout(false);
-            this.panel7.ResumeLayout(false);
-            this.panel7.PerformLayout();
+            this.voter_txt_con.ResumeLayout(false);
+            this.voter_txt_con.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.voter_icon)).EndInit();
             this.panel8.ResumeLayout(false);
             this.home_con.ResumeLayout(false);
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
+            this.home_txt_con.ResumeLayout(false);
+            this.home_txt_con.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.home_icon)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
@@ -649,7 +668,7 @@ namespace Election_system.Private.Admin
         #endregion
 
         private System.Windows.Forms.Panel sidenav;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel body;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
@@ -657,38 +676,38 @@ namespace Election_system.Private.Admin
         private System.Windows.Forms.Label home_txt;
         private System.Windows.Forms.PictureBox home_icon;
         private System.Windows.Forms.Panel Spacer;
-        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Panel home_txt_con;
         private System.Windows.Forms.Panel region_con;
-        private System.Windows.Forms.Panel panel16;
+        private System.Windows.Forms.Panel region_txt_con;
         private System.Windows.Forms.Label region_txt;
         private System.Windows.Forms.PictureBox region_icon;
         private System.Windows.Forms.Panel panel17;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Button modifyregion_btn;
+        private System.Windows.Forms.Button addregion_btn;
         private System.Windows.Forms.Panel station_con;
-        private System.Windows.Forms.Panel panel13;
+        private System.Windows.Forms.Panel station_txt_con;
         private System.Windows.Forms.Label station_txt;
         private System.Windows.Forms.PictureBox station_icon;
         private System.Windows.Forms.Panel panel14;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button modifystation_btn;
+        private System.Windows.Forms.Button addstation_btn;
         private System.Windows.Forms.Panel cand_con;
-        private System.Windows.Forms.Panel panel10;
+        private System.Windows.Forms.Panel cand_txt_con;
         private System.Windows.Forms.Label cand_txt;
         private System.Windows.Forms.PictureBox cand_icon;
         private System.Windows.Forms.Panel panel11;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button viewcand_btn;
+        private System.Windows.Forms.Button modifycand_btn;
+        private System.Windows.Forms.Button addcand_btn;
         private System.Windows.Forms.Panel voter_con;
-        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Panel voter_txt_con;
         private System.Windows.Forms.Label voter_txt;
         private System.Windows.Forms.PictureBox voter_icon;
         private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button12;
-        private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.Button viewVoters_btn;
+        private System.Windows.Forms.Button modifyVoters_btn;
+        private System.Windows.Forms.Button addVoters_btn;
+        private System.Windows.Forms.Button viewregion_btn;
+        private System.Windows.Forms.Button viewstation_btn;
     }
 }

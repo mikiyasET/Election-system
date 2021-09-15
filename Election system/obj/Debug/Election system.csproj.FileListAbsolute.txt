@@ -12,4 +12,4 @@ C:\Users\mikiy\source\repos\Election system\Election system\obj\Debug\Election s
 C:\Users\mikiy\source\repos\Election system\Election system\obj\Debug\Election system.exe
 C:\Users\mikiy\source\repos\Election system\Election system\obj\Debug\Election system.pdb
 C:\Users\mikiy\source\repos\Election system\Election system\obj\Debug\Election_system.Private.Admin.AdminForm.resources
-C:\Users\mikiy\source\repos\Election system\Election system\obj\Debug\Election_system.Private.Admin.Voters.resources
+C:\Users\mikiy\source\repos\Election system\Election system\obj\Debug\Election_system.Private.Admin.AddVoters.resources

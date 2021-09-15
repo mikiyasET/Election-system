@@ -73,11 +73,11 @@
     <Compile Include="Private\Admin\AdminForm.Designer.cs">
       <DependentUpon>AdminForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Private\Admin\Voters.cs">
+    <Compile Include="Private\Admin\AddVoters.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Private\Admin\Voters.Designer.cs">
-      <DependentUpon>Voters.cs</DependentUpon>
+    <Compile Include="Private\Admin\AddVoters.Designer.cs">
+      <DependentUpon>AddVoters.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -92,8 +92,8 @@
     <EmbeddedResource Include="Private\Admin\AdminForm.resx">
       <DependentUpon>AdminForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Private\Admin\Voters.resx">
-      <DependentUpon>Voters.cs</DependentUpon>
+    <EmbeddedResource Include="Private\Admin\AddVoters.resx">
+      <DependentUpon>AddVoters.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
