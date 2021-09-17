@@ -67,6 +67,24 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="Private\Admin\AddParty.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Private\Admin\AddParty.Designer.cs">
+      <DependentUpon>AddParty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Private\Admin\AddRegions.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Private\Admin\AddRegions.Designer.cs">
+      <DependentUpon>AddRegions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Private\Admin\AddStations.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Private\Admin\AddStations.Designer.cs">
+      <DependentUpon>AddStations.cs</DependentUpon>
+    </Compile>
     <Compile Include="Private\Admin\AdminForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -79,17 +97,77 @@
     <Compile Include="Private\Admin\AddVoters.Designer.cs">
       <DependentUpon>AddVoters.cs</DependentUpon>
     </Compile>
+    <Compile Include="Private\Admin\Dashboard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Private\Admin\Dashboard.Designer.cs">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Private\Admin\ModifyParty.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Private\Admin\ModifyParty.Designer.cs">
+      <DependentUpon>ModifyParty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Private\Admin\ModifyRegions.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Private\Admin\ModifyRegions.Designer.cs">
+      <DependentUpon>ModifyRegions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Private\Admin\ModifyStations.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Private\Admin\ModifyStations.Designer.cs">
+      <DependentUpon>ModifyStations.cs</DependentUpon>
+    </Compile>
     <Compile Include="Private\Admin\ModifyVoters.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Private\Admin\ModifyVoters.Designer.cs">
       <DependentUpon>ModifyVoters.cs</DependentUpon>
     </Compile>
+    <Compile Include="Private\Admin\ViewParty.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Private\Admin\ViewParty.Designer.cs">
+      <DependentUpon>ViewParty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Private\Admin\ViewRegion.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Private\Admin\ViewRegion.Designer.cs">
+      <DependentUpon>ViewRegion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Private\Admin\ViewStations.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Private\Admin\ViewStations.Designer.cs">
+      <DependentUpon>ViewStations.cs</DependentUpon>
+    </Compile>
     <Compile Include="Private\Admin\ViewVoters.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Private\Admin\ViewVoters.Designer.cs">
       <DependentUpon>ViewVoters.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Private\Voters\Profile.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Private\Voters\Profile.Designer.cs">
+      <DependentUpon>Profile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Private\Voters\Vote.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Private\Voters\Vote.Designer.cs">
+      <DependentUpon>Vote.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Private\Voters\VotersForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Private\Voters\VotersForm.Designer.cs">
+      <DependentUpon>VotersForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -101,17 +179,56 @@
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Private\Admin\AddParty.resx">
+      <DependentUpon>AddParty.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Private\Admin\AddRegions.resx">
+      <DependentUpon>AddRegions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Private\Admin\AddStations.resx">
+      <DependentUpon>AddStations.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Private\Admin\AdminForm.resx">
       <DependentUpon>AdminForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Private\Admin\AddVoters.resx">
       <DependentUpon>AddVoters.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Private\Admin\Dashboard.resx">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Private\Admin\ModifyParty.resx">
+      <DependentUpon>ModifyParty.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Private\Admin\ModifyRegions.resx">
+      <DependentUpon>ModifyRegions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Private\Admin\ModifyStations.resx">
+      <DependentUpon>ModifyStations.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Private\Admin\ModifyVoters.resx">
       <DependentUpon>ModifyVoters.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Private\Admin\ViewParty.resx">
+      <DependentUpon>ViewParty.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Private\Admin\ViewRegion.resx">
+      <DependentUpon>ViewRegion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Private\Admin\ViewStations.resx">
+      <DependentUpon>ViewStations.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Private\Admin\ViewVoters.resx">
       <DependentUpon>ViewVoters.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Private\Voters\Profile.resx">
+      <DependentUpon>Profile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Private\Voters\Vote.resx">
+      <DependentUpon>Vote.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Private\Voters\VotersForm.resx">
+      <DependentUpon>VotersForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -198,7 +315,7 @@
     <None Include="Resources\%24this.Icon.ico" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Private\Voters\" />
+    <None Include="assets\icons\election-pin.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="assets\icons\home %282%29.png" />
@@ -217,6 +334,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="assets\images\id-card.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\icons\logout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\icons\notepad.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\icons\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\icons\online-voting.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\icons\vote %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\icons\profile.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

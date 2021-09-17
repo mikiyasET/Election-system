@@ -15,3 +15,16 @@ C:\Users\mikiy\source\repos\Election system\Election system\obj\Debug\Election_s
 C:\Users\mikiy\source\repos\Election system\Election system\obj\Debug\Election_system.Private.Admin.AddVoters.resources
 C:\Users\mikiy\source\repos\Election system\Election system\obj\Debug\Election_system.Private.Admin.ModifyVoters.resources
 C:\Users\mikiy\source\repos\Election system\Election system\obj\Debug\Election_system.Private.Admin.ViewVoters.resources
+C:\Users\mikiy\source\repos\Election system\Election system\obj\Debug\Election_system.Private.Admin.AddParty.resources
+C:\Users\mikiy\source\repos\Election system\Election system\obj\Debug\Election_system.Private.Admin.AddRegions.resources
+C:\Users\mikiy\source\repos\Election system\Election system\obj\Debug\Election_system.Private.Admin.AddStations.resources
+C:\Users\mikiy\source\repos\Election system\Election system\obj\Debug\Election_system.Private.Admin.ModifyParty.resources
+C:\Users\mikiy\source\repos\Election system\Election system\obj\Debug\Election_system.Private.Admin.ModifyRegions.resources
+C:\Users\mikiy\source\repos\Election system\Election system\obj\Debug\Election_system.Private.Admin.ModifyStations.resources
+C:\Users\mikiy\source\repos\Election system\Election system\obj\Debug\Election_system.Private.Admin.ViewParty.resources
+C:\Users\mikiy\source\repos\Election system\Election system\obj\Debug\Election_system.Private.Admin.ViewRegion.resources
+C:\Users\mikiy\source\repos\Election system\Election system\obj\Debug\Election_system.Private.Admin.ViewStations.resources
+C:\Users\mikiy\source\repos\Election system\Election system\obj\Debug\Election_system.Private.Admin.Dashboard.resources
+C:\Users\mikiy\source\repos\Election system\Election system\obj\Debug\Election_system.Private.Voters.VotersForm.resources
+C:\Users\mikiy\source\repos\Election system\Election system\obj\Debug\Election_system.Private.Voters.Profile.resources
+C:\Users\mikiy\source\repos\Election system\Election system\obj\Debug\Election_system.Private.Voters.Vote.resources

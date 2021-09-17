@@ -59,6 +59,8 @@ namespace Election_system.Private.Admin
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.spacer1 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -88,7 +90,7 @@ namespace Election_system.Private.Admin
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(25, 491);
+            this.label7.Location = new System.Drawing.Point(21, 464);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(54, 13);
             this.label7.TabIndex = 2;
@@ -97,7 +99,7 @@ namespace Election_system.Private.Admin
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(25, 421);
+            this.label6.Location = new System.Drawing.Point(21, 394);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(91, 13);
             this.label6.TabIndex = 2;
@@ -106,7 +108,7 @@ namespace Election_system.Private.Admin
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(25, 349);
+            this.label5.Location = new System.Drawing.Point(21, 322);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(53, 13);
             this.label5.TabIndex = 2;
@@ -115,7 +117,7 @@ namespace Election_system.Private.Admin
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(25, 274);
+            this.label4.Location = new System.Drawing.Point(21, 247);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(78, 13);
             this.label4.TabIndex = 2;
@@ -124,7 +126,7 @@ namespace Election_system.Private.Admin
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(25, 198);
+            this.label3.Location = new System.Drawing.Point(21, 171);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(58, 13);
             this.label3.TabIndex = 2;
@@ -133,7 +135,7 @@ namespace Election_system.Private.Admin
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(25, 128);
+            this.label2.Location = new System.Drawing.Point(21, 101);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(69, 13);
             this.label2.TabIndex = 2;
@@ -142,7 +144,7 @@ namespace Election_system.Private.Admin
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(25, 54);
+            this.label1.Location = new System.Drawing.Point(20, 32);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(57, 13);
             this.label1.TabIndex = 2;
@@ -150,15 +152,15 @@ namespace Election_system.Private.Admin
             // 
             // firstName
             // 
-            this.firstName.Location = new System.Drawing.Point(25, 83);
+            this.firstName.Location = new System.Drawing.Point(20, 61);
             this.firstName.Multiline = true;
             this.firstName.Name = "firstName";
-            this.firstName.Size = new System.Drawing.Size(337, 27);
+            this.firstName.Size = new System.Drawing.Size(338, 27);
             this.firstName.TabIndex = 0;
             // 
             // middleName
             // 
-            this.middleName.Location = new System.Drawing.Point(25, 156);
+            this.middleName.Location = new System.Drawing.Point(21, 129);
             this.middleName.Multiline = true;
             this.middleName.Name = "middleName";
             this.middleName.Size = new System.Drawing.Size(337, 27);
@@ -242,7 +244,7 @@ namespace Election_system.Private.Admin
             // 
             // lastName
             // 
-            this.lastName.Location = new System.Drawing.Point(25, 230);
+            this.lastName.Location = new System.Drawing.Point(21, 203);
             this.lastName.Multiline = true;
             this.lastName.Name = "lastName";
             this.lastName.Size = new System.Drawing.Size(337, 27);
@@ -250,7 +252,7 @@ namespace Election_system.Private.Admin
             // 
             // phoneNo
             // 
-            this.phoneNo.Location = new System.Drawing.Point(25, 306);
+            this.phoneNo.Location = new System.Drawing.Point(21, 279);
             this.phoneNo.Multiline = true;
             this.phoneNo.Name = "phoneNo";
             this.phoneNo.Size = new System.Drawing.Size(337, 27);
@@ -258,15 +260,15 @@ namespace Election_system.Private.Admin
             // 
             // password
             // 
-            this.password.Location = new System.Drawing.Point(28, 381);
+            this.password.Location = new System.Drawing.Point(20, 354);
             this.password.Multiline = true;
             this.password.Name = "password";
-            this.password.Size = new System.Drawing.Size(337, 27);
+            this.password.Size = new System.Drawing.Size(338, 27);
             this.password.TabIndex = 0;
             // 
             // confirmPassword
             // 
-            this.confirmPassword.Location = new System.Drawing.Point(25, 447);
+            this.confirmPassword.Location = new System.Drawing.Point(21, 420);
             this.confirmPassword.Multiline = true;
             this.confirmPassword.Name = "confirmPassword";
             this.confirmPassword.Size = new System.Drawing.Size(337, 27);
@@ -286,6 +288,8 @@ namespace Election_system.Private.Admin
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label5);
@@ -311,7 +315,7 @@ namespace Election_system.Private.Admin
             // dateTimePicker1
             // 
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(25, 517);
+            this.dateTimePicker1.Location = new System.Drawing.Point(21, 490);
             this.dateTimePicker1.MaxDate = new System.DateTime(2021, 9, 15, 0, 0, 0, 0);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(337, 20);
@@ -369,6 +373,23 @@ namespace Election_system.Private.Admin
             this.label9.TabIndex = 2;
             this.label9.Text = "ID Number";
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(20, 549);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(338, 21);
+            this.comboBox1.TabIndex = 5;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(21, 523);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(41, 13);
+            this.label10.TabIndex = 4;
+            this.label10.Text = "Region";
+            // 
             // ModifyVoters
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -421,5 +442,7 @@ namespace Election_system.Private.Admin
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Panel spacer1;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label10;
     }
 }

@@ -53,6 +53,8 @@ namespace Election_system.Private.Admin
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.Spacer = new System.Windows.Forms.Panel();
+            this.label9 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -60,6 +62,8 @@ namespace Election_system.Private.Admin
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label5);
@@ -84,7 +88,6 @@ namespace Election_system.Private.Admin
             // 
             // label7
             // 
-            this.label7.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(25, 491);
             this.label7.Name = "label7";
@@ -94,7 +97,6 @@ namespace Election_system.Private.Admin
             // 
             // label6
             // 
-            this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(25, 421);
             this.label6.Name = "label6";
@@ -104,7 +106,6 @@ namespace Election_system.Private.Admin
             // 
             // label5
             // 
-            this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(25, 349);
             this.label5.Name = "label5";
@@ -114,7 +115,6 @@ namespace Election_system.Private.Admin
             // 
             // label4
             // 
-            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(25, 274);
             this.label4.Name = "label4";
@@ -124,7 +124,6 @@ namespace Election_system.Private.Admin
             // 
             // label3
             // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(25, 198);
             this.label3.Name = "label3";
@@ -134,7 +133,6 @@ namespace Election_system.Private.Admin
             // 
             // label2
             // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(25, 128);
             this.label2.Name = "label2";
@@ -144,7 +142,6 @@ namespace Election_system.Private.Admin
             // 
             // label1
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(25, 54);
             this.label1.Name = "label1";
@@ -154,7 +151,6 @@ namespace Election_system.Private.Admin
             // 
             // firstName
             // 
-            this.firstName.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.firstName.Location = new System.Drawing.Point(25, 83);
             this.firstName.Multiline = true;
             this.firstName.Name = "firstName";
@@ -163,7 +159,6 @@ namespace Election_system.Private.Admin
             // 
             // middleName
             // 
-            this.middleName.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.middleName.Location = new System.Drawing.Point(25, 156);
             this.middleName.Multiline = true;
             this.middleName.Name = "middleName";
@@ -172,7 +167,6 @@ namespace Election_system.Private.Admin
             // 
             // lastName
             // 
-            this.lastName.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lastName.Location = new System.Drawing.Point(25, 230);
             this.lastName.Multiline = true;
             this.lastName.Name = "lastName";
@@ -181,7 +175,6 @@ namespace Election_system.Private.Admin
             // 
             // phoneNo
             // 
-            this.phoneNo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.phoneNo.Location = new System.Drawing.Point(25, 306);
             this.phoneNo.Multiline = true;
             this.phoneNo.Name = "phoneNo";
@@ -190,7 +183,6 @@ namespace Election_system.Private.Admin
             // 
             // password
             // 
-            this.password.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.password.Location = new System.Drawing.Point(28, 381);
             this.password.Multiline = true;
             this.password.Name = "password";
@@ -199,7 +191,6 @@ namespace Election_system.Private.Admin
             // 
             // confirmPassword
             // 
-            this.confirmPassword.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.confirmPassword.Location = new System.Drawing.Point(25, 447);
             this.confirmPassword.Multiline = true;
             this.confirmPassword.Name = "confirmPassword";
@@ -208,7 +199,6 @@ namespace Election_system.Private.Admin
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePicker1.Location = new System.Drawing.Point(25, 517);
             this.dateTimePicker1.MaxDate = new System.DateTime(2021, 9, 15, 0, 0, 0, 0);
@@ -310,6 +300,23 @@ namespace Election_system.Private.Admin
             this.Spacer.Size = new System.Drawing.Size(355, 26);
             this.Spacer.TabIndex = 3;
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(22, 559);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(41, 13);
+            this.label9.TabIndex = 2;
+            this.label9.Text = "Region";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(25, 585);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(366, 21);
+            this.comboBox1.TabIndex = 3;
+            // 
             // AddVoters
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -353,5 +360,7 @@ namespace Election_system.Private.Admin
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel Spacer;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label9;
     }
 }
