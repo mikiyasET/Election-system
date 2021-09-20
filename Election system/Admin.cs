@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Election_system
 {
-    class Admin
+    public class Admin
     {
         public string username;
         public string password;
@@ -21,6 +21,11 @@ namespace Election_system
         {
             AdminDBLayer adminDB = new AdminDBLayer();
             adminDB.signIn(this);
+        }
+        public bool CheckUsername()
+        {
+            AdminDBLayer adminDB = new AdminDBLayer();
+            return adminDB.Exist(this);
         }
     }
 }

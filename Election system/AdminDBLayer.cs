@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using Election_system.Private.Admin;
 
 namespace Election_system
 {
@@ -18,7 +19,7 @@ namespace Election_system
                 using (SqlConnection con = new SqlConnection(constr))
                 {
                     con.Open();
-                    SqlCommand cmd = new SqlCommand("Admin_Signin", con);
+                    SqlCommand cmd = new SqlCommand("SP_Admin_Signin", con);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@username", admin.username);
                     cmd.Parameters.AddWithValue("@password", admin.password);
@@ -26,7 +27,9 @@ namespace Election_system
                     int result = cmd.ExecuteScalar() == null ? 0 : (int)cmd.ExecuteScalar();
                     if (result == 1)
                     {
-                        MessageBox.Show("Successfull");
+                        AdminForm form = new AdminForm(admin);
+                        Login.ActiveForm.Hide();
+                        form.ShowDialog();
                     }
                     else
                     {
@@ -40,6 +43,34 @@ namespace Election_system
                 MessageBox.Show(e.Message);
             }
         }
+        public bool Exist(Admin admin)
+        {
+            try {
+                using (SqlConnection con = new SqlConnection(constr))
+                {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("SP_Admin_exist", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@username", admin.username);
+                    int row = cmd.ExecuteNonQuery();
+                    int result = cmd.ExecuteScalar() == null ? 0 : (int)cmd.ExecuteScalar();
+                    con.Close();
+                    if (result == 1)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+            } catch (Exception e){
+                MessageBox.Show(e.Message, "Internal Error",MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }finally
+            {
 
+            }
+        }
     }
 }

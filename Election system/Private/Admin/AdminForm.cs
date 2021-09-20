@@ -12,26 +12,55 @@ namespace Election_system.Private.Admin
 {
     public partial class AdminForm : Form
     {
-        public AdminForm()
+        private string username;
+        /*public AdminForm()
         {
-            InitializeComponent();
+           InitializeComponent();
             Dashboard form = new Dashboard();
             form.Dock = DockStyle.Fill;
             body.Controls.Clear();
             body.Controls.Add(form);
-        }
 
+        }*/
+
+        public AdminForm(Election_system.Admin admin)
+        {
+            username = admin.username;
+            if (checkIfAdminExist(admin.username))
+            {
+                InitializeComponent();
+                Dashboard form = new Dashboard();
+                form.Dock = DockStyle.Fill;
+                body.Controls.Clear();
+                body.Controls.Add(form);
+            }else
+            {
+                this.Hide();
+                this.Close();
+                MessageBox.Show("You are not an admin", "Security", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private bool checkIfAdminExist(string username)
+        {
+            Election_system.Admin admin = new Election_system.Admin();
+            admin.username = username;
+            return admin.CheckUsername();
+        }
         bool votebtnexp = false;
         bool partybtnexp = false;
         bool stationbtnexp = false;
         bool regionbtnexp = false;
+        bool electionbtnexp = false;
 
         private void CollapseAll()
         {
+            checkIfAdminExist(username);
             voter_con.Height = 60;
             party_con.Height = 60;
             station_con.Height = 60;
             region_con.Height = 60;
+            election_con.Height = 60;
+
         }
 
         private void HomebtnClick(object sender, EventArgs e)
@@ -48,6 +77,7 @@ namespace Election_system.Private.Admin
             partybtnexp = false;
             stationbtnexp = false;
             regionbtnexp = false;
+            electionbtnexp = false;
             CollapseAll();
             if (!votebtnexp)
             {
@@ -64,6 +94,8 @@ namespace Election_system.Private.Admin
             votebtnexp = false;
             stationbtnexp = false;
             regionbtnexp = false;
+            electionbtnexp = false;
+
             CollapseAll();
             if (!partybtnexp)
             {
@@ -80,6 +112,8 @@ namespace Election_system.Private.Admin
             votebtnexp = false;
             partybtnexp = false;
             regionbtnexp = false;
+            electionbtnexp = false;
+
             CollapseAll();
             if (!stationbtnexp)
             {
@@ -96,6 +130,8 @@ namespace Election_system.Private.Admin
             votebtnexp = false;
             partybtnexp = false;
             stationbtnexp = false;
+            electionbtnexp = false;
+
             CollapseAll();
             if (!regionbtnexp)
             {
@@ -105,7 +141,27 @@ namespace Election_system.Private.Admin
             {
                 regionbtnexp = false;
             }
-            Console.WriteLine("Regionss");
+            Console.WriteLine("Region");
+
+        }
+        private void ElectionbtnClick(object sender, EventArgs e)
+        {
+            votebtnexp = false;
+            partybtnexp = false;
+            stationbtnexp = false;
+            regionbtnexp = false;
+
+            CollapseAll();
+            if (!electionbtnexp)
+            {
+                electionbtnexp = true;
+                election_con.Height = 180;
+            }
+            else
+            {
+                electionbtnexp = false;
+            }
+            Console.WriteLine("Election");
 
         }
 
@@ -205,115 +261,39 @@ namespace Election_system.Private.Admin
             body.Controls.Add(form);
         }
 
+        private void addelection_btn_Click(object sender, EventArgs e)
+        {
+            AddElection form = new AddElection();
+            form.Dock = DockStyle.Fill;
+            body.Controls.Clear();
+            body.Controls.Add(form);
+        }
+
+        private void modifyelection_btn_Click(object sender, EventArgs e)
+        {
+            ModifyElection form = new ModifyElection();
+            form.Dock = DockStyle.Fill;
+            body.Controls.Clear();
+            body.Controls.Add(form);
+        }
+
+        private void viewelection_btn_Click(object sender, EventArgs e)
+        {
+            ViewElection form = new ViewElection();
+            form.Dock = DockStyle.Fill;
+            body.Controls.Clear();
+            body.Controls.Add(form);
+        }
+
         private void logout_btn_Click(object sender, EventArgs e)
         {
-            CollapseAll();
+            this.Hide();
+            Login login = new Login();
+            login.ShowDialog();
+            this.Close();
 
         }
 
-        private void body_Paint(object sender, PaintEventArgs e)
-        {
 
-        }
-
-        private void sidenav_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void region_con_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void region_txt_con_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel17_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void station_con_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void station_txt_con_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel14_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void party_con_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void party_txt_con_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel11_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void voter_con_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void voter_txt_con_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel8_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void home_con_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void home_txt_con_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void Spacer_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel3_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

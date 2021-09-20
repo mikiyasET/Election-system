@@ -16,5 +16,13 @@ namespace Election_system.Private.Admin
         {
             InitializeComponent();
         }
+
+        private void addbtn_Click(object sender, EventArgs e)
+        {
+            Region region = new Region();
+            region.Name = name_box.Text;
+            region.Population = int.Parse(pop_box.Text);
+            region.Save();
+        }
     }
 }

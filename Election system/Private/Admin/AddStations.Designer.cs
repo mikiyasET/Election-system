@@ -29,33 +29,34 @@ namespace Election_system.Private.Admin
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.addbtn = new System.Windows.Forms.Button();
+            this.name_box = new System.Windows.Forms.TextBox();
             this.population_label = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.region_box = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
-            // button1
+            // addbtn
             // 
-            this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button1.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(178, 361);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(600, 48);
-            this.button1.TabIndex = 15;
-            this.button1.Text = "Add";
-            this.button1.UseVisualStyleBackColor = true;
+            this.addbtn.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.addbtn.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addbtn.Location = new System.Drawing.Point(178, 361);
+            this.addbtn.Name = "addbtn";
+            this.addbtn.Size = new System.Drawing.Size(600, 48);
+            this.addbtn.TabIndex = 15;
+            this.addbtn.Text = "Add";
+            this.addbtn.UseVisualStyleBackColor = true;
+            this.addbtn.Click += new System.EventHandler(this.addbtn_Click);
             // 
-            // textBox1
+            // name_box
             // 
-            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox1.Location = new System.Drawing.Point(506, 219);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(272, 24);
-            this.textBox1.TabIndex = 13;
+            this.name_box.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.name_box.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.name_box.Location = new System.Drawing.Point(506, 219);
+            this.name_box.Name = "name_box";
+            this.name_box.Size = new System.Drawing.Size(272, 30);
+            this.name_box.TabIndex = 13;
             // 
             // population_label
             // 
@@ -90,22 +91,23 @@ namespace Election_system.Private.Admin
             this.label1.TabIndex = 10;
             this.label1.Text = "Add Stations";
             // 
-            // comboBox1
+            // region_box
             // 
-            this.comboBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(506, 288);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(272, 21);
-            this.comboBox1.TabIndex = 16;
+            this.region_box.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.region_box.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.region_box.FormattingEnabled = true;
+            this.region_box.Location = new System.Drawing.Point(506, 288);
+            this.region_box.Name = "region_box";
+            this.region_box.Size = new System.Drawing.Size(272, 33);
+            this.region_box.TabIndex = 16;
             // 
             // AddStations
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.region_box);
+            this.Controls.Add(this.addbtn);
+            this.Controls.Add(this.name_box);
             this.Controls.Add(this.population_label);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -118,11 +120,11 @@ namespace Election_system.Private.Admin
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button addbtn;
+        private System.Windows.Forms.TextBox name_box;
         private System.Windows.Forms.Label population_label;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox region_box;
     }
 }

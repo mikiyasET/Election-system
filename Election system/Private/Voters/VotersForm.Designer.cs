@@ -35,6 +35,7 @@ namespace Election_system.Private.Voters
             this.voter_con = new System.Windows.Forms.Panel();
             this.voter_txt_con = new System.Windows.Forms.Panel();
             this.voter_txt = new System.Windows.Forms.Label();
+            this.voter_icon = new System.Windows.Forms.PictureBox();
             this.panel8 = new System.Windows.Forms.Panel();
             this.viewVoters_btn = new System.Windows.Forms.Button();
             this.modifyVoters_btn = new System.Windows.Forms.Button();
@@ -43,6 +44,7 @@ namespace Election_system.Private.Voters
             this.home_con = new System.Windows.Forms.Panel();
             this.home_txt_con = new System.Windows.Forms.Panel();
             this.home_txt = new System.Windows.Forms.Label();
+            this.home_icon = new System.Windows.Forms.PictureBox();
             this.Spacer = new System.Windows.Forms.Panel();
             this.body = new System.Windows.Forms.Panel();
             this.party_txt_con = new System.Windows.Forms.Panel();
@@ -50,30 +52,28 @@ namespace Election_system.Private.Voters
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
-            this.party_con = new System.Windows.Forms.Panel();
-            this.panel11 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.party_con = new System.Windows.Forms.Panel();
             this.party_icon = new System.Windows.Forms.PictureBox();
-            this.voter_icon = new System.Windows.Forms.PictureBox();
-            this.home_icon = new System.Windows.Forms.PictureBox();
+            this.panel11 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.voter_con.SuspendLayout();
             this.voter_txt_con.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.voter_icon)).BeginInit();
             this.panel8.SuspendLayout();
             this.home_con.SuspendLayout();
             this.home_txt_con.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.home_icon)).BeginInit();
             this.party_txt_con.SuspendLayout();
             this.sidenav.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.party_con.SuspendLayout();
-            this.panel11.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.party_con.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.party_icon)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.voter_icon)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.home_icon)).BeginInit();
+            this.panel11.SuspendLayout();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -131,6 +131,7 @@ namespace Election_system.Private.Voters
             this.voter_con.Padding = new System.Windows.Forms.Padding(25, 5, 5, 0);
             this.voter_con.Size = new System.Drawing.Size(385, 60);
             this.voter_con.TabIndex = 1;
+            this.voter_con.Click += new System.EventHandler(this.Votebtn_Click);
             // 
             // voter_txt_con
             // 
@@ -139,6 +140,7 @@ namespace Election_system.Private.Voters
             this.voter_txt_con.Name = "voter_txt_con";
             this.voter_txt_con.Size = new System.Drawing.Size(255, 52);
             this.voter_txt_con.TabIndex = 0;
+            this.voter_txt_con.Click += new System.EventHandler(this.Votebtn_Click);
             // 
             // voter_txt
             // 
@@ -151,6 +153,19 @@ namespace Election_system.Private.Voters
             this.voter_txt.Size = new System.Drawing.Size(49, 22);
             this.voter_txt.TabIndex = 1;
             this.voter_txt.Text = "Vote";
+            this.voter_txt.Click += new System.EventHandler(this.Votebtn_Click);
+            // 
+            // voter_icon
+            // 
+            this.voter_icon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.voter_icon.Image = global::Election_system.Properties.Resources.vote__1_;
+            this.voter_icon.Location = new System.Drawing.Point(25, 5);
+            this.voter_icon.Name = "voter_icon";
+            this.voter_icon.Size = new System.Drawing.Size(100, 52);
+            this.voter_icon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.voter_icon.TabIndex = 0;
+            this.voter_icon.TabStop = false;
+            this.voter_icon.Click += new System.EventHandler(this.Votebtn_Click);
             // 
             // panel8
             // 
@@ -228,6 +243,7 @@ namespace Election_system.Private.Voters
             this.home_con.Padding = new System.Windows.Forms.Padding(25, 5, 5, 0);
             this.home_con.Size = new System.Drawing.Size(385, 60);
             this.home_con.TabIndex = 1;
+            this.home_con.Click += new System.EventHandler(this.Profilebtn_Click);
             // 
             // home_txt_con
             // 
@@ -236,6 +252,7 @@ namespace Election_system.Private.Voters
             this.home_txt_con.Name = "home_txt_con";
             this.home_txt_con.Size = new System.Drawing.Size(255, 52);
             this.home_txt_con.TabIndex = 0;
+            this.home_txt_con.Click += new System.EventHandler(this.Profilebtn_Click);
             // 
             // home_txt
             // 
@@ -248,6 +265,19 @@ namespace Election_system.Private.Voters
             this.home_txt.Size = new System.Drawing.Size(65, 22);
             this.home_txt.TabIndex = 1;
             this.home_txt.Text = "Profile";
+            this.home_txt.Click += new System.EventHandler(this.Profilebtn_Click);
+            // 
+            // home_icon
+            // 
+            this.home_icon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.home_icon.Image = global::Election_system.Properties.Resources.user;
+            this.home_icon.Location = new System.Drawing.Point(25, 5);
+            this.home_icon.Name = "home_icon";
+            this.home_icon.Size = new System.Drawing.Size(100, 52);
+            this.home_icon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.home_icon.TabIndex = 0;
+            this.home_icon.TabStop = false;
+            this.home_icon.Click += new System.EventHandler(this.Profilebtn_Click);
             // 
             // Spacer
             // 
@@ -301,6 +331,7 @@ namespace Election_system.Private.Voters
             this.panel1.Padding = new System.Windows.Forms.Padding(25, 5, 5, 0);
             this.panel1.Size = new System.Drawing.Size(385, 60);
             this.panel1.TabIndex = 1;
+            this.panel1.Click += new System.EventHandler(this.Logout_Click);
             // 
             // panel2
             // 
@@ -309,6 +340,7 @@ namespace Election_system.Private.Voters
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(255, 52);
             this.panel2.TabIndex = 0;
+            this.panel2.Click += new System.EventHandler(this.Logout_Click);
             // 
             // label3
             // 
@@ -321,6 +353,19 @@ namespace Election_system.Private.Voters
             this.label3.Size = new System.Drawing.Size(69, 22);
             this.label3.TabIndex = 1;
             this.label3.Text = "Logout";
+            this.label3.Click += new System.EventHandler(this.Logout_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pictureBox1.Image = global::Election_system.Properties.Resources.logout;
+            this.pictureBox1.Location = new System.Drawing.Point(25, 5);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 52);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.Logout_Click);
             // 
             // party_con
             // 
@@ -335,28 +380,6 @@ namespace Election_system.Private.Voters
             this.party_con.Size = new System.Drawing.Size(385, 60);
             this.party_con.TabIndex = 1;
             // 
-            // panel11
-            // 
-            this.panel11.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.panel11.Controls.Add(this.viewparty_btn);
-            this.panel11.Controls.Add(this.modifyparty_btn);
-            this.panel11.Controls.Add(this.addparty_btn);
-            this.panel11.Location = new System.Drawing.Point(24, 57);
-            this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(355, 124);
-            this.panel11.TabIndex = 0;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pictureBox1.Image = global::Election_system.Properties.Resources.logout;
-            this.pictureBox1.Location = new System.Drawing.Point(25, 5);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 52);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // party_icon
             // 
             this.party_icon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
@@ -368,27 +391,16 @@ namespace Election_system.Private.Voters
             this.party_icon.TabIndex = 0;
             this.party_icon.TabStop = false;
             // 
-            // voter_icon
+            // panel11
             // 
-            this.voter_icon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.voter_icon.Image = global::Election_system.Properties.Resources.vote__1_;
-            this.voter_icon.Location = new System.Drawing.Point(25, 5);
-            this.voter_icon.Name = "voter_icon";
-            this.voter_icon.Size = new System.Drawing.Size(100, 52);
-            this.voter_icon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.voter_icon.TabIndex = 0;
-            this.voter_icon.TabStop = false;
-            // 
-            // home_icon
-            // 
-            this.home_icon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.home_icon.Image = global::Election_system.Properties.Resources.user;
-            this.home_icon.Location = new System.Drawing.Point(25, 5);
-            this.home_icon.Name = "home_icon";
-            this.home_icon.Size = new System.Drawing.Size(100, 52);
-            this.home_icon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.home_icon.TabIndex = 0;
-            this.home_icon.TabStop = false;
+            this.panel11.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.panel11.Controls.Add(this.viewparty_btn);
+            this.panel11.Controls.Add(this.modifyparty_btn);
+            this.panel11.Controls.Add(this.addparty_btn);
+            this.panel11.Location = new System.Drawing.Point(24, 57);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(355, 124);
+            this.panel11.TabIndex = 0;
             // 
             // panel3
             // 
@@ -436,22 +448,22 @@ namespace Election_system.Private.Voters
             this.voter_con.ResumeLayout(false);
             this.voter_txt_con.ResumeLayout(false);
             this.voter_txt_con.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.voter_icon)).EndInit();
             this.panel8.ResumeLayout(false);
             this.home_con.ResumeLayout(false);
             this.home_txt_con.ResumeLayout(false);
             this.home_txt_con.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.home_icon)).EndInit();
             this.party_txt_con.ResumeLayout(false);
             this.party_txt_con.PerformLayout();
             this.sidenav.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.party_con.ResumeLayout(false);
-            this.panel11.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.party_con.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.party_icon)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.voter_icon)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.home_icon)).EndInit();
+            this.panel11.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.ResumeLayout(false);

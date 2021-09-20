@@ -30,20 +30,20 @@ namespace Election_system.Private.Admin
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.addbtn = new System.Windows.Forms.Button();
+            this.pop_box = new System.Windows.Forms.TextBox();
+            this.name_box = new System.Windows.Forms.TextBox();
             this.population_label = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.textBox2);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.addbtn);
+            this.panel1.Controls.Add(this.pop_box);
+            this.panel1.Controls.Add(this.name_box);
             this.panel1.Controls.Add(this.population_label);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
@@ -53,23 +53,35 @@ namespace Election_system.Private.Admin
             this.panel1.Size = new System.Drawing.Size(1012, 780);
             this.panel1.TabIndex = 0;
             // 
-            // textBox2
+            // addbtn
             // 
-            this.textBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox2.Location = new System.Drawing.Point(544, 334);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(272, 24);
-            this.textBox2.TabIndex = 2;
+            this.addbtn.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.addbtn.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addbtn.Location = new System.Drawing.Point(216, 409);
+            this.addbtn.Name = "addbtn";
+            this.addbtn.Size = new System.Drawing.Size(600, 48);
+            this.addbtn.TabIndex = 3;
+            this.addbtn.Text = "Add";
+            this.addbtn.UseVisualStyleBackColor = true;
+            this.addbtn.Click += new System.EventHandler(this.addbtn_Click);
             // 
-            // textBox1
+            // pop_box
             // 
-            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox1.Location = new System.Drawing.Point(544, 267);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(272, 24);
-            this.textBox1.TabIndex = 2;
+            this.pop_box.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pop_box.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pop_box.Location = new System.Drawing.Point(544, 334);
+            this.pop_box.Name = "pop_box";
+            this.pop_box.Size = new System.Drawing.Size(272, 30);
+            this.pop_box.TabIndex = 2;
+            // 
+            // name_box
+            // 
+            this.name_box.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.name_box.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.name_box.Location = new System.Drawing.Point(544, 267);
+            this.name_box.Name = "name_box";
+            this.name_box.Size = new System.Drawing.Size(272, 30);
+            this.name_box.TabIndex = 2;
             // 
             // population_label
             // 
@@ -104,17 +116,6 @@ namespace Election_system.Private.Admin
             this.label1.TabIndex = 0;
             this.label1.Text = "Add Regions";
             // 
-            // button1
-            // 
-            this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button1.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(216, 409);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(600, 48);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Add";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // AddRegions
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -131,11 +132,11 @@ namespace Election_system.Private.Admin
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox pop_box;
+        private System.Windows.Forms.TextBox name_box;
         private System.Windows.Forms.Label population_label;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button addbtn;
     }
 }

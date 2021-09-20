@@ -15,6 +15,21 @@ namespace Election_system.Private.Admin
         public AddStations()
         {
             InitializeComponent();
+            Region region = new Region();
+            
+            region_box.DataSource = region.getRegions();
+            region_box.DisplayMember = "rname";
+            region_box.ValueMember = "rid";
+        }
+
+        private void addbtn_Click(object sender, EventArgs e)
+        {
+            DataRowView x = region_box.SelectedItem as DataRowView; 
+
+            Station station = new Station();
+            station.Name = name_box.Text;
+            station.Rid = int.Parse(x.Row["rid"].ToString());
+            station.Save();
         }
     }
 }

@@ -1,4 +1,7 @@
 ﻿
+using System.Drawing;
+using System.Windows.Forms;
+
 namespace Election_system
 {
     partial class Login
@@ -32,7 +35,6 @@ namespace Election_system
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.logincon = new System.Windows.Forms.Panel();
-            this.loginbtn = new System.Windows.Forms.Button();
             this.passcon = new System.Windows.Forms.Panel();
             this.passwordbox = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -51,6 +53,8 @@ namespace Election_system
             this.label6 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.resultsbtn = new Election_system.RoundedButton();
+            this.loginbtn = new Election_system.RoundedButton();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.logincon.SuspendLayout();
@@ -97,34 +101,18 @@ namespace Election_system
             this.logincon.Location = new System.Drawing.Point(45, 80);
             this.logincon.Name = "logincon";
             this.logincon.Padding = new System.Windows.Forms.Padding(20);
-            this.logincon.Size = new System.Drawing.Size(291, 232);
+            this.logincon.Size = new System.Drawing.Size(291, 268);
             this.logincon.TabIndex = 1;
-            // 
-            // loginbtn
-            // 
-            this.loginbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(83)))), ((int)(((byte)(133)))));
-            this.loginbtn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.loginbtn.FlatAppearance.BorderSize = 0;
-            this.loginbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.loginbtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.loginbtn.ForeColor = System.Drawing.Color.White;
-            this.loginbtn.Location = new System.Drawing.Point(20, 165);
-            this.loginbtn.Name = "loginbtn";
-            this.loginbtn.Size = new System.Drawing.Size(251, 44);
-            this.loginbtn.TabIndex = 7;
-            this.loginbtn.Text = "Login";
-            this.loginbtn.UseVisualStyleBackColor = false;
-            this.loginbtn.Click += new System.EventHandler(this.loginbtn_Click);
             // 
             // passcon
             // 
             this.passcon.Controls.Add(this.passwordbox);
             this.passcon.Controls.Add(this.label5);
             this.passcon.Dock = System.Windows.Forms.DockStyle.Top;
-            this.passcon.Location = new System.Drawing.Point(20, 100);
+            this.passcon.Location = new System.Drawing.Point(20, 99);
             this.passcon.Name = "passcon";
             this.passcon.Padding = new System.Windows.Forms.Padding(0, 20, 0, 20);
-            this.passcon.Size = new System.Drawing.Size(251, 65);
+            this.passcon.Size = new System.Drawing.Size(251, 61);
             this.passcon.TabIndex = 5;
             // 
             // passwordbox
@@ -147,7 +135,8 @@ namespace Election_system
             this.label5.Location = new System.Drawing.Point(0, 20);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(80, 19);
+            this.label5.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.label5.Size = new System.Drawing.Size(80, 24);
             this.label5.TabIndex = 2;
             this.label5.Text = "Password";
             // 
@@ -159,7 +148,7 @@ namespace Election_system
             this.idcon.Location = new System.Drawing.Point(20, 41);
             this.idcon.Name = "idcon";
             this.idcon.Padding = new System.Windows.Forms.Padding(0, 20, 0, 20);
-            this.idcon.Size = new System.Drawing.Size(251, 59);
+            this.idcon.Size = new System.Drawing.Size(251, 58);
             this.idcon.TabIndex = 1;
             // 
             // idbox
@@ -182,7 +171,8 @@ namespace Election_system
             this.username_id.Location = new System.Drawing.Point(0, 20);
             this.username_id.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.username_id.Name = "username_id";
-            this.username_id.Size = new System.Drawing.Size(26, 19);
+            this.username_id.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.username_id.Size = new System.Drawing.Size(26, 24);
             this.username_id.TabIndex = 2;
             this.username_id.Text = "ID";
             // 
@@ -203,6 +193,7 @@ namespace Election_system
             this.choose.Size = new System.Drawing.Size(251, 21);
             this.choose.Sorted = true;
             this.choose.TabIndex = 6;
+            this.choose.SelectedIndexChanged += new System.EventHandler(this.userChanged);
             // 
             // pictureBox1
             // 
@@ -284,6 +275,7 @@ namespace Election_system
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.White;
+            this.panel3.Controls.Add(this.resultsbtn);
             this.panel3.Controls.Add(this.label6);
             this.panel3.Controls.Add(this.label3);
             this.panel3.Controls.Add(this.pictureBox6);
@@ -328,6 +320,51 @@ namespace Election_system
             this.pictureBox6.TabIndex = 0;
             this.pictureBox6.TabStop = false;
             // 
+            // resultsbtn
+            // 
+            this.resultsbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(132)))), ((int)(((byte)(130)))));
+            this.resultsbtn.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(132)))), ((int)(((byte)(130)))));
+            this.resultsbtn.BorderDownColor = System.Drawing.Color.Empty;
+            this.resultsbtn.BorderDownWidth = 0F;
+            this.resultsbtn.BorderOverColor = System.Drawing.Color.Empty;
+            this.resultsbtn.BorderOverWidth = 0F;
+            this.resultsbtn.BorderRadius = 10;
+            this.resultsbtn.BorderWidth = 1.75F;
+            this.resultsbtn.FlatAppearance.BorderSize = 0;
+            this.resultsbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.resultsbtn.Font = new System.Drawing.Font("Rubik", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.resultsbtn.ForeColor = System.Drawing.Color.White;
+            this.resultsbtn.Location = new System.Drawing.Point(244, 442);
+            this.resultsbtn.Name = "resultsbtn";
+            this.resultsbtn.Size = new System.Drawing.Size(251, 44);
+            this.resultsbtn.TabIndex = 7;
+            this.resultsbtn.Text = "RESULTS";
+            this.resultsbtn.UseVisualStyleBackColor = false;
+            this.resultsbtn.Click += new System.EventHandler(this.resultbtn_Click);
+            // 
+            // loginbtn
+            // 
+            this.loginbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(83)))), ((int)(((byte)(133)))));
+            this.loginbtn.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(83)))), ((int)(((byte)(133)))));
+            this.loginbtn.BorderDownColor = System.Drawing.Color.Empty;
+            this.loginbtn.BorderDownWidth = 0F;
+            this.loginbtn.BorderOverColor = System.Drawing.Color.Empty;
+            this.loginbtn.BorderOverWidth = 0F;
+            this.loginbtn.BorderRadius = 10;
+            this.loginbtn.BorderWidth = 1.75F;
+            this.loginbtn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.loginbtn.FlatAppearance.BorderSize = 0;
+            this.loginbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.loginbtn.Font = new System.Drawing.Font("Rubik", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.loginbtn.ForeColor = System.Drawing.Color.White;
+            this.loginbtn.Location = new System.Drawing.Point(20, 160);
+            this.loginbtn.Name = "loginbtn";
+            this.loginbtn.Size = new System.Drawing.Size(251, 44);
+            this.loginbtn.TabIndex = 7;
+            this.loginbtn.Text = "LOGIN";
+            this.loginbtn.UseVisualStyleBackColor = false;
+            this.loginbtn.Click += new System.EventHandler(this.loginbtn_Click);
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -363,7 +400,7 @@ namespace Election_system
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.TextBox idbox;
+        private TextBox idbox;
         private System.Windows.Forms.Label username_id;
         private System.Windows.Forms.ComboBox choose;
         private System.Windows.Forms.PictureBox pictureBox2;
@@ -375,13 +412,14 @@ namespace Election_system
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel idcon;
         private System.Windows.Forms.Panel passcon;
-        private System.Windows.Forms.TextBox passwordbox;
+        private TextBox passwordbox;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel logincon;
-        private System.Windows.Forms.Button loginbtn;
+        private Election_system.RoundedButton loginbtn;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pictureBox6;
+        private RoundedButton resultsbtn;
     }
 }

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Election_system.Private.Admin;
+using Election_system.Private.Voters;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -15,6 +17,8 @@ namespace Election_system
         static void Main()
         {
             Application.EnableVisualStyles();
+            //Admin x = new Admin();
+            //x.username = "mikiyas";
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new MainPage());
         }

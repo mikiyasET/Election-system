@@ -30,13 +30,13 @@ namespace Election_system.Private.Admin
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
+            this.population = new System.Windows.Forms.Label();
             this.population_label = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.name = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.searchbtn = new System.Windows.Forms.Button();
+            this.search_box = new System.Windows.Forms.TextBox();
             this.spacer1 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -46,9 +46,9 @@ namespace Election_system.Private.Admin
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.population);
             this.panel1.Controls.Add(this.population_label);
-            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.name);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -57,16 +57,16 @@ namespace Election_system.Private.Admin
             this.panel1.Size = new System.Drawing.Size(891, 619);
             this.panel1.TabIndex = 8;
             // 
-            // label4
+            // population
             // 
-            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(504, 276);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(108, 24);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "Population";
+            this.population.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.population.AutoSize = true;
+            this.population.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.population.Location = new System.Drawing.Point(504, 276);
+            this.population.Name = "population";
+            this.population.Size = new System.Drawing.Size(43, 24);
+            this.population.TabIndex = 5;
+            this.population.Text = "- - -";
             // 
             // population_label
             // 
@@ -79,16 +79,17 @@ namespace Election_system.Private.Admin
             this.population_label.TabIndex = 5;
             this.population_label.Text = "Population";
             // 
-            // label3
+            // name
             // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(504, 219);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(64, 24);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Name";
+            this.name.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.name.AutoSize = true;
+            this.name.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.name.Location = new System.Drawing.Point(504, 219);
+            this.name.Name = "name";
+            this.name.Size = new System.Drawing.Size(43, 24);
+            this.name.TabIndex = 6;
+            this.name.Text = "- - -";
+            this.name.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label2
             // 
@@ -112,25 +113,26 @@ namespace Election_system.Private.Admin
             this.label1.TabIndex = 4;
             this.label1.Text = "Regions Details";
             // 
-            // button1
+            // searchbtn
             // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.button1.Location = new System.Drawing.Point(702, 47);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(169, 30);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Search";
-            this.button1.UseVisualStyleBackColor = true;
+            this.searchbtn.Dock = System.Windows.Forms.DockStyle.Right;
+            this.searchbtn.Location = new System.Drawing.Point(702, 47);
+            this.searchbtn.Name = "searchbtn";
+            this.searchbtn.Size = new System.Drawing.Size(169, 30);
+            this.searchbtn.TabIndex = 1;
+            this.searchbtn.Text = "Search";
+            this.searchbtn.UseVisualStyleBackColor = true;
+            this.searchbtn.Click += new System.EventHandler(this.searchbtn_Click);
             // 
-            // textBox1
+            // search_box
             // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.search_box.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Location = new System.Drawing.Point(20, 47);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(671, 30);
-            this.textBox1.TabIndex = 0;
+            this.search_box.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.search_box.Location = new System.Drawing.Point(20, 47);
+            this.search_box.Name = "search_box";
+            this.search_box.Size = new System.Drawing.Size(671, 30);
+            this.search_box.TabIndex = 0;
             // 
             // spacer1
             // 
@@ -152,8 +154,8 @@ namespace Election_system.Private.Admin
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.button1);
-            this.panel3.Controls.Add(this.textBox1);
+            this.panel3.Controls.Add(this.searchbtn);
+            this.panel3.Controls.Add(this.search_box);
             this.panel3.Controls.Add(this.spacer1);
             this.panel3.Controls.Add(this.label9);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
@@ -182,13 +184,13 @@ namespace Election_system.Private.Admin
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label population;
         private System.Windows.Forms.Label population_label;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label name;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button searchbtn;
+        private System.Windows.Forms.TextBox search_box;
         private System.Windows.Forms.Panel spacer1;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Panel panel3;

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using Election_system.Private.Voters;
 
 namespace Election_system
 {
@@ -18,25 +19,30 @@ namespace Election_system
                 using (SqlConnection con = new SqlConnection(constr))
                 {
                     con.Open();
-                    SqlCommand cmd = new SqlCommand("AddVoters", con);
+                    SqlCommand cmd = new SqlCommand("SP_AddVoters", con);
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@firstName", v.firstName);
-                    cmd.Parameters.AddWithValue("@middleName", v.middleName);
-                    cmd.Parameters.AddWithValue("@lastName", v.lastName);
-                    cmd.Parameters.AddWithValue("@password", v.password);
-                    cmd.Parameters.AddWithValue("@birth", v.birth);
-                    cmd.Parameters.AddWithValue("@phone", v.phone);
+                    cmd.Parameters.AddWithValue("@firstName", v.FirstName);
+                    cmd.Parameters.AddWithValue("@middleName", v.MiddleName);
+                    cmd.Parameters.AddWithValue("@lastName", v.LastName);
+                    cmd.Parameters.AddWithValue("@password", v.Password);
+                    cmd.Parameters.AddWithValue("@birth", v.Birth);
+                    cmd.Parameters.AddWithValue("@phone", v.Phone);
                     cmd.Parameters.AddWithValue("@idNo", v.IDNo);
                     cmd.Parameters.AddWithValue("@idImage", v.IDImage);
+                    cmd.Parameters.AddWithValue("@sid", v.Station);
+                    var x = cmd.Parameters.Add("@msg",SqlDbType.VarChar,100);
+                    x.Direction = ParameterDirection.Output;
                     int row = cmd.ExecuteNonQuery();
                     con.Close();
                     if (row > 0)
-                        MessageBox.Show("Save successfully!");
+                        MessageBox.Show("Inserted successfully!", "Voter Added", MessageBoxButtons.OK, MessageBoxIcon.None);
+                    else
+                        MessageBox.Show(x.Value==null ? "" : x.Value.ToString());
                 }
             }
             catch (Exception e)
             {
-                MessageBox.Show(e.Message);
+                MessageBox.Show(e.Message, "Internal Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -47,20 +53,25 @@ namespace Election_system
                 using (SqlConnection con = new SqlConnection(constr))
                 {
                     con.Open();
-                    SqlCommand cmd = new SqlCommand("sqlUpdateUser", con);
+                    SqlCommand cmd = new SqlCommand("SP_EditVoters", con);
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@firstName", v.firstName);
-                    cmd.Parameters.AddWithValue("@middleName", v.middleName);
-                    cmd.Parameters.AddWithValue("@lastName", v.lastName);
-                    cmd.Parameters.AddWithValue("@password", v.password);
-                    cmd.Parameters.AddWithValue("@birth", v.birth);
-                    cmd.Parameters.AddWithValue("@phone", v.phone);
+                    cmd.Parameters.AddWithValue("@vid", v.Vid);
+                    cmd.Parameters.AddWithValue("@firstName", v.FirstName);
+                    cmd.Parameters.AddWithValue("@middleName", v.MiddleName);
+                    cmd.Parameters.AddWithValue("@lastName", v.LastName);
+                    cmd.Parameters.AddWithValue("@birth", v.Birth);
+                    cmd.Parameters.AddWithValue("@phone", v.Phone);
                     cmd.Parameters.AddWithValue("@idNo", v.IDNo);
                     cmd.Parameters.AddWithValue("@idImage", v.IDImage);
+                    cmd.Parameters.AddWithValue("@sid", v.Station);
+                    var x = cmd.Parameters.Add("@msg", SqlDbType.VarChar, 100);
+                    x.Direction = ParameterDirection.Output;
                     int row = cmd.ExecuteNonQuery();
                     con.Close();
                     if (row > 0)
-                        MessageBox.Show("Updated successfully!");
+                        MessageBox.Show("Updated successfully!", "Voter modified", MessageBoxButtons.OK, MessageBoxIcon.None);
+                    else
+                        MessageBox.Show(x.Value == null ? "" : x.Value.ToString());
                 }
             }
             catch (Exception e)
@@ -76,18 +87,22 @@ namespace Election_system
                 using (SqlConnection con = new SqlConnection(constr))
                 {
                     con.Open();
-                    SqlCommand cmd = new SqlCommand("sqlDeleteUser", con);
+                    SqlCommand cmd = new SqlCommand("SP_RemoveVoters", con);
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@id", v.IDNo);
+                    cmd.Parameters.AddWithValue("@vid", v.Vid);
+                    var x = cmd.Parameters.Add("@msg", SqlDbType.VarChar, 100);
+                    x.Direction = ParameterDirection.Output;
                     int row = cmd.ExecuteNonQuery();
                     con.Close();
                     if (row > 0)
-                        MessageBox.Show("Deleted successfully!");
+                        MessageBox.Show("Deleted successfully!", "Voter Removed", MessageBoxButtons.OK, MessageBoxIcon.None);
+                    else
+                        MessageBox.Show(x.Value == null ? "" : x.Value.ToString());
                 }
             }
             catch (Exception e)
             {
-                MessageBox.Show(e.Message);
+                MessageBox.Show(e.Message, "Internal Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -98,17 +113,17 @@ namespace Election_system
                 using (SqlConnection con = new SqlConnection(constr))
                 {
                     con.Open();
-                    SqlCommand cmd = new SqlCommand("Voter_Signin", con);
+                    SqlCommand cmd = new SqlCommand("SP_Voter_Signin", con);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@idNo", v.IDNo);
-                    cmd.Parameters.AddWithValue("@password", v.password);
-                    // cmd.Parameters.Add("@x", SqlDbType.Int,100).Direction = ParameterDirection.Output;
+                    cmd.Parameters.AddWithValue("@password", v.Password);
                     int row = cmd.ExecuteNonQuery();
-                    // string result = Convert.ToString(cmd.Parameters["@x"].Value);
                     int result = cmd.ExecuteScalar() == null ? 0 : (int) cmd.ExecuteScalar();
                     if (result == 1)
                     {
-                        MessageBox.Show("Successfull");
+                        VotersForm form = new VotersForm();
+                        Login.ActiveForm.Hide();
+                        form.ShowDialog();
                     }else
                     {
                         MessageBox.Show("Id or password not correct", "Login error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -120,7 +135,67 @@ namespace Election_system
             }
             catch (Exception e)
             {
-                MessageBox.Show(e.Message);
+                MessageBox.Show(e.Message,"Internal Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        public Voters Voter(Voters v)
+        {
+            using (SqlConnection con = new SqlConnection(constr))
+            {
+                con.Open();
+                using (SqlDataAdapter cmd = new SqlDataAdapter())
+                {
+                    cmd.SelectCommand = new SqlCommand("SP_GetVoters", con);
+                    cmd.SelectCommand.CommandType = CommandType.StoredProcedure;
+                    cmd.SelectCommand.Parameters.AddWithValue("@id", v.IDNo);
+
+                    DataSet ds = new DataSet();
+                    cmd.Fill(ds, "voters");
+                    DataTable dt = ds.Tables["voters"];
+                    Voters voters = new Voters();
+                    foreach (DataRow row in dt.Rows)
+                    {
+                        voters.Vid = int.Parse(row["vid"].ToString());
+                        voters.FirstName = row["firstName"].ToString();
+                        voters.MiddleName = row["middleName"].ToString();
+                        voters.LastName = row["lastName"].ToString();
+                        voters.Birth = Convert.ToDateTime(row["birth"]);
+                        voters.Phone = int.Parse(row["phone"].ToString());
+                        voters.FirstName = row["firstName"].ToString();
+                        voters.IDNo = row["idNo"].ToString();
+                        voters.IDImage = (byte []) row["idimage"];
+                        voters.Station = int.Parse(row["sid"].ToString());
+                    }
+                    return voters;
+                }
+            }
+        }
+        
+        public int Size()
+        {
+            try
+            {
+                using (SqlConnection con = new SqlConnection(constr))
+                {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("SP_CountVoters", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    var x = cmd.Parameters.Add("@size", SqlDbType.Int);
+                    x.Direction = ParameterDirection.Output;
+                    int row = cmd.ExecuteNonQuery();
+                    con.Close();
+                    bool check = x.Value == null ? false : true;
+                    if (check)
+                        return int.Parse(x.Value.ToString());
+                    else
+                        return 0;
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message, "Internal Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return 0;
             }
         }
     }

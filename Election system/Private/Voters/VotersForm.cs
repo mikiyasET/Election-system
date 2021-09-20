@@ -16,5 +16,28 @@ namespace Election_system.Private.Voters
         {
             InitializeComponent();
         }
+
+        private void Profilebtn_Click(object sender, EventArgs e)
+        {
+            Profile form = new Profile();
+            form.Dock = DockStyle.Fill;
+            body.Controls.Clear();
+            body.Controls.Add(form);
+        }
+        private void Votebtn_Click(object sender, EventArgs e)
+        {
+            Vote form = new Vote();
+            form.Dock = DockStyle.Fill;
+            body.Controls.Clear();
+            body.Controls.Add(form);
+        }
+        private void Logout_Click(object sender,EventArgs e)
+        {
+            this.Hide();
+            Login login = new Login();
+            login.ShowDialog();
+            this.Close();
+
+        }
     }
 }

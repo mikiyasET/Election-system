@@ -16,5 +16,30 @@ namespace Election_system.Private.Admin
         {
             InitializeComponent();
         }
+
+        private void searchbtn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Station s = new Station();
+                s.Name = search_box.Text;
+                Station station = s.getStation();
+                if (station.HasValue)
+                {
+                    name_box.Text = station.Name;
+                    region_box.Text = station.Rid.ToString();
+                }
+                else
+                {
+                    name_box.Text = "- - -";
+                    region_box.Text = "- - -";
+                }
+            }
+            catch
+            {
+                name_box.Text = "- - -";
+                region_box.Text = "- - -";
+            }
+        }
     }
 }

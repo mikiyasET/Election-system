@@ -30,6 +30,8 @@ namespace Election_system.Private.Admin
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.station_box = new System.Windows.Forms.ComboBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -37,32 +39,35 @@ namespace Election_system.Private.Admin
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.firstName = new System.Windows.Forms.TextBox();
-            this.middleName = new System.Windows.Forms.TextBox();
-            this.lastName = new System.Windows.Forms.TextBox();
-            this.phoneNo = new System.Windows.Forms.TextBox();
-            this.password = new System.Windows.Forms.TextBox();
-            this.confirmPassword = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.firstName_box = new Election_system.TextBox2();
+            this.middleName_box = new Election_system.TextBox2();
+            this.lastName_box = new Election_system.TextBox2();
+            this.phoneNo_box = new Election_system.TextBox2();
+            this.password_box = new Election_system.TextBox2();
+            this.conformPassword_box = new Election_system.TextBox2();
+            this.birthdate_box = new System.Windows.Forms.DateTimePicker();
             this.id_image = new System.Windows.Forms.Button();
             this.clearbtn = new System.Windows.Forms.Button();
             this.savebtn = new System.Windows.Forms.Button();
-            this.IDNo = new System.Windows.Forms.TextBox();
+            this.IDNo_box = new Election_system.TextBox2();
             this.label8 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.Idcard_image = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.Spacer = new System.Windows.Forms.Panel();
-            this.label9 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Idcard_image)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.station_box);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label6);
@@ -71,13 +76,13 @@ namespace Election_system.Private.Admin
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.firstName);
-            this.groupBox1.Controls.Add(this.middleName);
-            this.groupBox1.Controls.Add(this.lastName);
-            this.groupBox1.Controls.Add(this.phoneNo);
-            this.groupBox1.Controls.Add(this.password);
-            this.groupBox1.Controls.Add(this.confirmPassword);
-            this.groupBox1.Controls.Add(this.dateTimePicker1);
+            this.groupBox1.Controls.Add(this.firstName_box);
+            this.groupBox1.Controls.Add(this.middleName_box);
+            this.groupBox1.Controls.Add(this.lastName_box);
+            this.groupBox1.Controls.Add(this.phoneNo_box);
+            this.groupBox1.Controls.Add(this.password_box);
+            this.groupBox1.Controls.Add(this.conformPassword_box);
+            this.groupBox1.Controls.Add(this.birthdate_box);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Left;
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
@@ -85,6 +90,24 @@ namespace Election_system.Private.Admin
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Voters Info";
+            // 
+            // station_box
+            // 
+            this.station_box.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.station_box.FormattingEnabled = true;
+            this.station_box.Location = new System.Drawing.Point(25, 585);
+            this.station_box.Name = "station_box";
+            this.station_box.Size = new System.Drawing.Size(366, 33);
+            this.station_box.TabIndex = 3;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(22, 559);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(94, 13);
+            this.label9.TabIndex = 2;
+            this.label9.Text = "Registered Station";
             // 
             // label7
             // 
@@ -149,73 +172,88 @@ namespace Election_system.Private.Admin
             this.label1.TabIndex = 2;
             this.label1.Text = "First Name";
             // 
-            // firstName
+            // firstName_box
             // 
-            this.firstName.Location = new System.Drawing.Point(25, 83);
-            this.firstName.Multiline = true;
-            this.firstName.Name = "firstName";
-            this.firstName.Size = new System.Drawing.Size(366, 27);
-            this.firstName.TabIndex = 0;
+            this.firstName_box.BackColor = System.Drawing.Color.White;
+            this.firstName_box.BorderColor = System.Drawing.Color.White;
+            this.firstName_box.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.firstName_box.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.firstName_box.Location = new System.Drawing.Point(25, 83);
+            this.firstName_box.Name = "firstName_box";
+            this.firstName_box.Size = new System.Drawing.Size(366, 30);
+            this.firstName_box.TabIndex = 0;
             // 
-            // middleName
+            // middleName_box
             // 
-            this.middleName.Location = new System.Drawing.Point(25, 156);
-            this.middleName.Multiline = true;
-            this.middleName.Name = "middleName";
-            this.middleName.Size = new System.Drawing.Size(366, 27);
-            this.middleName.TabIndex = 0;
+            this.middleName_box.BackColor = System.Drawing.Color.White;
+            this.middleName_box.BorderColor = System.Drawing.Color.White;
+            this.middleName_box.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.middleName_box.Location = new System.Drawing.Point(25, 156);
+            this.middleName_box.Name = "middleName_box";
+            this.middleName_box.Size = new System.Drawing.Size(366, 27);
+            this.middleName_box.TabIndex = 0;
             // 
-            // lastName
+            // lastName_box
             // 
-            this.lastName.Location = new System.Drawing.Point(25, 230);
-            this.lastName.Multiline = true;
-            this.lastName.Name = "lastName";
-            this.lastName.Size = new System.Drawing.Size(366, 27);
-            this.lastName.TabIndex = 0;
+            this.lastName_box.BackColor = System.Drawing.Color.White;
+            this.lastName_box.BorderColor = System.Drawing.Color.White;
+            this.lastName_box.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lastName_box.Location = new System.Drawing.Point(25, 230);
+            this.lastName_box.Name = "lastName_box";
+            this.lastName_box.Size = new System.Drawing.Size(366, 27);
+            this.lastName_box.TabIndex = 0;
             // 
-            // phoneNo
+            // phoneNo_box
             // 
-            this.phoneNo.Location = new System.Drawing.Point(25, 306);
-            this.phoneNo.Multiline = true;
-            this.phoneNo.Name = "phoneNo";
-            this.phoneNo.Size = new System.Drawing.Size(366, 27);
-            this.phoneNo.TabIndex = 0;
+            this.phoneNo_box.BackColor = System.Drawing.Color.White;
+            this.phoneNo_box.BorderColor = System.Drawing.Color.White;
+            this.phoneNo_box.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.phoneNo_box.Location = new System.Drawing.Point(25, 306);
+            this.phoneNo_box.Name = "phoneNo_box";
+            this.phoneNo_box.Size = new System.Drawing.Size(368, 29);
+            this.phoneNo_box.TabIndex = 0;
             // 
-            // password
+            // password_box
             // 
-            this.password.Location = new System.Drawing.Point(28, 381);
-            this.password.Multiline = true;
-            this.password.Name = "password";
-            this.password.Size = new System.Drawing.Size(366, 27);
-            this.password.TabIndex = 0;
+            this.password_box.BackColor = System.Drawing.Color.White;
+            this.password_box.BorderColor = System.Drawing.Color.White;
+            this.password_box.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.password_box.Location = new System.Drawing.Point(28, 381);
+            this.password_box.Name = "password_box";
+            this.password_box.Size = new System.Drawing.Size(366, 27);
+            this.password_box.TabIndex = 0;
             // 
-            // confirmPassword
+            // conformPassword_box
             // 
-            this.confirmPassword.Location = new System.Drawing.Point(25, 447);
-            this.confirmPassword.Multiline = true;
-            this.confirmPassword.Name = "confirmPassword";
-            this.confirmPassword.Size = new System.Drawing.Size(366, 27);
-            this.confirmPassword.TabIndex = 0;
+            this.conformPassword_box.BackColor = System.Drawing.Color.White;
+            this.conformPassword_box.BorderColor = System.Drawing.Color.White;
+            this.conformPassword_box.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.conformPassword_box.Location = new System.Drawing.Point(25, 447);
+            this.conformPassword_box.Name = "conformPassword_box";
+            this.conformPassword_box.Size = new System.Drawing.Size(369, 27);
+            this.conformPassword_box.TabIndex = 0;
             // 
-            // dateTimePicker1
+            // birthdate_box
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(25, 517);
-            this.dateTimePicker1.MaxDate = new System.DateTime(2021, 9, 15, 0, 0, 0, 0);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(366, 20);
-            this.dateTimePicker1.TabIndex = 1;
-            this.dateTimePicker1.Value = new System.DateTime(2021, 9, 15, 0, 0, 0, 0);
+            this.birthdate_box.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.birthdate_box.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.birthdate_box.Location = new System.Drawing.Point(25, 517);
+            this.birthdate_box.MaxDate = new System.DateTime(2021, 9, 15, 0, 0, 0, 0);
+            this.birthdate_box.Name = "birthdate_box";
+            this.birthdate_box.Size = new System.Drawing.Size(366, 30);
+            this.birthdate_box.TabIndex = 1;
+            this.birthdate_box.Value = new System.DateTime(2021, 9, 15, 0, 0, 0, 0);
             // 
             // id_image
             // 
             this.id_image.Dock = System.Windows.Forms.DockStyle.Top;
-            this.id_image.Location = new System.Drawing.Point(20, 141);
+            this.id_image.Location = new System.Drawing.Point(20, 392);
             this.id_image.Name = "id_image";
-            this.id_image.Size = new System.Drawing.Size(355, 74);
+            this.id_image.Size = new System.Drawing.Size(355, 46);
             this.id_image.TabIndex = 1;
-            this.id_image.Text = "Image";
+            this.id_image.Text = "Choose ...";
             this.id_image.UseVisualStyleBackColor = true;
+            this.id_image.Click += new System.EventHandler(this.id_image_Click);
             // 
             // clearbtn
             // 
@@ -236,15 +274,19 @@ namespace Election_system.Private.Admin
             this.savebtn.TabIndex = 2;
             this.savebtn.Text = "Save";
             this.savebtn.UseVisualStyleBackColor = true;
+            this.savebtn.Click += new System.EventHandler(this.AddVoter_Click);
             // 
-            // IDNo
+            // IDNo_box
             // 
-            this.IDNo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.IDNo.Location = new System.Drawing.Point(20, 59);
-            this.IDNo.Multiline = true;
-            this.IDNo.Name = "IDNo";
-            this.IDNo.Size = new System.Drawing.Size(355, 27);
-            this.IDNo.TabIndex = 0;
+            this.IDNo_box.BackColor = System.Drawing.Color.White;
+            this.IDNo_box.BorderColor = System.Drawing.Color.White;
+            this.IDNo_box.Dock = System.Windows.Forms.DockStyle.Top;
+            this.IDNo_box.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.IDNo_box.Location = new System.Drawing.Point(20, 59);
+            this.IDNo_box.Name = "IDNo_box";
+            this.IDNo_box.Size = new System.Drawing.Size(355, 27);
+            this.IDNo_box.TabIndex = 0;
+            this.IDNo_box.Load += new System.EventHandler(this.IDNo_box_Load);
             // 
             // label8
             // 
@@ -255,6 +297,7 @@ namespace Election_system.Private.Admin
             this.label8.Size = new System.Drawing.Size(58, 13);
             this.label8.TabIndex = 2;
             this.label8.Text = "ID Number";
+            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // groupBox2
             // 
@@ -271,10 +314,12 @@ namespace Election_system.Private.Admin
             // panel1
             // 
             this.panel1.Controls.Add(this.id_image);
+            this.panel1.Controls.Add(this.panel4);
+            this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.clearbtn);
             this.panel1.Controls.Add(this.savebtn);
-            this.panel1.Controls.Add(this.IDNo);
+            this.panel1.Controls.Add(this.IDNo_box);
             this.panel1.Controls.Add(this.Spacer);
             this.panel1.Controls.Add(this.label8);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -284,13 +329,44 @@ namespace Election_system.Private.Admin
             this.panel1.Size = new System.Drawing.Size(395, 659);
             this.panel1.TabIndex = 3;
             // 
+            // panel4
+            // 
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel4.Location = new System.Drawing.Point(20, 362);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(355, 30);
+            this.panel4.TabIndex = 4;
+            this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.Idcard_image);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Location = new System.Drawing.Point(20, 116);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(355, 246);
+            this.panel3.TabIndex = 4;
+            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            // 
+            // Idcard_image
+            // 
+            this.Idcard_image.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Idcard_image.Image = global::Election_system.Properties.Resources.id_card;
+            this.Idcard_image.Location = new System.Drawing.Point(0, 0);
+            this.Idcard_image.Name = "Idcard_image";
+            this.Idcard_image.Size = new System.Drawing.Size(355, 246);
+            this.Idcard_image.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Idcard_image.TabIndex = 0;
+            this.Idcard_image.TabStop = false;
+            // 
             // panel2
             // 
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(20, 86);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(355, 55);
+            this.panel2.Size = new System.Drawing.Size(355, 30);
             this.panel2.TabIndex = 4;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // Spacer
             // 
@@ -299,23 +375,7 @@ namespace Election_system.Private.Admin
             this.Spacer.Name = "Spacer";
             this.Spacer.Size = new System.Drawing.Size(355, 26);
             this.Spacer.TabIndex = 3;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(22, 559);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(41, 13);
-            this.label9.TabIndex = 2;
-            this.label9.Text = "Region";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(25, 585);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(366, 21);
-            this.comboBox1.TabIndex = 3;
+            this.Spacer.Paint += new System.Windows.Forms.PaintEventHandler(this.Spacer_Paint);
             // 
             // AddVoters
             // 
@@ -330,6 +390,8 @@ namespace Election_system.Private.Admin
             this.groupBox2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.Idcard_image)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -344,23 +406,26 @@ namespace Election_system.Private.Admin
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox firstName;
-        private System.Windows.Forms.TextBox middleName;
-        private System.Windows.Forms.TextBox lastName;
-        private System.Windows.Forms.TextBox phoneNo;
-        private System.Windows.Forms.TextBox password;
-        private System.Windows.Forms.TextBox confirmPassword;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private Election_system.TextBox2 firstName_box;
+        private Election_system.TextBox2 middleName_box;
+        private Election_system.TextBox2 lastName_box;
+        private Election_system.TextBox2 phoneNo_box;
+        private Election_system.TextBox2 password_box;
+        private Election_system.TextBox2 conformPassword_box;
+        private System.Windows.Forms.DateTimePicker birthdate_box;
         private System.Windows.Forms.Button id_image;
         private System.Windows.Forms.Button clearbtn;
         private System.Windows.Forms.Button savebtn;
-        private System.Windows.Forms.TextBox IDNo;
+        private Election_system.TextBox2 IDNo_box;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel Spacer;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox station_box;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.PictureBox Idcard_image;
     }
 }

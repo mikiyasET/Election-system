@@ -19,7 +19,7 @@ namespace Election_system
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            Point point = pictureBox1.PointToClient(Cursor.Position);
+            Point point = region_image.PointToClient(Cursor.Position);
             int x = point.X;
             int y = point.Y;
 
@@ -193,7 +193,7 @@ namespace Election_system
         }
         private bool Rule(int x1, int x2, int y1, int y2)
         {
-            Point point = pictureBox1.PointToClient(Cursor.Position);
+            Point point = region_image.PointToClient(Cursor.Position);
             int x = point.X;
             int y = point.Y;
             if (x >= x1 && x <= x2 && (y >= y1 && y <= y2))
@@ -210,45 +210,92 @@ namespace Election_system
             switch (region)
             {
                 case "AddisAbaba":
-                    Console.WriteLine("Addis Ababa");
+                    Region region1 = new Region();
+                    region1.RegionID = 1;
+                    ChangeDetails(region1.getDetails());
+                    this.region_image.Image = global::Election_system.Properties.Resources.AddisAbaba;
                     break;
                 case "Afar":
-                    Console.WriteLine("Afar");
+                    Region region2 = new Region();
+                    region2.RegionID = 2;
+                    ChangeDetails(region2.getDetails());
+                    this.region_image.Image = global::Election_system.Properties.Resources.Afar;
                     break;
                 case "Amahara":
-                    Console.WriteLine("Amahara");
+                    Region region3 = new Region();
+                    region3.RegionID = 3;
+                    ChangeDetails(region3.getDetails());
+                    this.region_image.Image = global::Election_system.Properties.Resources.Amhara;
                     break;
                 case "Benishangul":
-                    Console.WriteLine("Benishangul");
+                    Region region4 = new Region();
+                    region4.RegionID = 4;
+                    ChangeDetails(region4.getDetails());
+                    this.region_image.Image = global::Election_system.Properties.Resources.Benishangul_Gumuz;
                     break;
                 case "DireDawa":
-                    Console.WriteLine("DireDawa");
+                    Region region5 = new Region();
+                    region5.RegionID = 5;
+                    ChangeDetails(region5.getDetails());
+                    this.region_image.Image = global::Election_system.Properties.Resources.DireDawa;
                     break;
                 case "Gambela":
-                    Console.WriteLine("Gambela");
+                    Region region6 = new Region();
+                    region6.RegionID = 6;
+                    ChangeDetails(region6.getDetails());
+                    this.region_image.Image = global::Election_system.Properties.Resources.Gambela;
                     break;
                 case "Harari":
-                    Console.WriteLine("Harari");
+                    Region region7 = new Region();
+                    region7.RegionID = 7;
+                    ChangeDetails(region7.getDetails());
+                    this.region_image.Image = global::Election_system.Properties.Resources.Harari;
                     break;
                 case "Oromia":
-                    Console.WriteLine("Oromia");
+                    Region region8 = new Region();
+                    region8.RegionID = 8;
+                    ChangeDetails(region8.getDetails());
+                    this.region_image.Image = global::Election_system.Properties.Resources.Oromia;
                     break;
                 case "Sidama":
-                    Console.WriteLine("Sidama");
+                    Region region9 = new Region();
+                    region9.RegionID = 9;
+                    ChangeDetails(region9.getDetails());
+                    this.region_image.Image = global::Election_system.Properties.Resources.sidama;
                     break;
                 case "Somali":
-                    Console.WriteLine("Somali");
+                    Region region10 = new Region();
+                    region10.RegionID = 10;
+                    ChangeDetails(region10.getDetails());
+                    this.region_image.Image = global::Election_system.Properties.Resources.somali;
                     break;
                 case "SNNPR":
-                    Console.WriteLine("SNNPR");
+                    Region region11 = new Region();
+                    region11.RegionID = 11;
+                    ChangeDetails(region11.getDetails());
+                    this.region_image.Image = global::Election_system.Properties.Resources.SNNP;
                     break;
                 case "Tigray":
-                    Console.WriteLine("Tigray");
+                    Region region12 = new Region();
+                    region12.RegionID = 12;
+                    ChangeDetails(region12.getDetails());
+                    this.region_image.Image = global::Election_system.Properties.Resources.Tigray;
                     break;
                 default:
+                    this.region_image.Image = global::Election_system.Properties.Resources.Ethiopia_map___white;
                     Console.WriteLine("Error: " + region);
                     break;
             }
+        }
+        private void ChangeDetails(Region region)
+        {
+            string regionfix = region.RegionID == 1 || region.RegionID == 5 ? "" : " Region";
+            regionName_txt.Text = region.Name + regionfix;
+            population_txt.Text = String.Format("{0:n0}", region.Population);
+            voters_txt.Text = String.Format("{0:n0}", region.Voter) == "0" ? "- - -" : String.Format("{0:n0}", region.Voter);
+            voted_txt.Text = String.Format("{0:n0}", region.Voted) == "0" ? "- - -" : String.Format("{0:n0}", region.Voted);
+            station_txt.Text = String.Format("{0:n0}", region.Stations) == "0" ? "- - -" : String.Format("{0:n0}", region.Stations);
+
         }
 
         private void VoteNowBtn(object sender, EventArgs e)
@@ -257,6 +304,11 @@ namespace Election_system
             this.Hide(); // hide
             login.ShowDialog(); // show the form
             this.Close(); // close
+        }
+
+        private void pictureBox1_Hover(object sender, MouseEventArgs e)
+        {
+
         }
     }
 }

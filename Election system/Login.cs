@@ -13,22 +13,13 @@ namespace Election_system
 {
     public partial class Login : Form
     {
-        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
-        private static extern IntPtr CreateRoundRectRgn(
-            int nLeft,
-            int nTop,
-            int nRight,
-            int nBottom,
-            int nWidthEllipse,
-            int nHeightEllipse
-            );
+       
         public Login()
         {
             InitializeComponent();
         }
         private void Login_Load(object sender, EventArgs e)
         {
-            loginbtn.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, loginbtn.Width, loginbtn.Height, 30, 30));
             choose.SelectedIndex = 1;
         }
         private void userChanged(Object sender,EventArgs e)
@@ -51,7 +42,7 @@ namespace Election_system
             {
                 Voters v = new Voters();
                 v.IDNo = id;
-                v.password = password;
+                v.Password = password;
                 v.Login();
             }else if (user == "Admin")
             {
@@ -61,6 +52,13 @@ namespace Election_system
             {
                 MessageBox.Show("Unknown user");
             }
+        }
+        private void resultbtn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            MainPage form = new MainPage();
+            form.ShowDialog();
+            this.Close();
         }
     }
 }
