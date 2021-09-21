@@ -17,6 +17,10 @@ namespace Election_system.Private.Admin
         public AddParty()
         {
             InitializeComponent();
+            Election election = new Election();
+            election_box.DataSource = election.getElections();
+            election_box.DisplayMember = "ename";
+            election_box.ValueMember = "eid";
         }
         private void logobtn_Click(object sender, EventArgs e)
         {
@@ -45,6 +49,8 @@ namespace Election_system.Private.Admin
             {
                 if (name_box.Text != "")
                 {
+                    DataRowView x = election_box.SelectedItem as DataRowView;
+
                     byte[] img;
                     img = null;
                     FileStream fs = new FileStream(imgLoc, FileMode.Open, FileAccess.Read);
@@ -53,6 +59,7 @@ namespace Election_system.Private.Admin
                     Election_system.Party party = new Election_system.Party();
                     party.Name = name_box.Text;
                     party.Logo = img;
+                    party.Eid = int.Parse(x.Row["eid"].ToString());
                     party.Add();
                 }
                 else

@@ -35,13 +35,15 @@ namespace Election_system.Private.Admin
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.region_box = new System.Windows.Forms.ComboBox();
+            this.election_box = new System.Windows.Forms.ComboBox();
+            this.election_label = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // addbtn
             // 
             this.addbtn.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.addbtn.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addbtn.Location = new System.Drawing.Point(178, 361);
+            this.addbtn.Location = new System.Drawing.Point(178, 420);
             this.addbtn.Name = "addbtn";
             this.addbtn.Size = new System.Drawing.Size(600, 48);
             this.addbtn.TabIndex = 15;
@@ -101,10 +103,34 @@ namespace Election_system.Private.Admin
             this.region_box.Size = new System.Drawing.Size(272, 33);
             this.region_box.TabIndex = 16;
             // 
+            // election_box
+            // 
+            this.election_box.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.election_box.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.election_box.FormattingEnabled = true;
+            this.election_box.Location = new System.Drawing.Point(506, 355);
+            this.election_box.Name = "election_box";
+            this.election_box.Size = new System.Drawing.Size(272, 33);
+            this.election_box.TabIndex = 18;
+            this.election_box.SelectedIndexChanged += new System.EventHandler(this.election_box_SelectedIndexChanged);
+            // 
+            // election_label
+            // 
+            this.election_label.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.election_label.AutoSize = true;
+            this.election_label.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.election_label.Location = new System.Drawing.Point(190, 359);
+            this.election_label.Name = "election_label";
+            this.election_label.Size = new System.Drawing.Size(85, 24);
+            this.election_label.TabIndex = 17;
+            this.election_label.Text = "Election";
+            // 
             // AddStations
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.election_box);
+            this.Controls.Add(this.election_label);
             this.Controls.Add(this.region_box);
             this.Controls.Add(this.addbtn);
             this.Controls.Add(this.name_box);
@@ -126,5 +152,7 @@ namespace Election_system.Private.Admin
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox region_box;
+        private System.Windows.Forms.ComboBox election_box;
+        private System.Windows.Forms.Label election_label;
     }
 }

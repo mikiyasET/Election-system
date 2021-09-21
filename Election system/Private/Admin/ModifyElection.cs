@@ -55,7 +55,7 @@ namespace Election_system.Private.Admin
             {
                 Election el = new Election();
                 el.Name = search_box.Text;
-                Election election = el.GetElection();
+                Election election = el.getElection();
                 if (election.HasValue)
                 {
                     eid = election.Eid;

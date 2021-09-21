@@ -34,6 +34,8 @@ namespace Election_system.Private.Admin
             this.spacer1 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.election_box = new System.Windows.Forms.ComboBox();
+            this.election_label = new System.Windows.Forms.Label();
             this.logo_img = new System.Windows.Forms.PictureBox();
             this.logobtn = new System.Windows.Forms.Button();
             this.name_box = new System.Windows.Forms.TextBox();
@@ -89,6 +91,8 @@ namespace Election_system.Private.Admin
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.election_box);
+            this.panel1.Controls.Add(this.election_label);
             this.panel1.Controls.Add(this.logo_img);
             this.panel1.Controls.Add(this.logobtn);
             this.panel1.Controls.Add(this.name_box);
@@ -102,13 +106,35 @@ namespace Election_system.Private.Admin
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(698, 540);
             this.panel1.TabIndex = 8;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // election_box
+            // 
+            this.election_box.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.election_box.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.election_box.FormattingEnabled = true;
+            this.election_box.Location = new System.Drawing.Point(371, 194);
+            this.election_box.Name = "election_box";
+            this.election_box.Size = new System.Drawing.Size(272, 33);
+            this.election_box.TabIndex = 17;
+            // 
+            // election_label
+            // 
+            this.election_label.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.election_label.AutoSize = true;
+            this.election_label.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.election_label.Location = new System.Drawing.Point(55, 194);
+            this.election_label.Name = "election_label";
+            this.election_label.Size = new System.Drawing.Size(85, 24);
+            this.election_label.TabIndex = 16;
+            this.election_label.Text = "Election";
             // 
             // logo_img
             // 
             this.logo_img.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.logo_img.BackColor = System.Drawing.Color.Transparent;
             this.logo_img.Image = global::Election_system.Properties.Resources.addpic;
-            this.logo_img.Location = new System.Drawing.Point(371, 182);
+            this.logo_img.Location = new System.Drawing.Point(371, 246);
             this.logo_img.Name = "logo_img";
             this.logo_img.Size = new System.Drawing.Size(272, 180);
             this.logo_img.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -120,7 +146,7 @@ namespace Election_system.Private.Admin
             this.logobtn.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.logobtn.Enabled = false;
             this.logobtn.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.logobtn.Location = new System.Drawing.Point(371, 368);
+            this.logobtn.Location = new System.Drawing.Point(371, 432);
             this.logobtn.Name = "logobtn";
             this.logobtn.Size = new System.Drawing.Size(272, 31);
             this.logobtn.TabIndex = 14;
@@ -143,7 +169,7 @@ namespace Election_system.Private.Admin
             this.population_label.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.population_label.AutoSize = true;
             this.population_label.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.population_label.Location = new System.Drawing.Point(55, 182);
+            this.population_label.Location = new System.Drawing.Point(55, 246);
             this.population_label.Name = "population_label";
             this.population_label.Size = new System.Drawing.Size(57, 24);
             this.population_label.TabIndex = 11;
@@ -176,7 +202,7 @@ namespace Election_system.Private.Admin
             this.removebtn.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.removebtn.Enabled = false;
             this.removebtn.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.removebtn.Location = new System.Drawing.Point(509, 416);
+            this.removebtn.Location = new System.Drawing.Point(509, 478);
             this.removebtn.Name = "removebtn";
             this.removebtn.Size = new System.Drawing.Size(134, 48);
             this.removebtn.TabIndex = 9;
@@ -189,7 +215,7 @@ namespace Election_system.Private.Admin
             this.updatebtn.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.updatebtn.Enabled = false;
             this.updatebtn.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.updatebtn.Location = new System.Drawing.Point(371, 416);
+            this.updatebtn.Location = new System.Drawing.Point(371, 478);
             this.updatebtn.Name = "updatebtn";
             this.updatebtn.Size = new System.Drawing.Size(127, 48);
             this.updatebtn.TabIndex = 9;
@@ -243,5 +269,7 @@ namespace Election_system.Private.Admin
         private System.Windows.Forms.TextBox name_box;
         private System.Windows.Forms.Label population_label;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox election_box;
+        private System.Windows.Forms.Label election_label;
     }
 }

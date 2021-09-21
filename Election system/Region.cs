@@ -82,10 +82,10 @@ namespace Election_system
             get { return hasValue; }
         }
 
-        public Region getDetails()
+        public Region getDetails(int eid)
         {
             RegionDBLayer regionDB = new RegionDBLayer();
-            return regionDB.Details(this);
+            return regionDB.Details(this,eid);
         }
         public Region getRegion()
         {

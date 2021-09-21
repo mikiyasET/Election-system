@@ -89,7 +89,7 @@ namespace Election_system
                 MessageBox.Show(e.Message, "Internal Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        public Region Details(Region region)
+        public Region Details(Region region,int eid)
         {
             SqlConnection myConnection = new SqlConnection(constr);
             SqlCommand cmd = new SqlCommand("SP_GetDetails", myConnection);
@@ -99,6 +99,10 @@ namespace Election_system
             SqlParameter custId = cmd.Parameters.Add("@rid", SqlDbType.Int);
             custId.Direction = ParameterDirection.Input;
             custId.Value = region.RegionID;
+
+            SqlParameter eids = cmd.Parameters.Add("@eid", SqlDbType.Int);
+            eids.Direction = ParameterDirection.Input;
+            eids.Value = eid;
 
             SqlParameter msg = cmd.Parameters.Add("@msg", SqlDbType.Int);
             msg.Direction = ParameterDirection.Output;

@@ -23,6 +23,7 @@ namespace Election_system
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@pname", party.Name);
                     cmd.Parameters.AddWithValue("@logo", party.Logo);
+                    cmd.Parameters.AddWithValue("@eid", party.Eid);
                     var x = cmd.Parameters.Add("@msg", SqlDbType.VarChar, 100);
                     x.Direction = ParameterDirection.Output;
                     int row = cmd.ExecuteNonQuery();
@@ -35,7 +36,7 @@ namespace Election_system
             }
             catch (Exception e)
             {
-                MessageBox.Show(e.Message, "Internal Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(e.Message, "Internal Error - Party", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -51,6 +52,7 @@ namespace Election_system
                     cmd.Parameters.AddWithValue("@pid", party.Pid);
                     cmd.Parameters.AddWithValue("@pname", party.Name);
                     cmd.Parameters.AddWithValue("@logo", party.Logo);
+                    cmd.Parameters.AddWithValue("@eid", party.Eid);
                     var x = cmd.Parameters.Add("@msg", SqlDbType.VarChar, 100);
                     x.Direction = ParameterDirection.Output;
                     int row = cmd.ExecuteNonQuery();
@@ -89,7 +91,7 @@ namespace Election_system
             }
             catch (Exception e)
             {
-                MessageBox.Show(e.Message, "Internal Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(e.Message, "Internal Error - Party", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -116,7 +118,8 @@ namespace Election_system
                     {
                         party.Pid = int.Parse(rows["pid"].ToString());
                         party.Name = rows["pname"].ToString();
-                        party.Logo = (byte[]) rows["logo"];
+                        party.Logo = (byte[])rows["logo"];
+                        party.Eid = int.Parse(rows["eid"].ToString());
                         party.HasValue = true;
                     }
                 }
@@ -144,7 +147,27 @@ namespace Election_system
                 }
             }
         }
+        public DataTable PartiesByEID(Party p)
+        {
+            using (SqlConnection con = new SqlConnection(constr))
+            {
+                con.Open();
+                using (SqlDataAdapter cmd = new SqlDataAdapter())
+                {
+                    cmd.SelectCommand = new SqlCommand("SP_GetPartiesByEID", con);
+                    cmd.SelectCommand.CommandType = CommandType.StoredProcedure;
+                    SqlParameter param = new SqlParameter("@msg", SqlDbType.VarChar, 100);
+                    param.Direction = ParameterDirection.Output;
+                    cmd.SelectCommand.Parameters.AddWithValue("@eid", p.Eid);
+                    cmd.SelectCommand.Parameters.Add(param);
 
+                    DataSet ds = new DataSet();
+                    cmd.Fill(ds, "parties");
+                    DataTable dt = ds.Tables["parties"];
+                    return dt;
+                }
+            }
+        }
         public int Size()
         {
             try
@@ -167,7 +190,7 @@ namespace Election_system
             }
             catch (Exception e)
             {
-                MessageBox.Show(e.Message, "Internal Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(e.Message, "Internal Error - Party", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return 0;
             }
         }

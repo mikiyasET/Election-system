@@ -40,6 +40,8 @@ namespace Election_system.Private.Admin
             this.spacer1 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.election_box = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
@@ -47,7 +49,9 @@ namespace Election_system.Private.Admin
             // panel1
             // 
             this.panel1.Controls.Add(this.name_box);
+            this.panel1.Controls.Add(this.election_box);
             this.panel1.Controls.Add(this.region_box);
+            this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.population_label);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
@@ -164,6 +168,28 @@ namespace Election_system.Private.Admin
             this.panel3.Size = new System.Drawing.Size(1137, 97);
             this.panel3.TabIndex = 11;
             // 
+            // label3
+            // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(366, 354);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(85, 24);
+            this.label3.TabIndex = 18;
+            this.label3.Text = "Election";
+            // 
+            // election_box
+            // 
+            this.election_box.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.election_box.AutoSize = true;
+            this.election_box.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.election_box.Location = new System.Drawing.Point(641, 354);
+            this.election_box.Name = "election_box";
+            this.election_box.Size = new System.Drawing.Size(43, 24);
+            this.election_box.TabIndex = 18;
+            this.election_box.Text = "- - -";
+            // 
             // ViewStations
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -193,5 +219,7 @@ namespace Election_system.Private.Admin
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label name_box;
         private System.Windows.Forms.Label region_box;
+        private System.Windows.Forms.Label election_box;
+        private System.Windows.Forms.Label label3;
     }
 }

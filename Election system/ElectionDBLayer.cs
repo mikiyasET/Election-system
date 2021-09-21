@@ -129,6 +129,23 @@ namespace Election_system
                 return election;
             }
         }
+        public DataTable Elections()
+        {
+            using (SqlConnection con = new SqlConnection(constr))
+            {
+                con.Open();
+                using (SqlDataAdapter cmd = new SqlDataAdapter())
+                {
+                    cmd.SelectCommand = new SqlCommand("SP_GetElections", con);
+                    cmd.SelectCommand.CommandType = CommandType.StoredProcedure;
+
+                    DataSet ds = new DataSet();
+                    cmd.Fill(ds, "election");
+                    DataTable dt = ds.Tables["election"];
+                    return dt;
+                }
+            }
+        }
 
     }
 }

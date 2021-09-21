@@ -28,17 +28,21 @@ namespace Election_system.Private.Admin
                 {
                     name_box.Text = station.Name;
                     region_box.Text = station.Rid.ToString();
+                    election_box.Text = station.Eid.ToString();
                 }
                 else
                 {
                     name_box.Text = "- - -";
                     region_box.Text = "- - -";
+                    election_box.Text = "- - -";
                 }
             }
             catch
             {
                 name_box.Text = "- - -";
                 region_box.Text = "- - -";
+                election_box.Text = "- - -";
+
             }
         }
     }

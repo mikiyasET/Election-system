@@ -19,6 +19,11 @@ namespace Election_system.Private.Admin
         public ModifyParty()
         {
             InitializeComponent();
+
+            Election election = new Election();
+            election_box.DataSource = election.getElections();
+            election_box.DisplayMember = "ename";
+            election_box.ValueMember = "eid";
         }
 
         private void logobtn_Click(object sender, EventArgs e)
@@ -57,9 +62,11 @@ namespace Election_system.Private.Admin
                 {
                     img = img2;
                 }
+                DataRowView y = election_box.SelectedItem as DataRowView;
                 Election_system.Party party= new Election_system.Party();
                 party.Pid = pid;
-                party.Name = name_box.Text; 
+                party.Name = name_box.Text;
+                party.Eid = int.Parse(y.Row["eid"].ToString());
                 party.Logo = img;
                 party.HasValue = true;
                 party.Update();
@@ -98,12 +105,15 @@ namespace Election_system.Private.Admin
                     logo_img.Image = Image.FromStream(ms);
                     img2 = party1.Logo;
                     imgLoc = logo_img.ImageLocation;
+                    election_box.SelectedValue = party1.Eid;
 
                     name_box.Enabled = true;
                     updatebtn.Enabled = true;
                     removebtn.Enabled = true;
                     logobtn.Enabled = true;
-                }else
+                    election_box.Enabled = true;
+                }
+                else
                 {
                     logo_img.Image = Election_system.Properties.Resources.addpic;
                     name_box.Text = "";
@@ -111,6 +121,8 @@ namespace Election_system.Private.Admin
                     updatebtn.Enabled = false;
                     removebtn.Enabled = false;
                     logobtn.Enabled = false;
+                    election_box.Enabled = false;
+
                 }
             } catch (ArgumentNullException ex)
             {
@@ -120,7 +132,10 @@ namespace Election_system.Private.Admin
                 updatebtn.Enabled = false;
                 removebtn.Enabled = false;
                 logobtn.Enabled = false;
-            } catch (Exception ex)
+                election_box.Enabled = false;
+
+            }
+            catch (Exception ex)
             {
                 logo_img.Image = Election_system.Properties.Resources.addpic;
                 name_box.Text = "";
@@ -128,7 +143,14 @@ namespace Election_system.Private.Admin
                 updatebtn.Enabled = false;
                 removebtn.Enabled = false;
                 logobtn.Enabled = false;
+                election_box.Enabled = false;
+
             }
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

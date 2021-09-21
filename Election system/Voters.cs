@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Election_system
 {
-    class Voters
+    public class Voters
     {
         private int vid;
         private string firstName;
@@ -123,6 +123,7 @@ namespace Election_system
                 station = value;
             }
         }
+        
 
         public Voters()
         {

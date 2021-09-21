@@ -28,19 +28,29 @@ namespace Election_system.Private.Admin
                 if (party1.HasValue)
                 {
                     partyName.Text = party1.Name;
+                    election_box.Text = party1.Eid.ToString();
                     MemoryStream ms = new MemoryStream(party1.Logo);
                     logo_img.Image = Image.FromStream(ms);
                 }else
                 {
                     logo_img.Image = Election_system.Properties.Resources.picture;
                     partyName.Text = "- - -";
+                    election_box.Text = "- - -";
+
                 }
             }
             catch (Exception ex)
             {
                 logo_img.Image = Election_system.Properties.Resources.picture;
                 partyName.Text = "- - -";
+                election_box.Text = "- - -";
+
             }
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

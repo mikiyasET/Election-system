@@ -173,22 +173,22 @@
     <Compile Include="Private\Admin\ViewVoters.Designer.cs">
       <DependentUpon>ViewVoters.cs</DependentUpon>
     </Compile>
-    <Compile Include="Private\Voters\Profile.cs">
+    <Compile Include="Private\VotersPage\Profile.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Private\Voters\Profile.Designer.cs">
+    <Compile Include="Private\VotersPage\Profile.Designer.cs">
       <DependentUpon>Profile.cs</DependentUpon>
     </Compile>
-    <Compile Include="Private\Voters\Vote.cs">
+    <Compile Include="Private\VotersPage\Vote.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Private\Voters\Vote.Designer.cs">
+    <Compile Include="Private\VotersPage\Vote.Designer.cs">
       <DependentUpon>Vote.cs</DependentUpon>
     </Compile>
-    <Compile Include="Private\Voters\VotersForm.cs">
+    <Compile Include="Private\VotersPage\VotersForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Private\Voters\VotersForm.Designer.cs">
+    <Compile Include="Private\VotersPage\VotersForm.Designer.cs">
       <DependentUpon>VotersForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -206,6 +206,8 @@
     <Compile Include="TextBox2.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Vote.cs" />
+    <Compile Include="VoteDBLayer.cs" />
     <Compile Include="Voters.cs" />
     <Compile Include="VotersDBLayer.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -265,13 +267,13 @@
     <EmbeddedResource Include="Private\Admin\ViewVoters.resx">
       <DependentUpon>ViewVoters.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Private\Voters\Profile.resx">
+    <EmbeddedResource Include="Private\VotersPage\Profile.resx">
       <DependentUpon>Profile.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Private\Voters\Vote.resx">
+    <EmbeddedResource Include="Private\VotersPage\Vote.resx">
       <DependentUpon>Vote.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Private\Voters\VotersForm.resx">
+    <EmbeddedResource Include="Private\VotersPage\VotersForm.resx">
       <DependentUpon>VotersForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

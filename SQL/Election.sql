@@ -49,8 +49,9 @@ go
 go
 CREATE TABLE parties (
 	pid int primary key identity,
-	pname varchar(100) not null unique,
-	logo image
+	pname varchar(100) not null,
+	logo image,
+	eid int
 )
 go
 
@@ -58,7 +59,8 @@ go
 CREATE TABLE station (
 	sid int primary key identity,
 	sname varchar(100) not null unique,
-	rid int not null
+	rid int not null,
+	eid int
 )
 go
 
@@ -93,6 +95,21 @@ AS BEGIN
     SET @res = ENCRYPTBYPASSPHRASE('SQL SERVER 2008 Pass',@str)
     RETURN (@res)
     END
+go
+
+go
+CREATE FUNCTION dbo.GivenVoice(@eid int,@pid int)
+RETURNS int
+as
+begin
+	DECLARE @voice int
+	SELECT @voice = COUNT(vc.vpid)
+	FROM votecount as vc
+	full join parties as p on p.pid = vc.vpid
+	where p.eid = @eid and p.pid = @pid
+	GROUP BY p.pid
+	return @voice;
+end
 go
 
 go
@@ -139,7 +156,7 @@ go
 /*---------------- Voters ---------------*/
 
 go
-CREATE PROC SP_Voter_Signin
+ALTER PROC SP_Voter_Signin
 @idNo varchar(50),
 @password varchar(max)
 as
@@ -303,16 +320,20 @@ go
 CREATE PROC SP_AddParty
 @pname varchar(30),
 @logo image,
+@eid int,
 @msg varchar(100) OUTPUT
 as
 begin
-	SELECT * FROM parties WHERE pname = @pname;
+	SELECT * FROM parties WHERE pname = @pname and eid = @eid;
 	if (@@ROWCOUNT = 0) 
 		if(NULLIF(@pname, '') IS NOT NULL)
-			if (NULLIF(CONVERT(varbinary(max),@logo), '') IS NOT NULL)
-					INSERT INTO parties VALUES (@pname,@logo)
+			if(NULLIF(@eid, '') IS NOT NULL)
+				if (NULLIF(CONVERT(varbinary(max),@logo), '') IS NOT NULL)
+						INSERT INTO parties VALUES (@pname,@logo,@eid)
+				else
+					SET @msg = 'Party logo is required'
 			else
-				SET @msg = 'Party logo is required'
+				SET @msg = 'Election is required'
 		else
 			SET @msg = 'Party name is required'	
 	else
@@ -325,16 +346,20 @@ CREATE PROC SP_EditParty
 @pid int,
 @pname varchar(30),
 @logo image,
+@eid int,
 @msg varchar(100) OUTPUT
 as
 begin
-	SELECT * FROM parties WHERE pname = @pname and pid != @pid;
+	SELECT * FROM parties WHERE pname = @pname and pid != @pid and eid = @eid;
 	if (@@ROWCOUNT = 0) 
 		if(NULLIF(@pname, '') IS NOT NULL)
-			if (NULLIF(CONVERT(varbinary(max),@logo), '') IS NOT NULL)
-					UPDATE parties SET pname = @pname,logo = @logo WHERE pid = @pid
+			if(NULLIF(@eid, '') IS NOT NULL)
+				if (NULLIF(CONVERT(varbinary(max),@logo), '') IS NOT NULL)
+						UPDATE parties SET pname = @pname,logo = @logo,eid=@eid WHERE pid = @pid
+				else
+					SET @msg = 'Party logo is required'
 			else
-				SET @msg = 'Party logo is required'
+				SET @msg = 'Election is required'
 		else
 			SET @msg = 'Party name is required'	
 	else
@@ -378,6 +403,21 @@ CREATE PROC SP_GetParties
 as
 begin
 	SELECT * FROM parties;
+end
+go
+go
+CREATE PROC SP_GetPartiesByEID
+@eid int,
+@msg varchar(100) OUTPUT
+as
+begin
+	
+	if(NULLIF(@eid, '') IS NOT NULL)
+	begin
+			SELECT * FROM parties WHERE eid = @eid;
+	end
+	else 
+		SET @msg = 'Election id is required'
 end
 go
 go
@@ -463,22 +503,28 @@ begin
 end
 go
 go
-CREATE PROC SP_GetDetails
+ALTER PROC SP_GetDetails
 @rid int,
+@eid int,
 @msg varchar(100) OUTPUT
 as
 begin
-	if(NULLIF(@rid, '') IS NOT NULL)
+	if(NULLIF(@eid, '') IS NOT NULL)
 	begin
-		SELECT r.rid as id,r.rname as name,r.rpopulation as population,COUNT(DISTINCT s.sid) as stations,COUNT(DISTINCT v.vid) as voters,COUNT(DISTINCT vc.vcid) as voted FROM regions as r 
-		left JOIN station as s on r.rid = s.rid
-		left JOIN voters as v on v.sid = s.sid
-		left JOIN votecount as vc on vc.vid = v.vid
-		where r.rid = @rid
-		GROUP BY r.rid,r.rname,r.rpopulation
+		if(NULLIF(@rid, '') IS NOT NULL)
+		begin
+			SELECT r.rid as id,r.rname as name,r.rpopulation as population,COUNT(DISTINCT s.sid) as stations,COUNT(DISTINCT v.vid) as voters,COUNT(DISTINCT vc.vcid) as voted FROM regions as r 
+			left JOIN station as s on r.rid = s.rid and s.eid = @eid
+			left JOIN voters as v on v.sid = s.sid
+			left JOIN votecount as vc on vc.vid = v.vid
+			where r.rid = @rid
+			GROUP BY r.rid,r.rname,r.rpopulation
+		end
+		else 
+			SET @msg = 'Region id is required'
 	end
-	else 
-		SET @msg = 'Region id is required'
+		else 
+			SET @msg = 'Election id is required'
 end
 go
 go
@@ -513,19 +559,23 @@ go
 CREATE PROC SP_AddStation
 @sname varchar(30),
 @rid int,
+@eid int,
 @msg varchar(100) OUTPUT
 as
 begin
-	SELECT * FROM station WHERE sname = @sname;
+	SELECT * FROM station WHERE sname = @sname and eid = @eid;
 	if (@@ROWCOUNT = 0) 
 	begin
 		SELECT * FROM regions WHERE rid = @rid;
 		if(@@ROWCOUNT = 1)
 			if(NULLIF(@sname, '') IS NOT NULL)
-				if (NULLIF(@rid, '') IS NOT NULL)
-						INSERT INTO station VALUES (@sname,@rid)
+				if(NULLIF(@eid, '') IS NOT NULL)
+					if (NULLIF(@rid, '') IS NOT NULL)
+							INSERT INTO station VALUES (@sname,@rid,@eid)
+					else
+						SET @msg = 'Region is required'
 				else
-					SET @msg = 'Region is required'
+					SET @msg = 'Election is required'
 			else
 				SET @msg = 'Station name is required'
 		else
@@ -542,19 +592,23 @@ CREATE PROC SP_EditStation
 @sid int,
 @sname varchar(30),
 @rid int,
+@eid int,
 @msg varchar(100) OUTPUT
 as
 begin
-	SELECT * FROM station WHERE sname = @sname and sid != @sid;
+	SELECT * FROM station WHERE sname = @sname and sid != @sid and eid = @eid;
 	if (@@ROWCOUNT = 0) 
 	begin
 		SELECT * FROM regions WHERE rid = @rid;
 		if(@@ROWCOUNT = 1)
 			if(NULLIF(@sname, '') IS NOT NULL)
-				if (NULLIF(@rid, '') IS NOT NULL)
-						UPDATE station SET sname = @sname,rid = @rid WHERE sid = @sid
+				if(NULLIF(@eid, '') IS NOT NULL)
+					if (NULLIF(@rid, '') IS NOT NULL)
+							UPDATE station SET sname = @sname,rid = @rid,eid = @eid WHERE sid = @sid
+					else
+						SET @msg = 'Region is required'
 				else
-					SET @msg = 'Region is required'
+					SET @msg = 'Election is required'
 			else
 				SET @msg = 'Station name is required'
 		else
@@ -605,6 +659,24 @@ begin
 	end
 	else 
 		SET @msg = 'Station Name is required'
+end
+go
+
+go
+ALTER PROC SP_GetStationByID
+@sid int,
+@msg varchar(100) OUTPUT
+as
+begin
+	
+	if(NULLIF(@sid, '') IS NOT NULL)
+	begin
+		SELECT * FROM station where sid = @sid
+		if @@ROWCOUNT = 0
+			SET @msg = 'Unknown Station'
+	end
+	else 
+		SET @msg = 'Station id is required'
 end
 go
 go
@@ -709,6 +781,7 @@ begin
 		SET @msg = 'Election Name is required'
 end
 go
+
 /*-------------- Election End-------------*/
 
 go
@@ -719,7 +792,7 @@ CREATE PROC SP_VOTE
 @msg varchar(100) OUTPUT
 as
 begin
-	SELECT * FROM votecount WHERE  vid = @vid and eid = @eid;
+	SELECT * FROM votecount WHERE vid = @vid and eid = @eid;
 	if (@@ROWCOUNT = 0)
 		if(NULLIF(@vid, '') IS NOT NULL)
 			if (NULLIF(@eid, '') IS NOT NULL)
@@ -735,10 +808,40 @@ begin
 	 SET @msg = 'Can not vote twice'
 end
 go
+go
+ALTER PROC SP_CheckVoter
+@vid int
+as
+begin
+	if(NULLIF(@vid, '') IS NOT NULL) begin
+		DECLARE @sid int,@eid int
+		SELECT @sid = sid FROM voters WHERE vid = @vid;
+		SELECT @eid = eid FROM station WHERE sid = @sid;
+		SELECT * FROM votecount WHERE vid = @vid and eid = @eid;
+		if (@@ROWCOUNT = 0)
+			return 1;
+		else
+			return 0;
+	end
+	else
+	 return 0;
+end
+go
+go
+ALTER PROC SP_LeadBoard
+@eid int,
+@msg varchar(100) OUTPUT
+as
+begin
+	
 
+	select pname as Name,logo,CASE when dbo.GivenVoice(pid,eid) IS NULL then 0 else dbo.GivenVoice(pid,eid) end as Voice from parties where eid = @eid
+
+end
+go
 /****************************************** END *********************************************/
 
-
+select * from parties
 select * from voters where dbo.Decrypt(passcode) = 'snowden'
 SELECT * FROM regions
 INSERT INTO regions VALUES ('Addis Ababa',3273000),
@@ -753,10 +856,14 @@ INSERT INTO regions VALUES ('Addis Ababa',3273000),
 						   ('Somali',5453000),
 						   ('SNNP',11426000),
 						   ('Tigray',5056000)
-INSERT INTO voters VALUES ('mikiyas','lemlemu','gebrewold',dbo.Encrypt('snowden'),'12-2-2019',0941398934,1,'100001','image.jpg',1)
+INSERT INTO election VALUES ('2014 National Election','12-2-2021','12-6-2021')
+INSERT INTO voters VALUES ('mikiyas','lemlemu','gebrewold',dbo.Encrypt('123'),'12-2-2019',0941398934,1,'100001','image.jpg',1)
 INSERT INTO voters VALUES ('Surafel','Zeleke','Ayalew',dbo.Encrypt('123'),'7-9-2000',0941398934,1,'100002','images.jpg',1)
 INSERT INTO superAdmin VALUES ('Mikiyas',dbo.Encrypt('123'))
-INSERT INTO station VALUES ('AAL001',1)
-INSERT INTO station VALUES ('AAL002',1)
-
-select * from parties 
+INSERT INTO station VALUES ('AAL001',1,1)
+INSERT INTO station VALUES ('AAL002',1,2)
+select * from parties
+select * from station 
+select * from voters
+update voters set vid = 10 where vid = 3
+delete from voters where vid in (1,2)

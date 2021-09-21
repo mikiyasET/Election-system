@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -51,10 +52,15 @@ namespace Election_system
             ElectionDBLayer electionDB = new ElectionDBLayer();
             electionDB.Delete(this);
         }
-        public Election GetElection()
+        public Election getElection()
         {
             ElectionDBLayer electionDB = new ElectionDBLayer();
             return electionDB.Election(this);
+        }
+        public DataTable getElections()
+        {
+            ElectionDBLayer electionDB = new ElectionDBLayer();
+            return electionDB.Elections();
         }
     }
 }

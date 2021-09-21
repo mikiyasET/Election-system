@@ -41,21 +41,22 @@ namespace Election_system.Private.Voters
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 492);
             this.panel1.Name = "panel1";
+            this.panel1.Padding = new System.Windows.Forms.Padding(30);
             this.panel1.Size = new System.Drawing.Size(800, 139);
             this.panel1.TabIndex = 0;
             // 
             // votebtn
             // 
-            this.votebtn.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.votebtn.BackColor = System.Drawing.Color.Red;
+            this.votebtn.Dock = System.Windows.Forms.DockStyle.Fill;
             this.votebtn.Enabled = false;
             this.votebtn.FlatAppearance.BorderSize = 0;
             this.votebtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.votebtn.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.votebtn.ForeColor = System.Drawing.Color.White;
-            this.votebtn.Location = new System.Drawing.Point(302, 20);
+            this.votebtn.Location = new System.Drawing.Point(30, 30);
             this.votebtn.Name = "votebtn";
-            this.votebtn.Size = new System.Drawing.Size(221, 87);
+            this.votebtn.Size = new System.Drawing.Size(740, 79);
             this.votebtn.TabIndex = 0;
             this.votebtn.Text = "VOTE";
             this.votebtn.UseVisualStyleBackColor = false;

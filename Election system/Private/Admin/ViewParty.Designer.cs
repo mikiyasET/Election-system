@@ -30,27 +30,29 @@ namespace Election_system.Private.Admin
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.logo_img = new System.Windows.Forms.PictureBox();
+            this.panel5 = new System.Windows.Forms.Panel();
             this.partyName = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.logo_img = new System.Windows.Forms.PictureBox();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.searchbtn = new System.Windows.Forms.Button();
             this.search_box = new System.Windows.Forms.TextBox();
             this.spacer1 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
+            this.election_box = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.logo_img)).BeginInit();
-            this.panel3.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
+            this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.logo_img)).BeginInit();
+            this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.election_box);
             this.panel1.Controls.Add(this.panel5);
             this.panel1.Controls.Add(this.panel4);
             this.panel1.Controls.Add(this.panel2);
@@ -59,6 +61,35 @@ namespace Election_system.Private.Admin
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(859, 609);
             this.panel1.TabIndex = 10;
+            // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.partyName);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel5.Location = new System.Drawing.Point(0, 315);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(859, 127);
+            this.panel5.TabIndex = 16;
+            // 
+            // partyName
+            // 
+            this.partyName.Dock = System.Windows.Forms.DockStyle.Top;
+            this.partyName.Font = new System.Drawing.Font("Arial", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.partyName.Location = new System.Drawing.Point(0, 0);
+            this.partyName.Name = "partyName";
+            this.partyName.Size = new System.Drawing.Size(859, 127);
+            this.partyName.TabIndex = 10;
+            this.partyName.Text = "- - -";
+            this.partyName.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.logo_img);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel4.Location = new System.Drawing.Point(0, 100);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(859, 215);
+            this.panel4.TabIndex = 16;
             // 
             // logo_img
             // 
@@ -72,16 +103,14 @@ namespace Election_system.Private.Admin
             this.logo_img.TabIndex = 15;
             this.logo_img.TabStop = false;
             // 
-            // partyName
+            // panel2
             // 
-            this.partyName.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.partyName.Font = new System.Drawing.Font("Arial", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.partyName.Location = new System.Drawing.Point(0, 0);
-            this.partyName.Name = "partyName";
-            this.partyName.Size = new System.Drawing.Size(859, 127);
-            this.partyName.TabIndex = 10;
-            this.partyName.Text = "- - -";
-            this.partyName.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(859, 100);
+            this.panel2.TabIndex = 16;
             // 
             // label1
             // 
@@ -146,32 +175,17 @@ namespace Election_system.Private.Admin
             this.panel3.Size = new System.Drawing.Size(859, 97);
             this.panel3.TabIndex = 9;
             // 
-            // panel2
+            // election_box
             // 
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(859, 100);
-            this.panel2.TabIndex = 16;
-            // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.logo_img);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel4.Location = new System.Drawing.Point(0, 100);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(859, 215);
-            this.panel4.TabIndex = 16;
-            // 
-            // panel5
-            // 
-            this.panel5.Controls.Add(this.partyName);
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel5.Location = new System.Drawing.Point(0, 315);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(859, 127);
-            this.panel5.TabIndex = 16;
+            this.election_box.Dock = System.Windows.Forms.DockStyle.Top;
+            this.election_box.Font = new System.Drawing.Font("Arial", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.election_box.Location = new System.Drawing.Point(0, 442);
+            this.election_box.Name = "election_box";
+            this.election_box.Size = new System.Drawing.Size(859, 127);
+            this.election_box.TabIndex = 10;
+            this.election_box.Text = "- - -";
+            this.election_box.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.election_box.Click += new System.EventHandler(this.label2_Click);
             // 
             // ViewParty
             // 
@@ -182,13 +196,13 @@ namespace Election_system.Private.Admin
             this.Name = "ViewParty";
             this.Size = new System.Drawing.Size(859, 706);
             this.panel1.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.logo_img)).EndInit();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            this.panel5.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -207,5 +221,6 @@ namespace Election_system.Private.Admin
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label election_box;
     }
 }

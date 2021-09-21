@@ -12,6 +12,7 @@ namespace Election_system
         private int pid;
         private string name;
         private byte[] logo;
+        private int eid;
         private bool hasValue = false;
 
 
@@ -35,7 +36,11 @@ namespace Election_system
             get { return hasValue; }
             set { hasValue = value; }
         }
-
+        public int Eid
+        {
+            get { return eid; }
+            set { eid = value; }
+        }
         public void Add()
         {
             PartyDBLayer partyDB = new PartyDBLayer();
@@ -55,6 +60,11 @@ namespace Election_system
         {
             PartyDBLayer partyDB = new PartyDBLayer();
             return partyDB.Parties();
+        }
+        public DataTable PartiesByEID()
+        {
+            PartyDBLayer partyDB = new PartyDBLayer();
+            return partyDB.PartiesByEID(this);
         }
         public Party getParty()
         {

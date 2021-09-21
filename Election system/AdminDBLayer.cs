@@ -52,8 +52,10 @@ namespace Election_system
                     SqlCommand cmd = new SqlCommand("SP_Admin_exist", con);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@username", admin.username);
+                    var r = cmd.Parameters.Add("@ReturnVal", SqlDbType.Int);
+                    r.Direction = ParameterDirection.ReturnValue;
                     int row = cmd.ExecuteNonQuery();
-                    int result = cmd.ExecuteScalar() == null ? 0 : (int)cmd.ExecuteScalar();
+                    int result = r.Value == null ? 0 : int.Parse(r.Value.ToString());
                     con.Close();
                     if (result == 1)
                     {

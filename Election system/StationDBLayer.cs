@@ -23,6 +23,7 @@ namespace Election_system
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@sname", s.Name);
                     cmd.Parameters.AddWithValue("@rid", s.Rid);
+                    cmd.Parameters.AddWithValue("@eid", s.Eid);
                     var x = cmd.Parameters.Add("@msg", SqlDbType.VarChar, 100);
                     x.Direction = ParameterDirection.Output;
                     int row = cmd.ExecuteNonQuery();
@@ -35,7 +36,7 @@ namespace Election_system
             }
             catch (Exception e)
             {
-                MessageBox.Show(e.Message, "Internal Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(e.Message, "Internal Error - Station", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -51,6 +52,7 @@ namespace Election_system
                     cmd.Parameters.AddWithValue("@sid", s.Sid);
                     cmd.Parameters.AddWithValue("@sname", s.Name);
                     cmd.Parameters.AddWithValue("@rid", s.Rid);
+                    cmd.Parameters.AddWithValue("@eid", s.Eid);
                     var x = cmd.Parameters.Add("@msg", SqlDbType.VarChar, 100);
                     x.Direction = ParameterDirection.Output;
                     int row = cmd.ExecuteNonQuery();
@@ -89,7 +91,7 @@ namespace Election_system
             }
             catch (Exception e)
             {
-                MessageBox.Show(e.Message, "Internal Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(e.Message, "Internal Error - Station", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         public DataTable stations()
@@ -134,6 +136,43 @@ namespace Election_system
                         station.Sid = int.Parse(rows["sid"].ToString());
                         station.Name = rows["sname"].ToString();
                         station.Rid = int.Parse(rows["rid"].ToString());
+                        station.Eid = int.Parse(rows["eid"].ToString());
+                        station.HasValue = true;
+                    }
+                }
+                else
+                {
+                    MessageBox.Show(param.Value.ToString(), "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                return station;
+            }
+        }
+        public Station StationByID(Station s)
+        {
+            using (SqlConnection con = new SqlConnection(constr))
+            {
+                con.Open();
+                Station station = new Station();
+                SqlDataAdapter cmd = new SqlDataAdapter("SP_GetStationByID", con);
+                cmd.SelectCommand.CommandType = CommandType.StoredProcedure;
+
+                SqlParameter param = new SqlParameter("@msg", SqlDbType.VarChar, 100);
+                param.Direction = ParameterDirection.Output;
+                cmd.SelectCommand.Parameters.AddWithValue("@sid", s.Sid);
+                cmd.SelectCommand.Parameters.Add(param);
+                int row = cmd.SelectCommand.ExecuteNonQuery();
+                if (param.Value.ToString() == "")
+                {
+                    DataSet ds = new DataSet();
+                    cmd.Fill(ds, "station");
+                    DataTable dt = ds.Tables["station"];
+
+                    foreach (DataRow rows in dt.Rows)
+                    {
+                        station.Sid = int.Parse(rows["sid"].ToString());
+                        station.Name = rows["sname"].ToString();
+                        station.Rid = int.Parse(rows["rid"].ToString());
+                        station.Eid = int.Parse(rows["eid"].ToString());
                         station.HasValue = true;
                     }
                 }
@@ -166,7 +205,7 @@ namespace Election_system
             }
             catch (Exception e)
             {
-                MessageBox.Show(e.Message, "Internal Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(e.Message, "Internal Error - Station", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return 0;
             }
         }

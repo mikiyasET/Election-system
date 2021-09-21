@@ -12,6 +12,7 @@ namespace Election_system
         private int sid;
         private string name;
         private int rid;
+        private int eid;
         private bool hasValue = false;
         public int Sid
         {
@@ -33,16 +34,25 @@ namespace Election_system
             set { hasValue = value; }
             get { return hasValue; }
         }
-
+        public int Eid
+        {
+            get { return eid; }
+            set { eid = value; }
+        }
         public DataTable getStations()
         {
             StationDBLayer stationDB = new StationDBLayer();
             return stationDB.stations();
         }
-          public Station getStation()
+        public Station getStation()
         {
             StationDBLayer stationDB = new StationDBLayer();
             return stationDB.Station(this);
+        }
+        public Station getStationByID()
+        {
+            StationDBLayer stationDB = new StationDBLayer();
+            return stationDB.StationByID(this);
         }
         public void Save()
         {
