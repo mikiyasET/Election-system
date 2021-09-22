@@ -16,7 +16,7 @@ namespace Election_system
         {
             try
             {
-                using (SqlConnection con = new SqlConnection(constr))
+                using (SqlConnection con = new SqlConnection(admin_con))
                 {
                     con.Open();
                     SqlCommand cmd = new SqlCommand("SP_Admin_Signin", con);
@@ -46,7 +46,7 @@ namespace Election_system
         public bool Exist(Admin admin)
         {
             try {
-                using (SqlConnection con = new SqlConnection(constr))
+                using (SqlConnection con = new SqlConnection(admin_con))
                 {
                     con.Open();
                     SqlCommand cmd = new SqlCommand("SP_Admin_exist", con);

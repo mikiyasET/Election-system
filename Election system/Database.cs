@@ -8,6 +8,8 @@ namespace Election_system
 {
     abstract class Database
     {
-        protected string constr = "server=UNKNOWN\\SQLEXPRESS;database=Election;uid=lab;pwd=123";
+        protected string viewer_con = "server=UNKNOWN\\SQLEXPRESS;database=Election;uid=viewer;pwd=views";
+        protected string voter_con = "server=UNKNOWN\\SQLEXPRESS;database=Election;uid=voter;pwd=secure";
+        protected string admin_con = "server=UNKNOWN\\SQLEXPRESS;database=Election;uid=eadmin;pwd=election";
     }
 }

@@ -29,7 +29,7 @@ namespace Election_system.Private.Admin
 
         private void livefeed_Tick(object sender, EventArgs e)
         {
-            voters_no.Text = String.Format("{0:n0}", voters.Size());
+            voters_no.Text = String.Format("{0:n0}", voters.Size()); // 100,000
             parties_no.Text = String.Format("{0:n0}", party.Size());
             stations_no.Text = String.Format("{0:n0}", station.Size());
             regions_no.Text = String.Format("{0:n0}", region.Size());

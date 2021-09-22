@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Election_system.Private.VotersPage;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -29,6 +30,13 @@ namespace Election_system.Private.Voters
         private void Votebtn_Click(object sender, EventArgs e)
         {
             Vote form = new Vote(voters);
+            form.Dock = DockStyle.Fill;
+            body.Controls.Clear();
+            body.Controls.Add(form);
+        }
+        private void Resultbtn_Click(object sender, EventArgs e)
+        {
+            Result form = new Result();
             form.Dock = DockStyle.Fill;
             body.Controls.Clear();
             body.Controls.Add(form);

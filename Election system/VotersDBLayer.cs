@@ -16,7 +16,7 @@ namespace Election_system
         {
             try
             {
-                using (SqlConnection con = new SqlConnection(constr))
+                using (SqlConnection con = new SqlConnection(admin_con))
                 {
                     con.Open();
                     SqlCommand cmd = new SqlCommand("SP_AddVoters", con);
@@ -50,7 +50,7 @@ namespace Election_system
         {
             try
             {
-                using (SqlConnection con = new SqlConnection(constr))
+                using (SqlConnection con = new SqlConnection(admin_con))
                 {
                     con.Open();
                     SqlCommand cmd = new SqlCommand("SP_EditVoters", con);
@@ -84,7 +84,7 @@ namespace Election_system
         {
             try
             {
-                using (SqlConnection con = new SqlConnection(constr))
+                using (SqlConnection con = new SqlConnection(admin_con))
                 {
                     con.Open();
                     SqlCommand cmd = new SqlCommand("SP_RemoveVoters", con);
@@ -110,7 +110,7 @@ namespace Election_system
         {
             try
             {
-                using (SqlConnection con = new SqlConnection(constr))
+                using (SqlConnection con = new SqlConnection(admin_con))
                 {
                     con.Open();
                     SqlCommand cmd = new SqlCommand("SP_Voter_Signin", con);
@@ -143,7 +143,7 @@ namespace Election_system
 
         public Voters Voter(Voters v)
         {
-            using (SqlConnection con = new SqlConnection(constr))
+            using (SqlConnection con = new SqlConnection(admin_con))
             {
                 con.Open();
                 using (SqlDataAdapter cmd = new SqlDataAdapter())
@@ -178,7 +178,7 @@ namespace Election_system
         {
             try
             {
-                using (SqlConnection con = new SqlConnection(constr))
+                using (SqlConnection con = new SqlConnection(admin_con))
                 {
                     con.Open();
                     SqlCommand cmd = new SqlCommand("SP_CountVoters", con);

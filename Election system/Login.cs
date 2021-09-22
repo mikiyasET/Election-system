@@ -57,7 +57,7 @@ namespace Election_system
         {
             this.Hide();
             MainPage form = new MainPage();
-            form.ShowDialog();
+            form.Show();
             this.Close();
         }
     }

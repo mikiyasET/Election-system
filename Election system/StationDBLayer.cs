@@ -16,7 +16,7 @@ namespace Election_system
         {
             try
             {
-                using (SqlConnection con = new SqlConnection(constr))
+                using (SqlConnection con = new SqlConnection(admin_con))
                 {
                     con.Open();
                     SqlCommand cmd = new SqlCommand("SP_AddStation", con);
@@ -44,7 +44,7 @@ namespace Election_system
         {
             try
             {
-                using (SqlConnection con = new SqlConnection(constr))
+                using (SqlConnection con = new SqlConnection(admin_con))
                 {
                     con.Open();
                     SqlCommand cmd = new SqlCommand("SP_EditStation", con);
@@ -73,7 +73,7 @@ namespace Election_system
         {
             try
             {
-                using (SqlConnection con = new SqlConnection(constr))
+                using (SqlConnection con = new SqlConnection(admin_con))
                 {
                     con.Open();
                     SqlCommand cmd = new SqlCommand("SP_RemoveStation", con);
@@ -96,7 +96,7 @@ namespace Election_system
         }
         public DataTable stations()
         {
-            using (SqlConnection con = new SqlConnection(constr))
+            using (SqlConnection con = new SqlConnection(admin_con))
             {
                 con.Open();
                 using (SqlDataAdapter cmd = new SqlDataAdapter())
@@ -113,7 +113,7 @@ namespace Election_system
         }
         public Station Station(Station s)
         {
-            using (SqlConnection con = new SqlConnection(constr))
+            using (SqlConnection con = new SqlConnection(admin_con))
             {
                 con.Open();
                 Station station = new Station();
@@ -149,7 +149,7 @@ namespace Election_system
         }
         public Station StationByID(Station s)
         {
-            using (SqlConnection con = new SqlConnection(constr))
+            using (SqlConnection con = new SqlConnection(admin_con))
             {
                 con.Open();
                 Station station = new Station();
@@ -187,7 +187,7 @@ namespace Election_system
         {
             try
             {
-                using (SqlConnection con = new SqlConnection(constr))
+                using (SqlConnection con = new SqlConnection(admin_con))
                 {
                     con.Open();
                     SqlCommand cmd = new SqlCommand("SP_CountStations", con);

@@ -252,6 +252,7 @@ namespace Election_system.Private.Admin
             // livefeed
             // 
             this.livefeed.Enabled = true;
+            this.livefeed.Interval = 1000;
             this.livefeed.Tick += new System.EventHandler(this.livefeed_Tick);
             // 
             // Dashboard

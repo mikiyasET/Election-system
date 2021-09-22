@@ -15,7 +15,7 @@ namespace Election_system
         {
             try
             {
-                using (SqlConnection con = new SqlConnection(constr))
+                using (SqlConnection con = new SqlConnection(admin_con))
                 {
                     con.Open();
                     SqlCommand cmd = new SqlCommand("SP_AddRegion", con);
@@ -41,7 +41,7 @@ namespace Election_system
         {
             try
             {
-                using (SqlConnection con = new SqlConnection(constr))
+                using (SqlConnection con = new SqlConnection(admin_con))
                 {
                     con.Open();
                     SqlCommand cmd = new SqlCommand("SP_EditRegion", con);
@@ -68,7 +68,7 @@ namespace Election_system
         {
             try
             {
-                using (SqlConnection con = new SqlConnection(constr))
+                using (SqlConnection con = new SqlConnection(admin_con))
                 {
                     con.Open();
                     SqlCommand cmd = new SqlCommand("SP_RemoveRegion", con);
@@ -91,7 +91,7 @@ namespace Election_system
         }
         public Region Details(Region region,int eid)
         {
-            SqlConnection myConnection = new SqlConnection(constr);
+            SqlConnection myConnection = new SqlConnection(admin_con);
             SqlCommand cmd = new SqlCommand("SP_GetDetails", myConnection);
             cmd.CommandType = CommandType.StoredProcedure;
             myConnection.Open();
@@ -128,7 +128,7 @@ namespace Election_system
         }
         public DataTable Regions()
         {
-            using (SqlConnection con = new SqlConnection(constr))
+            using (SqlConnection con = new SqlConnection(admin_con))
             {
                 con.Open();
                 using (SqlDataAdapter cmd = new SqlDataAdapter())
@@ -145,7 +145,7 @@ namespace Election_system
         }
         public Region Region(Region r)
         {
-            using (SqlConnection con = new SqlConnection(constr))
+            using (SqlConnection con = new SqlConnection(admin_con))
             {
                 con.Open();
                 Region region = new Region();
@@ -182,7 +182,7 @@ namespace Election_system
         {
             try
             {
-                using (SqlConnection con = new SqlConnection(constr))
+                using (SqlConnection con = new SqlConnection(admin_con))
                 {
                     con.Open();
                     SqlCommand cmd = new SqlCommand("SP_CountRegions", con);
@@ -208,7 +208,7 @@ namespace Election_system
         {
             try
             {
-                using (SqlConnection con = new SqlConnection(constr))
+                using (SqlConnection con = new SqlConnection(admin_con))
                 {
                     con.Open();
                     SqlCommand cmd = new SqlCommand("SP_Population", con);

@@ -15,7 +15,7 @@ namespace Election_system
         {
             try
             {
-                using (SqlConnection con = new SqlConnection(constr))
+                using (SqlConnection con = new SqlConnection(admin_con))
                 {
                     con.Open();
                     SqlCommand cmd = new SqlCommand("SP_AddElection", con);
@@ -43,7 +43,7 @@ namespace Election_system
         {
             try
             {
-                using (SqlConnection con = new SqlConnection(constr))
+                using (SqlConnection con = new SqlConnection(admin_con))
                 {
                     con.Open();
                     SqlCommand cmd = new SqlCommand("SP_EditElection", con);
@@ -72,7 +72,7 @@ namespace Election_system
         {
             try
             {
-                using (SqlConnection con = new SqlConnection(constr))
+                using (SqlConnection con = new SqlConnection(admin_con))
                 {
                     con.Open();
                     SqlCommand cmd = new SqlCommand("SP_RemoveElection", con);
@@ -95,7 +95,7 @@ namespace Election_system
         }
         public Election Election(Election el)
         {
-            using (SqlConnection con = new SqlConnection(constr))
+            using (SqlConnection con = new SqlConnection(viewer_con))
             {
                 con.Open();
                 Election election = new Election();
@@ -131,7 +131,7 @@ namespace Election_system
         }
         public DataTable Elections()
         {
-            using (SqlConnection con = new SqlConnection(constr))
+            using (SqlConnection con = new SqlConnection(viewer_con))
             {
                 con.Open();
                 using (SqlDataAdapter cmd = new SqlDataAdapter())

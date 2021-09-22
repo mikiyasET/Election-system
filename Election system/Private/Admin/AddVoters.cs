@@ -87,35 +87,48 @@ namespace Election_system.Private.Admin
                 }
                 if (!error)
                 {
-                    byte[] img = null;
-                    FileStream fs = new FileStream(imgLoc, FileMode.Open, FileAccess.Read);
-                    BinaryReader br = new BinaryReader(fs);
-                    img = br.ReadBytes((int)fs.Length);
-                    Election_system.Voters voter = new Election_system.Voters();
-                    DataRowView x = station_box.SelectedItem as DataRowView;
-                    voter.FirstName = firstName_box.Text;
-                    voter.MiddleName = middleName_box.Text;
-                    voter.LastName = lastName_box.Text;
-                    voter.Phone = int.Parse(phoneNo_box.Text);
-                    voter.Password = password_box.Text;
-                    voter.Birth = birthdate_box.Value;
-                    voter.IDNo = IDNo_box.Text;
-                    voter.IDImage = img;
-                    voter.Station = int.Parse(x.Row["id"].ToString());
-                    voter.Save();
+                    if(conformPassword_box.Text == password_box.Text)
+                    {
+                        if (password_box.Text.Length >= 6)
+                        {
+                            byte[] img = null;
+                            FileStream fs = new FileStream(imgLoc, FileMode.Open, FileAccess.Read);
+                            BinaryReader br = new BinaryReader(fs);
+                            img = br.ReadBytes((int)fs.Length);
+                            Election_system.Voters voter = new Election_system.Voters();
+                            DataRowView x = station_box.SelectedItem as DataRowView;
+                            voter.FirstName = firstName_box.Text;
+                            voter.MiddleName = middleName_box.Text;
+                            voter.LastName = lastName_box.Text;
+                            voter.Phone = int.Parse(phoneNo_box.Text);
+                            voter.Password = password_box.Text;
+                            voter.Birth = birthdate_box.Value;
+                            voter.IDNo = IDNo_box.Text;
+                            voter.IDImage = img;
+                            voter.Station = int.Parse(x.Row["id"].ToString());
+                            voter.Save();
+                        }else
+                        {
+                            MessageBox.Show("Password length must 6 or more character.", "Invalid length", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Password Doesn't match", "Input mismatch", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             }
             catch (FormatException fe)
             {
-                MessageBox.Show("Phone Number must be a number");
+                MessageBox.Show("Phone Number must be a number", "Wrong input", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             catch (ArgumentException ae)
             {
-                MessageBox.Show("Please insert the id image");
+                MessageBox.Show("Please insert the id image", "Image not inserted", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Error");
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }

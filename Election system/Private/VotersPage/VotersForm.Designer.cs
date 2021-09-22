@@ -29,9 +29,6 @@ namespace Election_system.Private.Voters
         /// </summary>
         private void InitializeComponent()
         {
-            this.viewparty_btn = new System.Windows.Forms.Button();
-            this.modifyparty_btn = new System.Windows.Forms.Button();
-            this.addparty_btn = new System.Windows.Forms.Button();
             this.voter_con = new System.Windows.Forms.Panel();
             this.voter_txt_con = new System.Windows.Forms.Panel();
             this.voter_txt = new System.Windows.Forms.Label();
@@ -40,22 +37,21 @@ namespace Election_system.Private.Voters
             this.viewVoters_btn = new System.Windows.Forms.Button();
             this.modifyVoters_btn = new System.Windows.Forms.Button();
             this.addVoters_btn = new System.Windows.Forms.Button();
-            this.party_txt = new System.Windows.Forms.Label();
+            this.result_txt = new System.Windows.Forms.Label();
             this.home_con = new System.Windows.Forms.Panel();
             this.home_txt_con = new System.Windows.Forms.Panel();
             this.home_txt = new System.Windows.Forms.Label();
             this.home_icon = new System.Windows.Forms.PictureBox();
             this.Spacer = new System.Windows.Forms.Panel();
             this.body = new System.Windows.Forms.Panel();
-            this.party_txt_con = new System.Windows.Forms.Panel();
+            this.result_txt_con = new System.Windows.Forms.Panel();
             this.sidenav = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.party_con = new System.Windows.Forms.Panel();
-            this.party_icon = new System.Windows.Forms.PictureBox();
-            this.panel11 = new System.Windows.Forms.Panel();
+            this.result_con = new System.Windows.Forms.Panel();
+            this.result_icon = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -66,58 +62,15 @@ namespace Election_system.Private.Voters
             this.home_con.SuspendLayout();
             this.home_txt_con.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.home_icon)).BeginInit();
-            this.party_txt_con.SuspendLayout();
+            this.result_txt_con.SuspendLayout();
             this.sidenav.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.party_con.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.party_icon)).BeginInit();
-            this.panel11.SuspendLayout();
+            this.result_con.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.result_icon)).BeginInit();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // viewparty_btn
-            // 
-            this.viewparty_btn.FlatAppearance.BorderSize = 0;
-            this.viewparty_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.viewparty_btn.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.viewparty_btn.ForeColor = System.Drawing.Color.White;
-            this.viewparty_btn.Location = new System.Drawing.Point(136, 83);
-            this.viewparty_btn.Name = "viewparty_btn";
-            this.viewparty_btn.Size = new System.Drawing.Size(206, 34);
-            this.viewparty_btn.TabIndex = 0;
-            this.viewparty_btn.Text = "View Party";
-            this.viewparty_btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.viewparty_btn.UseVisualStyleBackColor = true;
-            // 
-            // modifyparty_btn
-            // 
-            this.modifyparty_btn.FlatAppearance.BorderSize = 0;
-            this.modifyparty_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.modifyparty_btn.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.modifyparty_btn.ForeColor = System.Drawing.Color.White;
-            this.modifyparty_btn.Location = new System.Drawing.Point(136, 43);
-            this.modifyparty_btn.Name = "modifyparty_btn";
-            this.modifyparty_btn.Size = new System.Drawing.Size(206, 34);
-            this.modifyparty_btn.TabIndex = 0;
-            this.modifyparty_btn.Text = "Modify Party";
-            this.modifyparty_btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.modifyparty_btn.UseVisualStyleBackColor = true;
-            // 
-            // addparty_btn
-            // 
-            this.addparty_btn.FlatAppearance.BorderSize = 0;
-            this.addparty_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.addparty_btn.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addparty_btn.ForeColor = System.Drawing.Color.White;
-            this.addparty_btn.Location = new System.Drawing.Point(136, 3);
-            this.addparty_btn.Name = "addparty_btn";
-            this.addparty_btn.Size = new System.Drawing.Size(206, 34);
-            this.addparty_btn.TabIndex = 0;
-            this.addparty_btn.Text = "Add Party";
-            this.addparty_btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.addparty_btn.UseVisualStyleBackColor = true;
             // 
             // voter_con
             // 
@@ -220,17 +173,18 @@ namespace Election_system.Private.Voters
             this.addVoters_btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.addVoters_btn.UseVisualStyleBackColor = true;
             // 
-            // party_txt
+            // result_txt
             // 
-            this.party_txt.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.party_txt.AutoSize = true;
-            this.party_txt.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.party_txt.ForeColor = System.Drawing.Color.White;
-            this.party_txt.Location = new System.Drawing.Point(40, 15);
-            this.party_txt.Name = "party_txt";
-            this.party_txt.Size = new System.Drawing.Size(64, 22);
-            this.party_txt.TabIndex = 1;
-            this.party_txt.Text = "Result";
+            this.result_txt.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.result_txt.AutoSize = true;
+            this.result_txt.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.result_txt.ForeColor = System.Drawing.Color.White;
+            this.result_txt.Location = new System.Drawing.Point(40, 15);
+            this.result_txt.Name = "result_txt";
+            this.result_txt.Size = new System.Drawing.Size(64, 22);
+            this.result_txt.TabIndex = 1;
+            this.result_txt.Text = "Result";
+            this.result_txt.Click += new System.EventHandler(this.Resultbtn_Click);
             // 
             // home_con
             // 
@@ -296,19 +250,20 @@ namespace Election_system.Private.Voters
             this.body.Size = new System.Drawing.Size(907, 732);
             this.body.TabIndex = 3;
             // 
-            // party_txt_con
+            // result_txt_con
             // 
-            this.party_txt_con.Controls.Add(this.party_txt);
-            this.party_txt_con.Location = new System.Drawing.Point(125, 5);
-            this.party_txt_con.Name = "party_txt_con";
-            this.party_txt_con.Size = new System.Drawing.Size(255, 52);
-            this.party_txt_con.TabIndex = 0;
+            this.result_txt_con.Controls.Add(this.result_txt);
+            this.result_txt_con.Location = new System.Drawing.Point(125, 5);
+            this.result_txt_con.Name = "result_txt_con";
+            this.result_txt_con.Size = new System.Drawing.Size(255, 52);
+            this.result_txt_con.TabIndex = 0;
+            this.result_txt_con.Click += new System.EventHandler(this.Resultbtn_Click);
             // 
             // sidenav
             // 
             this.sidenav.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(181)))), ((int)(((byte)(177)))));
             this.sidenav.Controls.Add(this.panel1);
-            this.sidenav.Controls.Add(this.party_con);
+            this.sidenav.Controls.Add(this.result_con);
             this.sidenav.Controls.Add(this.voter_con);
             this.sidenav.Controls.Add(this.home_con);
             this.sidenav.Controls.Add(this.Spacer);
@@ -367,40 +322,30 @@ namespace Election_system.Private.Voters
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.Logout_Click);
             // 
-            // party_con
+            // result_con
             // 
-            this.party_con.Controls.Add(this.party_txt_con);
-            this.party_con.Controls.Add(this.party_icon);
-            this.party_con.Controls.Add(this.panel11);
-            this.party_con.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.party_con.Dock = System.Windows.Forms.DockStyle.Top;
-            this.party_con.Location = new System.Drawing.Point(0, 446);
-            this.party_con.Name = "party_con";
-            this.party_con.Padding = new System.Windows.Forms.Padding(25, 5, 5, 0);
-            this.party_con.Size = new System.Drawing.Size(385, 60);
-            this.party_con.TabIndex = 1;
+            this.result_con.Controls.Add(this.result_txt_con);
+            this.result_con.Controls.Add(this.result_icon);
+            this.result_con.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.result_con.Dock = System.Windows.Forms.DockStyle.Top;
+            this.result_con.Location = new System.Drawing.Point(0, 446);
+            this.result_con.Name = "result_con";
+            this.result_con.Padding = new System.Windows.Forms.Padding(25, 5, 5, 0);
+            this.result_con.Size = new System.Drawing.Size(385, 60);
+            this.result_con.TabIndex = 1;
+            this.result_con.Click += new System.EventHandler(this.Resultbtn_Click);
             // 
-            // party_icon
+            // result_icon
             // 
-            this.party_icon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.party_icon.Image = global::Election_system.Properties.Resources.notepad;
-            this.party_icon.Location = new System.Drawing.Point(25, 5);
-            this.party_icon.Name = "party_icon";
-            this.party_icon.Size = new System.Drawing.Size(100, 52);
-            this.party_icon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.party_icon.TabIndex = 0;
-            this.party_icon.TabStop = false;
-            // 
-            // panel11
-            // 
-            this.panel11.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.panel11.Controls.Add(this.viewparty_btn);
-            this.panel11.Controls.Add(this.modifyparty_btn);
-            this.panel11.Controls.Add(this.addparty_btn);
-            this.panel11.Location = new System.Drawing.Point(24, 57);
-            this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(355, 124);
-            this.panel11.TabIndex = 0;
+            this.result_icon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.result_icon.Image = global::Election_system.Properties.Resources.notepad;
+            this.result_icon.Location = new System.Drawing.Point(25, 5);
+            this.result_icon.Name = "result_icon";
+            this.result_icon.Size = new System.Drawing.Size(100, 52);
+            this.result_icon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.result_icon.TabIndex = 0;
+            this.result_icon.TabStop = false;
+            this.result_icon.Click += new System.EventHandler(this.Resultbtn_Click);
             // 
             // panel3
             // 
@@ -454,16 +399,15 @@ namespace Election_system.Private.Voters
             this.home_txt_con.ResumeLayout(false);
             this.home_txt_con.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.home_icon)).EndInit();
-            this.party_txt_con.ResumeLayout(false);
-            this.party_txt_con.PerformLayout();
+            this.result_txt_con.ResumeLayout(false);
+            this.result_txt_con.PerformLayout();
             this.sidenav.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.party_con.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.party_icon)).EndInit();
-            this.panel11.ResumeLayout(false);
+            this.result_con.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.result_icon)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.ResumeLayout(false);
@@ -473,9 +417,6 @@ namespace Election_system.Private.Voters
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button viewparty_btn;
-        private System.Windows.Forms.Button modifyparty_btn;
-        private System.Windows.Forms.Button addparty_btn;
         private System.Windows.Forms.Panel voter_con;
         private System.Windows.Forms.Panel voter_txt_con;
         private System.Windows.Forms.Label voter_txt;
@@ -484,7 +425,7 @@ namespace Election_system.Private.Voters
         private System.Windows.Forms.Button viewVoters_btn;
         private System.Windows.Forms.Button modifyVoters_btn;
         private System.Windows.Forms.Button addVoters_btn;
-        private System.Windows.Forms.Label party_txt;
+        private System.Windows.Forms.Label result_txt;
         private System.Windows.Forms.Panel home_con;
         private System.Windows.Forms.Panel home_txt_con;
         private System.Windows.Forms.Label home_txt;
@@ -493,14 +434,13 @@ namespace Election_system.Private.Voters
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel body;
-        private System.Windows.Forms.Panel party_txt_con;
+        private System.Windows.Forms.Panel result_txt_con;
         private System.Windows.Forms.Panel sidenav;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Panel party_con;
-        private System.Windows.Forms.PictureBox party_icon;
-        private System.Windows.Forms.Panel panel11;
+        private System.Windows.Forms.Panel result_con;
+        private System.Windows.Forms.PictureBox result_icon;
     }
 }

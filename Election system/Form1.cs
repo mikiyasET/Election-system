@@ -28,12 +28,19 @@ namespace Election_system
 
                 Vote vote = new Vote();
                 vote.Eid = int.Parse(row.Row["eid"].ToString());
-                leadboard_table.DataSource = vote.PartiesByEID();
 
-                DataGridViewColumn column = leadboard_table.Columns[1];
+                DataTable dtable = vote.PartiesByEID();
+                dtable = dtable.DefaultView.ToTable();
+                dtable.Columns.Add("Rank", typeof(Int32)).SetOrdinal(0);
+                int srNo = 1;
+                foreach (DataRow rows in dtable.Rows)
+                {
+                    rows["Rank"] = srNo++;
+                }
+                leadboard_table.DataSource = dtable;
+                DataGridViewColumn column = leadboard_table.Columns[2];
                 column.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                ((DataGridViewImageColumn)leadboard_table.Columns[1]).ImageLayout = DataGridViewImageCellLayout.Zoom;
-                leadboard_table.Rows[1].Height = 400;
+                ((DataGridViewImageColumn)leadboard_table.Columns[2]).ImageLayout = DataGridViewImageCellLayout.Zoom;
             }catch { 
             }
         }
@@ -335,21 +342,42 @@ namespace Election_system
         {
             Login login = new Login();
             this.Hide(); // hide
-            login.ShowDialog(); // show the form
-            this.Close(); // close
+            login.ShowDialog(); // show the
         }
         private void Election_OnChange(object sender, EventArgs e)
         {
             DataRowView row = elections.SelectedItem as DataRowView;
 
             ShowRegion(regionName);
-            Party party = new Party();
-            party.Eid = int.Parse(row.Row["eid"].ToString());
-            leadboard_table.DataSource = party.PartiesByEID();
+            Vote vote = new Vote();
+            vote.Eid = int.Parse(row.Row["eid"].ToString());
+            DataTable dtable = vote.PartiesByEID();
+            dtable = dtable.DefaultView.ToTable();
+            dtable.Columns.Add("Rank", typeof(Int32)).SetOrdinal(0);
+            int srNo = 1;
+            foreach (DataRow rows in dtable.Rows)
+            {
+                rows["Rank"] = srNo++;
+            }
+            leadboard_table.DataSource = dtable;
+            DataGridViewColumn column = leadboard_table.Columns[2];
+            column.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            ((DataGridViewImageColumn)leadboard_table.Columns[2]).ImageLayout = DataGridViewImageCellLayout.Zoom;
         }
-        private void pictureBox1_Hover(object sender, MouseEventArgs e)
-        {
 
+        private void parties_btn_Click(object sender, EventArgs e)
+        {
+            body.Controls.Clear();
+            Parties p = new Parties();
+            p.Dock = DockStyle.Fill;
+            body.Controls.Add(p);
+        }
+
+        private void leadboardbtn_Click(object sender, EventArgs e)
+        {
+            body.Controls.Clear();
+            body.Controls.Add(rightbar);
+            body.Controls.Add(ethiopia);
         }
     }
 }

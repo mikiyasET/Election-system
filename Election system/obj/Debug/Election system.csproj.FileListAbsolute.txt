@@ -31,3 +31,5 @@ C:\Users\mikiy\source\repos\Election system\Election system\obj\Debug\Election_s
 C:\Users\mikiy\source\repos\Election system\Election system\obj\Debug\Election_system.Private.Admin.AddElection.resources
 C:\Users\mikiy\source\repos\Election system\Election system\obj\Debug\Election_system.Private.Admin.ModifyElection.resources
 C:\Users\mikiy\source\repos\Election system\Election system\obj\Debug\Election_system.Private.Admin.ViewElection.resources
+C:\Users\mikiy\source\repos\Election system\Election system\obj\Debug\Election_system.Parties.resources
+C:\Users\mikiy\source\repos\Election system\Election system\obj\Debug\Election_system.Private.VotersPage.Result.resources

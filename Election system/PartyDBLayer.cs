@@ -16,7 +16,7 @@ namespace Election_system
         {
             try
             {
-                using (SqlConnection con = new SqlConnection(constr))
+                using (SqlConnection con = new SqlConnection(admin_con))
                 {
                     con.Open();
                     SqlCommand cmd = new SqlCommand("SP_AddParty", con);
@@ -44,7 +44,7 @@ namespace Election_system
         {
             try
             {
-                using (SqlConnection con = new SqlConnection(constr))
+                using (SqlConnection con = new SqlConnection(admin_con))
                 {
                     con.Open();
                     SqlCommand cmd = new SqlCommand("SP_EditParty", con);
@@ -73,7 +73,7 @@ namespace Election_system
         {
             try
             {
-                using (SqlConnection con = new SqlConnection(constr))
+                using (SqlConnection con = new SqlConnection(admin_con))
                 {
                     con.Open();
                     SqlCommand cmd = new SqlCommand("SP_RemoveParty", con);
@@ -96,7 +96,7 @@ namespace Election_system
         }
 
         public Party MyParty(Party p) {
-            using (SqlConnection con = new SqlConnection(constr))
+            using (SqlConnection con = new SqlConnection(viewer_con))
             {
                 con.Open();
                 Party party = new Party();
@@ -132,7 +132,7 @@ namespace Election_system
         }
         public DataTable Parties()
         {
-            using (SqlConnection con = new SqlConnection(constr))
+            using (SqlConnection con = new SqlConnection(viewer_con))
             {
                 con.Open();
                 using (SqlDataAdapter cmd = new SqlDataAdapter())
@@ -149,7 +149,7 @@ namespace Election_system
         }
         public DataTable PartiesByEID(Party p)
         {
-            using (SqlConnection con = new SqlConnection(constr))
+            using (SqlConnection con = new SqlConnection(viewer_con))
             {
                 con.Open();
                 using (SqlDataAdapter cmd = new SqlDataAdapter())
@@ -172,7 +172,7 @@ namespace Election_system
         {
             try
             {
-                using (SqlConnection con = new SqlConnection(constr))
+                using (SqlConnection con = new SqlConnection(viewer_con))
                 {
                     con.Open();
                     SqlCommand cmd = new SqlCommand("SP_CountParties", con);

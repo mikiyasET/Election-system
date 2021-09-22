@@ -15,7 +15,7 @@ namespace Election_system
         {
             try
             {
-                using (SqlConnection con = new SqlConnection(constr))
+                using (SqlConnection con = new SqlConnection(voter_con))
                 {
                     con.Open();
                     SqlCommand cmd = new SqlCommand("SP_VOTE", con);
@@ -42,7 +42,7 @@ namespace Election_system
         {
             try
             {
-                using (SqlConnection con = new SqlConnection(constr))
+                using (SqlConnection con = new SqlConnection(viewer_con))
                 {
                     con.Open();
                     SqlCommand cmd = new SqlCommand("SP_CheckVoter", con);
@@ -74,7 +74,7 @@ namespace Election_system
 
         public DataTable PartiesLead(Vote v)
         {
-            using (SqlConnection con = new SqlConnection(constr))
+            using (SqlConnection con = new SqlConnection(viewer_con))
             {
                 con.Open();
                 using (SqlDataAdapter cmd = new SqlDataAdapter())
