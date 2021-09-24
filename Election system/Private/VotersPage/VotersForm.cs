@@ -36,7 +36,7 @@ namespace Election_system.Private.Voters
         }
         private void Resultbtn_Click(object sender, EventArgs e)
         {
-            Result form = new Result();
+            Result form = new Result(voters);
             form.Dock = DockStyle.Fill;
             body.Controls.Clear();
             body.Controls.Add(form);

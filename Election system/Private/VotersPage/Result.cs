@@ -12,17 +12,16 @@ namespace Election_system.Private.VotersPage
 {
     public partial class Result : UserControl
     {
-        public Result()
+        int eid;
+        public Result(Election_system.Voters v)
         {
             InitializeComponent();
-            Election election = new Election();
-            elections.DataSource = election.getElections();
-            elections.DisplayMember = "ename";
-            elections.ValueMember = "eid";
-            DataRowView row = elections.SelectedItem as DataRowView;
 
             Vote vote = new Vote();
-            vote.Eid = int.Parse(row.Row["eid"].ToString());
+            Station x = new Station();
+            x.Sid = v.Station;
+            eid = x.getStationByID().Eid;
+            vote.Eid = eid;
 
             DataTable dtable = vote.PartiesByEID();
             dtable = dtable.DefaultView.ToTable();
@@ -39,27 +38,6 @@ namespace Election_system.Private.VotersPage
             leadboard_table.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             ((DataGridViewImageColumn)leadboard_table.Columns[2]).ImageLayout = DataGridViewImageCellLayout.Zoom;
         }
-        private void Election_OnChange(object sender, EventArgs e)
-        {
-            DataRowView row = elections.SelectedItem as DataRowView;
-
-            Vote vote = new Vote();
-            vote.Eid = int.Parse(row.Row["eid"].ToString());
-
-            DataTable dtable = vote.PartiesByEID();
-            dtable = dtable.DefaultView.ToTable();
-            dtable.Columns.Add("Rank", typeof(Int32)).SetOrdinal(0);
-            int srNo = 1;
-            foreach (DataRow rows in dtable.Rows)
-            {
-                rows["Rank"] = srNo++;
-            }
-            leadboard_table.DataSource = dtable;
-            DataGridViewColumn column = leadboard_table.Columns[2];
-            column.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            leadboard_table.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            leadboard_table.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            ((DataGridViewImageColumn)leadboard_table.Columns[2]).ImageLayout = DataGridViewImageCellLayout.Zoom;
-        }
+        
     }
 }

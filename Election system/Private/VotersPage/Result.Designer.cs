@@ -36,21 +36,18 @@ namespace Election_system.Private.VotersPage
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.full = new System.Windows.Forms.Panel();
             this.leadboard_table = new System.Windows.Forms.DataGridView();
-            this.upper = new System.Windows.Forms.Panel();
-            this.elections = new System.Windows.Forms.ComboBox();
             this.full.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.leadboard_table)).BeginInit();
-            this.upper.SuspendLayout();
             this.SuspendLayout();
             // 
             // full
             // 
             this.full.Controls.Add(this.leadboard_table);
             this.full.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.full.Location = new System.Drawing.Point(0, 67);
+            this.full.Location = new System.Drawing.Point(0, 0);
             this.full.Name = "full";
             this.full.Padding = new System.Windows.Forms.Padding(50);
-            this.full.Size = new System.Drawing.Size(1180, 638);
+            this.full.Size = new System.Drawing.Size(1180, 705);
             this.full.TabIndex = 6;
             // 
             // leadboard_table
@@ -116,43 +113,18 @@ namespace Election_system.Private.VotersPage
             this.leadboard_table.RowTemplate.ReadOnly = true;
             this.leadboard_table.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.leadboard_table.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.leadboard_table.Size = new System.Drawing.Size(1080, 538);
+            this.leadboard_table.Size = new System.Drawing.Size(1080, 605);
             this.leadboard_table.TabIndex = 3;
-            // 
-            // upper
-            // 
-            this.upper.Controls.Add(this.elections);
-            this.upper.Dock = System.Windows.Forms.DockStyle.Top;
-            this.upper.Location = new System.Drawing.Point(0, 0);
-            this.upper.Name = "upper";
-            this.upper.Padding = new System.Windows.Forms.Padding(50, 10, 50, 10);
-            this.upper.Size = new System.Drawing.Size(1180, 67);
-            this.upper.TabIndex = 7;
-            // 
-            // elections
-            // 
-            this.elections.BackColor = System.Drawing.Color.White;
-            this.elections.Dock = System.Windows.Forms.DockStyle.Top;
-            this.elections.Font = new System.Drawing.Font("Rubik", 25F, System.Drawing.FontStyle.Bold);
-            this.elections.ForeColor = System.Drawing.Color.Black;
-            this.elections.FormattingEnabled = true;
-            this.elections.Location = new System.Drawing.Point(50, 10);
-            this.elections.MaxDropDownItems = 100;
-            this.elections.Name = "elections";
-            this.elections.Size = new System.Drawing.Size(1080, 49);
-            this.elections.TabIndex = 6;
             // 
             // Result
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.full);
-            this.Controls.Add(this.upper);
             this.Name = "Result";
             this.Size = new System.Drawing.Size(1180, 705);
             this.full.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.leadboard_table)).EndInit();
-            this.upper.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -161,7 +133,5 @@ namespace Election_system.Private.VotersPage
 
         private System.Windows.Forms.Panel full;
         private System.Windows.Forms.DataGridView leadboard_table;
-        private System.Windows.Forms.Panel upper;
-        private System.Windows.Forms.ComboBox elections;
     }
 }

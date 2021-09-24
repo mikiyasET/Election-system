@@ -72,20 +72,12 @@ namespace Election_system.Private.Admin
             isnull = isnull || (IDNo_box.Text == "" ? true : false);
             isnull = isnull || (station_box.SelectedIndex == null ? true : false);
 
-            error = firstName_box.Text == "" ? true : false;
-            error = error || (middleName_box.Text == "" ? true : false);
-            error = error || (lastName_box.Text == "" ? true : false);
-            error = error || (phoneNo_box.Text == "" ? true : false);
-            error = error || (password_box.Text == "" ? true : false);
-            error = error || (conformPassword_box.Text == "" ? true : false);
-            error = error || (IDNo_box.Text == "" ? true : false);
-            error = error || (station_box.SelectedIndex == null ? true : false);
             try
             {
                 if (isnull) {
                     MessageBox.Show("There is an empty field");
                 }
-                if (!error)
+                if (!isnull)
                 {
                     if(conformPassword_box.Text == password_box.Text)
                     {

@@ -45,16 +45,12 @@ namespace Election_system.Private.Admin
             this.panel5 = new System.Windows.Forms.Panel();
             this.population_no = new System.Windows.Forms.Label();
             this.lab = new System.Windows.Forms.Label();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
             this.livefeed = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
-            this.panel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -217,38 +213,6 @@ namespace Election_system.Private.Admin
             this.lab.Text = "Population";
             this.lab.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // panel6
-            // 
-            this.panel6.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panel6.Controls.Add(this.label11);
-            this.panel6.Controls.Add(this.label10);
-            this.panel6.Location = new System.Drawing.Point(807, 323);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(232, 155);
-            this.panel6.TabIndex = 0;
-            // 
-            // label11
-            // 
-            this.label11.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label11.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(0, 49);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(232, 68);
-            this.label11.TabIndex = 0;
-            this.label11.Text = "- - -";
-            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label10
-            // 
-            this.label10.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label10.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(0, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(232, 49);
-            this.label10.TabIndex = 1;
-            this.label10.Text = "Stations";
-            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // livefeed
             // 
             this.livefeed.Enabled = true;
@@ -259,7 +223,6 @@ namespace Election_system.Private.Admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
@@ -272,7 +235,6 @@ namespace Election_system.Private.Admin
             this.panel3.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
-            this.panel6.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -294,9 +256,6 @@ namespace Election_system.Private.Admin
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label lab;
         private System.Windows.Forms.Label population_no;
-        private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Timer livefeed;
     }
 }

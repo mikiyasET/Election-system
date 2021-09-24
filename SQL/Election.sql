@@ -1,5 +1,5 @@
 go
--- drop database Election
+ drop database Election
 go
 
 GO
@@ -111,10 +111,40 @@ CREATE TABLE votecount(
 )
 go
 
+
+ALTER TABLE parties
+ADD CONSTRAINT FK_electionparties
+FOREIGN KEY (eid) REFERENCES election(eid)
+
+ALTER TABLE station
+ADD CONSTRAINT FK_electionstation
+FOREIGN KEY (eid) REFERENCES election(eid)
+
+ALTER TABLE station
+ADD CONSTRAINT FK_stationregion
+FOREIGN KEY (rid) REFERENCES regions(rid)
+
+ALTER TABLE votecount
+ADD CONSTRAINT FK_VoteVoter
+FOREIGN KEY (vid) REFERENCES voters(vid)
+
+ALTER TABLE votecount
+ADD CONSTRAINT FK_VotedElection
+FOREIGN KEY (eid) REFERENCES election(eid)
+
+ALTER TABLE votecount
+ADD CONSTRAINT FK_VotedParty
+FOREIGN KEY (vpid) REFERENCES parties(pid)
+
+ALTER TABLE voters
+ADD CONSTRAINT FK_VoterStation
+FOREIGN KEY (sid) REFERENCES station(sid)
+
 /****************************************** END *********************************************/
 
 
 /**************************************** Functions *****************************************/
+
 go
 CREATE FUNCTION dbo.Encrypt(@str varchar(max))
 RETURNS varchar(max)
@@ -126,15 +156,15 @@ AS BEGIN
 go
 
 go
-CREATE FUNCTION dbo.GivenVoice(@eid int,@pid int)
+ALTER FUNCTION dbo.GivenVoice(@eid int,@pid int)
 RETURNS int
 as
 begin
 	DECLARE @voice int
-	SELECT @voice = COUNT(vc.vid)
+	SELECT @voice = COUNT(vc.vpid)
 	FROM votecount as vc
 	where vc.eid = @eid and vc.vpid = @pid
-	GROUP BY vc.vpid
+	GROUP BY vc.vcid
 	return @voice;
 end
 go
@@ -149,6 +179,29 @@ BEGIN
     RETURN(@res)
 END
 go
+
+go
+CREATE FUNCTION dbo.GetElectionName(@eid int)
+returns varchar(100)
+as
+begin
+	DECLARE @name varchar(100)
+	SELECT @name = ename from Election WHERE eid = @eid
+	return @name
+end
+go
+
+go
+CREATE FUNCTION dbo.GetStationName(@sid int)
+returns varchar(100)
+as
+begin
+	DECLARE @name varchar(100)
+	SELECT @name = sname FROM station
+	return @name
+end
+go
+
 /****************************************** END *********************************************/
 
 
@@ -167,6 +220,7 @@ begin
 		return 0; -- login failed
 end
 go
+
 go
 CREATE PROC SP_Admin_Exist
 @username varchar(30)
@@ -180,6 +234,35 @@ begin
 end
 go
 
+go
+CREATE PROC SP_AddAdmin
+@username varchar(100),
+@password varchar(100)
+as
+begin
+	INSERT INTO superAdmin VALUES (@username,dbo.Encrypt(@password))
+end
+go
+
+go
+CREATE PROC SP_EditAdmin
+@aid int,
+@username varchar(100),
+@password varchar(100)
+as
+begin
+	UPDATE superAdmin SET username = @username WHERE id = @aid
+end
+go
+
+go
+CREATE PROC SP_RemoveAdmin
+@aid int
+as
+begin
+	DELETE FROM superAdmin WHERE id = @aid
+end
+go
 /*---------------- Voters ---------------*/
 
 go
@@ -447,6 +530,7 @@ begin
 		SET @msg = 'Election id is required'
 end
 go
+
 go
 CREATE PROC SP_CountParties
 @size int OUTPUT
@@ -479,6 +563,7 @@ begin
 		SET @msg = 'Region name already exists'
 end
 go
+
 go
 CREATE PROC SP_EditRegion
 @rid int,
@@ -500,6 +585,7 @@ begin
 		SET @msg = 'Region name already exists'
 end
 go
+
 go
 CREATE PROC SP_RemoveRegion
 @rid int,
@@ -513,6 +599,7 @@ begin
 		SET @msg = 'Unknown Region'
 end
 go
+
 go
 CREATE PROC SP_GetRegion
 @rname varchar(100),
@@ -529,6 +616,7 @@ begin
 		SET @msg = 'Region Name is required'
 end
 go
+
 go
 CREATE PROC SP_GetDetails
 @rid int,
@@ -541,10 +629,10 @@ begin
 		if(NULLIF(@rid, '') IS NOT NULL)
 		begin
 			SELECT r.rid as id,r.rname as name,r.rpopulation as population,COUNT(DISTINCT s.sid) as stations,COUNT(DISTINCT v.vid) as voters,COUNT(DISTINCT vc.vcid) as voted FROM regions as r 
-			left JOIN station as s on r.rid = s.rid and s.eid = 1
+			left JOIN station as s on r.rid = s.rid and s.eid = @eid
 			left JOIN voters as v on v.sid = s.sid
 			left JOIN votecount as vc on vc.vid = v.vid
-			where r.rid =1
+			where r.rid = @rid
 			GROUP BY r.rid,r.rname,r.rpopulation
 		end
 		else 
@@ -554,6 +642,7 @@ begin
 			SET @msg = 'Election id is required'
 end
 go
+
 go
 CREATE PROC SP_GETRegions
 as
@@ -561,6 +650,7 @@ begin
 	SELECT * FROM regions;
 end
 go
+
 go
 CREATE PROC SP_CountRegions
 @size int OUTPUT
@@ -571,6 +661,7 @@ begin
 end
 go
 
+go
 CREATE PROC SP_Population
 @size int OUTPUT
 as
@@ -671,6 +762,7 @@ begin
 	SELECT s.sid as id,s.sname as station,r.rname as region FROM station as s left join regions as r on s.rid = r.rid;
 end
 go
+
 go
 CREATE PROC SP_GetStation
 @sname varchar(100),
@@ -706,6 +798,7 @@ begin
 		SET @msg = 'Station id is required'
 end
 go
+
 go
 CREATE PROC SP_CountStations
 @size int OUTPUT
@@ -744,6 +837,7 @@ begin
 		end
 end
 go
+
 go
 CREATE PROC SP_EditElection 
 @eid int,
@@ -772,6 +866,7 @@ begin
 		SET @msg = 'Election name already exists'
 end
 go
+
 go
 CREATE PROC SP_RemoveElection 
 @eid int,
@@ -785,6 +880,7 @@ begin
 		SET @msg = 'Unknown Election'
 end
 go
+
 go
 CREATE PROC SP_GetElections
 as
@@ -792,6 +888,7 @@ begin
 	SELECT * from election
 end
 go
+
 go
 CREATE PROC SP_GetElection
 @ename varchar(100),
@@ -835,6 +932,20 @@ begin
 	 SET @msg = 'Can not vote twice'
 end
 go
+
+go
+CREATE PROC SP_RemoveVote
+@vcid int,
+@msg varchar(100) OUTPUT
+as
+begin
+	if (NULLIF(@vcid, '') IS NOT NULL)
+		DELETE FROM votecount WHERE vcid = @vcid
+	else
+		SET @msg = 'please insert the vote count id'
+end
+go
+
 go
 CREATE PROC SP_CheckVoter
 @vid int
@@ -854,18 +965,27 @@ begin
 	 return 0;
 end
 go
+
 go
-CREATE PROC SP_LeadBoard
+ALTER PROC SP_LeadBoard
 @eid int,
 @msg varchar(100) OUTPUT
 as
 begin
-	
-
-	select pname as Name,logo,CASE when dbo.GivenVoice(pid,eid) IS NULL then 0 else dbo.GivenVoice(pid,eid) end as Voice from parties where eid = 1
-
+	select pname as Name,logo,CASE when dbo.GivenVoice(eid,pid) IS NULL then 0 else dbo.GivenVoice(eid,pid) end as Voice from parties where eid = @eid order by dbo.GivenVoice(eid,pid) DESC
 end
 go
+
+go
+CREATE PROC SP_highest
+@eid int,
+@msg varchar(100) OUTPUT
+AS
+BEGIN
+	SELECT top 1 vpid FROM votecount WHERE eid = 1  GROUP BY vpid ORDER BY COUNT(vcid)
+END
+go
+
 
 
 /***************************************** TRIGGER *******************************************/
@@ -913,8 +1033,6 @@ begin
 end
 go
 
-
-
 go
 CREATE TRIGGER [prevent invalid EDate]
 ON election
@@ -926,12 +1044,7 @@ begin
 	
 	SELECT @start = e_start,@end = e_end FROM inserted
 
-	if (@start < GETDATE() or @end < GETDATE())
-	begin
-		ROLLBACK
-		RAISERROR('The election start day and end must after today', 16, 2);
-	end
-	else if (@start > @end) 
+	IF (@start > @end) 
 	begin 
 		ROLLBACK
 		RAISERROR('The starting date can not be less than the ending date', 16, 2);
@@ -939,13 +1052,32 @@ begin
 end
 go
 
+go
+create TRIGGER [prevent invalid vote]
+ON votecount
+AFTER INSERT
+AS
+begin
+	DECLARE @eid int
+	DECLARE @start date
+	DECLARE @end date
+	
+	SELECT @eid = eid FROM inserted
+	SELECT @start = e_start,@end = e_end from election where eid = @eid
+	if (@start < GETDATE())
+	begin
+		ROLLBACK
+		RAISERROR('The election have not started yet', 16, 2);
+	end
+	else if (@end > GETDATE()) 
+	begin 
+		ROLLBACK
+		RAISERROR('The election has ended', 16, 2);
+	end
+end
+go
 
 
-/****************************************** END *********************************************/
-/*
-select * from parties
-select * from voters where dbo.Decrypt(passcode) = 'snowden'
-SELECT * FROM regions
 INSERT INTO regions VALUES ('Addis Ababa',3273000),
 						   ('Afar',1723000),
 						   ('Amhara',20401000),
@@ -958,10 +1090,29 @@ INSERT INTO regions VALUES ('Addis Ababa',3273000),
 						   ('Somali',5453000),
 						   ('SNNP',11426000),
 						   ('Tigray',5056000)
-INSERT INTO election VALUES ('2014 National Election','12-2-2021','12-6-2021')
+INSERT INTO superAdmin VALUES ('Mikiyas',dbo.Encrypt('12345678'))
+
+
+
+BACKUP DATABASE Election
+TO DISK = 'C:\Users\mikiy\Desktop\db_backup\myDB.bak'
+
+BACKUP DATABASE Election
+TO DISK = 'C:\Users\mikiy\Desktop\db_backup\myDB.bak'
+WITH DIFFERENTIAL
+
+
+
+/****************************************** END *********************************************/
+/*
+select * from parties
+select * from voters where dbo.Decrypt(passcode) = 'snowden'
+SELECT * FROM regions
+
+UPDATE election set ename = 'Election 1',e_start = '9-22-2021' WHERE eid = 1
+INSERT INTO election VALUES ('Election 1','9-23-2021','9-29-2021')
 INSERT INTO voters VALUES ('mikiyas','lemlemu','gebrewold',dbo.Encrypt('123'),'12-2-2019',0941398934,1,'100001','image.jpg',1)
 INSERT INTO voters VALUES ('Surafel','Zeleke','Ayalew',dbo.Encrypt('123'),'7-9-2000',0941398934,1,'100002','images.jpg',1)
-INSERT INTO superAdmin VALUES ('Mikiyas',dbo.Encrypt('123'))
 INSERT INTO station VALUES ('AAL001',1,1)
 INSERT INTO station VALUES ('AAL002',1,2)
 select * from voters
@@ -973,5 +1124,8 @@ select * from parties
 
 
 
+
 update voters set vid = 10 where vid = 3
 delete from voters where vid in (1,2)*/
+
+

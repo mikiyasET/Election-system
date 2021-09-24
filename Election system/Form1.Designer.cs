@@ -38,7 +38,6 @@ namespace Election_system
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainPage));
             this.leftbar = new System.Windows.Forms.Panel();
             this.leadboardbtn = new System.Windows.Forms.Button();
             this.parties_btn = new System.Windows.Forms.Button();
@@ -405,6 +404,7 @@ namespace Election_system
             this.leadboard_table.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.leadboard_table.Size = new System.Drawing.Size(396, 307);
             this.leadboard_table.TabIndex = 2;
+            this.leadboard_table.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.leadboard_table_CellContentClick);
             // 
             // body
             // 
@@ -429,7 +429,6 @@ namespace Election_system
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)), true);
             this.ForeColor = System.Drawing.Color.White;
             this.HelpButton = true;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainPage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Election system";
